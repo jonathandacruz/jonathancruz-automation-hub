@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,6 +12,26 @@ All colors MUST be HSL.
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
+    
+    /* Brand Colors - Purple/Blue Theme */
+    --brand-primary: 252 84% 68%;        /* Purple #8B5CF6 */
+    --brand-secondary: 217 91% 60%;      /* Blue #3B82F6 */
+    --brand-accent: 266 100% 71%;        /* Bright Purple #A855F7 */
+    --brand-muted: 252 30% 95%;          /* Light Purple background */
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--brand-primary)), hsl(var(--brand-secondary)));
+    --gradient-hero: linear-gradient(135deg, hsl(252 84% 68%) 0%, hsl(217 91% 60%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)) 0%, hsl(var(--brand-muted)) 100%);
+    
+    /* Shadows with brand colors */
+    --shadow-brand: 0 10px 40px -10px hsl(var(--brand-primary) / 0.3);
+    --shadow-elegant: 0 25px 50px -12px hsl(var(--brand-primary) / 0.25);
+    --shadow-glow: 0 0 50px hsl(var(--brand-primary) / 0.3);
+    
+    /* Animation tokens */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
