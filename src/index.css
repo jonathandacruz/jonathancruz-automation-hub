@@ -10,26 +10,28 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 262 10% 4%;
+    --background: 249 250 251;              /* #F9FAFB - Cinza claro */
+    --foreground: 15 23 42;                 /* Texto escuro */
     
-    /* Brand Colors - Tech-focused Dark Theme */
-    --brand-primary: 220 100% 50%;      /* Tech Blue #0080FF */
-    --brand-secondary: 240 60% 25%;     /* Dark Navy #1E293B */
-    --brand-accent: 200 100% 40%;       /* Cyan accent #0099CC */
-    --brand-muted: 220 15% 96%;         /* Light gray background */
+    /* Nova Paleta: Azul + Laranja */
+    --brand-primary: 214 100% 59%;          /* #2563EB - Blue-600 */
+    --brand-secondary: 220 13% 18%;         /* Azul escuro secundário */
+    --brand-accent: 24 95% 53%;             /* #F97316 - Orange-500 (CTA) */
+    --brand-muted: 249 250 251;             /* #F9FAFB - Fundo claro */
     
-    /* Gradients with tech colors */
-    --gradient-primary: linear-gradient(135deg, hsl(220 100% 50%), hsl(240 60% 25%));
-    --gradient-hero: linear-gradient(135deg, hsl(220 100% 50%) 0%, hsl(200 100% 40%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 15% 96%) 100%);
+    /* Gradientes com nova paleta */
+    --gradient-primary: linear-gradient(135deg, hsl(214 100% 59%), hsl(24 95% 53%));
+    --gradient-hero: linear-gradient(135deg, hsl(214 100% 59%) 0%, hsl(214 100% 70%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(249 250 251) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(24 95% 53%), hsl(20 91% 48%));
     
-    /* Enhanced shadows with tech blue */
-    --shadow-brand: 0 4px 20px -2px hsl(220 100% 50% / 0.15);
-    --shadow-elegant: 0 20px 40px -5px hsl(220 100% 50% / 0.25);
-    --shadow-glow: 0 0 60px hsl(220 100% 50% / 0.4);
+    /* Sombras com azul */
+    --shadow-brand: 0 4px 20px -2px hsl(214 100% 59% / 0.15);
+    --shadow-elegant: 0 20px 40px -5px hsl(214 100% 59% / 0.25);
+    --shadow-glow: 0 0 60px hsl(214 100% 59% / 0.4);
+    --shadow-orange: 0 10px 30px -5px hsl(24 95% 53% / 0.3);
     
-    /* Animation tokens */
+    /* Animações */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
@@ -39,24 +41,24 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 220 100% 50%;
+    --primary: 214 100% 59%;                /* Azul principal */
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 220 15% 95%;
-    --secondary-foreground: 240 60% 25%;
+    --secondary: 249 250 251;               /* Fundo claro */
+    --secondary-foreground: 15 23 42;
 
-    --muted: 220 15% 96%;
-    --muted-foreground: 220 20% 40%;
+    --muted: 249 250 251;                   /* Fundo claro */
+    --muted-foreground: 100 116 139;        /* Texto secundário */
 
-    --accent: 220 15% 95%;
-    --accent-foreground: 240 60% 25%;
+    --accent: 24 95% 53%;                   /* Laranja para CTAs */
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 20% 85%;
-    --input: 220 20% 85%;
-    --ring: 220 100% 50%;
+    --border: 226 227 229;                  /* Bordas suaves */
+    --input: 226 227 229;
+    --ring: 214 100% 59%;
 
     --radius: 0.5rem;
 

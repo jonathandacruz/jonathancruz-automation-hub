@@ -82,11 +82,13 @@ export default {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-card': 'var(--gradient-card)',
+				'gradient-cta': 'var(--gradient-cta)',
 			},
 			boxShadow: {
 				'brand': 'var(--shadow-brand)',
 				'elegant': 'var(--shadow-elegant)',
 				'glow': 'var(--shadow-glow)',
+				'orange': 'var(--shadow-orange)',
 			},
 			keyframes: {
 				'accordion-down': {
