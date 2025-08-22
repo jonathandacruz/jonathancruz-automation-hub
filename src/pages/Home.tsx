@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Youtube, BookOpen, ArrowRight, Code, Database, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/jonathan-hero.jpg";
+const heroImage = "/lovable-uploads/ce80acb0-814b-4698-82bb-a4850f3d7bcc.png";
 
 const Home = () => {
   return (
@@ -21,16 +21,14 @@ const Home = () => {
                   Com Tecnologia.
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-lg">
-                  Sou Jonathan da Cruz, desenvolvedor de sistemas, instrutor e 
-                  palestrante. Acredito que o aprendizado se torna mais poderoso 
-                  quando compartilhado. Aqui, você encontrará conhecimento 
-                  prático para acelerar sua jornada na tecnologia.
+                  Aprenda tecnologia e automações de forma simples e prática. 
+                  Conhecimento direto ao ponto para acelerar sua jornada na tecnologia.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
-                  variant="hero" 
+                  variant="youtube" 
                   size="lg"
                   asChild
                 >
@@ -174,6 +172,7 @@ const Home = () => {
                   href="https://www.youtube.com/channel/UC3M_z-XMGTFMBbCjVLPKkUA"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-red-600 text-white hover:bg-red-700 h-11 px-8"
                 >
                   <Youtube className="mr-2 h-5 w-5" />
                   Canal do YouTube

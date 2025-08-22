@@ -26,7 +26,9 @@ const Sobre = () => {
               <h2 className="text-3xl font-bold">Minha Jornada na Tecnologia</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Com quase 10 anos de experiência em Tecnologia da Informação, construí uma carreira sólida 
+                  Sou Jonathan da Cruz, desenvolvedor de sistemas, instrutor e 
+                  palestrante. Acredito que o aprendizado se torna mais poderoso 
+                  quando compartilhado. Com quase 10 anos de experiência em Tecnologia da Informação, construí uma carreira sólida 
                   como desenvolvedor de sistemas, sempre focado em criar soluções eficientes e inovadoras.
                 </p>
                 <p>
