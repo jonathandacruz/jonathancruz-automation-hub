@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, Zap, Clock, TrendingUp, ArrowRight, Play } from "lucide-react";
+import { CheckCircle, Zap, Clock, TrendingUp, ArrowRight, Play, BookOpen, Users, Award } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const AutomacaoN8n = () => {
@@ -45,17 +45,63 @@ const AutomacaoN8n = () => {
     }
   ];
 
+  const courseModules = [
+    {
+      number: "01",
+      title: "Introdução ao n8n",
+      description: "Fundamentos da automação e primeiros passos com n8n",
+      duration: "45 min",
+      topics: ["O que é automação", "Instalação do n8n", "Interface básica", "Primeiro workflow"]
+    },
+    {
+      number: "02", 
+      title: "Workflows Básicos",
+      description: "Criação de automações simples e conceitos fundamentais",
+      duration: "60 min",
+      topics: ["Triggers e ações", "Nós básicos", "Conexões", "Teste de workflows"]
+    },
+    {
+      number: "03",
+      title: "Manipulação de Dados",
+      description: "Transformação e tratamento de dados entre aplicações",
+      duration: "90 min", 
+      topics: ["Expressões JavaScript", "Transformação de dados", "Filtros", "Formatação"]
+    },
+    {
+      number: "04",
+      title: "Integrações Populares",
+      description: "Conectando n8n com Gmail, Google Sheets, Slack e mais",
+      duration: "120 min",
+      topics: ["Gmail API", "Google Sheets", "Slack", "Webhooks", "APIs REST"]
+    },
+    {
+      number: "05",
+      title: "Automações Avançadas",
+      description: "Workflows complexos e boas práticas de automação",
+      duration: "75 min",
+      topics: ["Loops e condições", "Error handling", "Scheduling", "Monitoramento"]
+    },
+    {
+      number: "06",
+      title: "Deploy e Produção",
+      description: "Como colocar suas automações em produção de forma segura",
+      duration: "45 min", 
+      topics: ["Self-hosting", "Docker", "Variáveis de ambiente", "Backup", "Segurança"]
+    }
+  ];
+
   return (
     <div className="pt-16">
-      {/* Hero Section */}
+      {/* Hero Section - SEO Optimized */}
       <section className="py-20 px-4 lg:px-6 bg-gradient-primary text-white">
         <div className="container mx-auto text-center">
           <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-            Automação com n8n
+            n8n Tutorial Completo em Português
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8">
-            Transforme sua produtividade com automações inteligentes. 
-            Aprenda a criar fluxos poderosos que eliminam tarefas repetitivas e otimizam seu trabalho.
+            Aprenda n8n do zero ao avançado. Tutorial completo de automação de workflows, 
+            integração de APIs e criação de fluxos automatizados. Curso n8n em português 
+            com exemplos práticos e projetos reais.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20" asChild>
@@ -84,39 +130,45 @@ const AutomacaoN8n = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
               <h2 className="text-3xl lg:text-4xl font-bold">
-                O que é o n8n?
+                O que é o n8n? Ferramenta de Automação Open Source
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p className="text-lg">
-                  O n8n é uma plataforma de automação de fluxo de trabalho que permite conectar 
-                  diferentes aplicações e serviços de forma visual e intuitiva.
+                  O n8n é uma ferramenta de automação de workflow open source que permite conectar 
+                  diferentes aplicações e serviços sem programação. É uma alternativa gratuita ao Zapier 
+                  que você pode hospedar em seus próprios servidores.
                 </p>
                 <p>
-                  Com ele, você pode criar automações complexas sem precisar escrever código, 
-                  usando uma interface drag-and-drop que torna o processo simples e acessível.
+                  Com interface visual drag-and-drop, o n8n permite criar automações complexas, 
+                  integrar APIs, automatizar tarefas repetitivas e criar fluxos de trabalho 
+                  personalizados para sua empresa ou projetos pessoais.
                 </p>
                 <p>
-                  É ideal para automatizar tarefas repetitivas, integrar sistemas diferentes e 
-                  criar fluxos de trabalho que economizam tempo e reduzem erros.
+                  Ideal para desenvolvedores, empresas e freelancers que querem automatizar processos, 
+                  integrar sistemas diferentes e aumentar a produtividade sem depender de plataformas pagas.
                 </p>
               </div>
               
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="h-5 w-5 text-brand-primary" />
-                  <span>Interface visual intuitiva</span>
+                  <span>Interface visual para automação sem código</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="h-5 w-5 text-brand-primary" />
-                  <span>Mais de 200 integrações nativas</span>
+                  <span>Mais de 350+ integrações nativas (Gmail, Slack, etc)</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="h-5 w-5 text-brand-primary" />
-                  <span>Self-hosted e código aberto</span>
+                  <span>Self-hosted - controle total dos seus dados</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="h-5 w-5 text-brand-primary" />
-                  <span>Suporte a JavaScript customizado</span>
+                  <span>Código aberto e gratuito (alternativa ao Zapier)</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="h-5 w-5 text-brand-primary" />
+                  <span>Suporte a JavaScript e expressões customizadas</span>
                 </div>
               </div>
             </div>
@@ -152,10 +204,10 @@ const AutomacaoN8n = () => {
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Por que usar automação?
+              Por que usar automação n8n?
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Descubra como a automação pode transformar seu dia a dia e sua empresa
+              Benefícios da automação de processos com n8n para empresas e desenvolvedores
             </p>
           </div>
 
@@ -179,15 +231,94 @@ const AutomacaoN8n = () => {
         </div>
       </section>
 
-      {/* Exemplos de Fluxos */}
-      <section className="py-20 px-4 lg:px-6">
+      {/* Curso n8n Fundamentos */}
+      <section className="py-20 px-4 lg:px-6 bg-white">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Exemplos de Automações
+              Curso n8n Fundamentos - Módulos Completos
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+              Aprenda n8n do básico ao avançado com meu curso estruturado. 
+              Cada módulo foi criado para levar você do zero à criação de automações profissionais.
+            </p>
+            <div className="flex justify-center gap-8 text-sm text-muted-foreground mb-8">
+              <div className="flex items-center">
+                <Users className="h-4 w-4 mr-2 text-brand-primary" />
+                6+ horas de conteúdo
+              </div>
+              <div className="flex items-center">
+                <BookOpen className="h-4 w-4 mr-2 text-brand-primary" />
+                6 módulos práticos
+              </div>
+              <div className="flex items-center">
+                <Award className="h-4 w-4 mr-2 text-brand-primary" />
+                Projetos reais
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {courseModules.map((module, index) => (
+              <Card key={index} className="border-0 shadow-brand hover:shadow-elegant transition-all duration-300 group">
+                <CardHeader>
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">{module.number}</span>
+                    </div>
+                    <span className="text-sm text-muted-foreground bg-brand-muted px-3 py-1 rounded-full">
+                      {module.duration}
+                    </span>
+                  </div>
+                  <CardTitle className="group-hover:text-brand-primary transition-colors">
+                    {module.title}
+                  </CardTitle>
+                  <CardDescription className="text-base">
+                    {module.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    <h4 className="font-medium text-sm text-muted-foreground mb-3">O que você vai aprender:</h4>
+                    {module.topics.map((topic, topicIndex) => (
+                      <div key={topicIndex} className="flex items-center space-x-2">
+                        <CheckCircle className="h-4 w-4 text-brand-primary flex-shrink-0" />
+                        <span className="text-sm">{topic}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Button variant="brand" size="lg" asChild>
+              <a 
+                href="https://www.youtube.com/channel/UC3M_z-XMGTFMBbCjVLPKkUA"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Play className="mr-2 h-5 w-5" />
+                Assistir Curso Completo
+              </a>
+            </Button>
+            <p className="text-sm text-muted-foreground mt-4">
+              Curso completo disponível no meu canal do YouTube
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Exemplos de Fluxos */}
+      <section className="py-20 px-4 lg:px-6 bg-brand-muted">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+              Exemplos Práticos de Automação n8n
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Alguns dos fluxos que já criei e que você pode implementar
+              Workflows reais que você pode implementar hoje mesmo para automatizar seus processos
             </p>
           </div>
 
@@ -223,11 +354,11 @@ const AutomacaoN8n = () => {
       <section className="py-20 px-4 lg:px-6 bg-gradient-primary text-white">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            Aprenda n8n Comigo
+            Domine n8n Automação do Zero ao Avançado
           </h2>
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
-            Domine a arte da automação e transforme sua produtividade. 
-            Conteúdo prático, direto ao ponto e com exemplos reais.
+            Curso completo de n8n em português. Aprenda automação de workflows, 
+            integração de APIs e crie seus próprios projetos de automação.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20" asChild>
