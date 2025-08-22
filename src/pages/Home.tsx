@@ -1,17 +1,10 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Youtube, BookOpen, ArrowRight, Code, Database, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
-import BackgroundRemovalDemo from "@/components/BackgroundRemovalDemo";
 
-const originalHeroImage = "/lovable-uploads/e020e825-ba4b-4684-b062-79a26a4e1e23.png";
+const heroImage = "/lovable-uploads/e020e825-ba4b-4684-b062-79a26a4e1e23.png";
 
 const Home = () => {
-  const [heroImage, setHeroImage] = useState(originalHeroImage);
-
-  const handleImageProcessed = (processedImageUrl: string) => {
-    setHeroImage(processedImageUrl);
-  };
 
   return (
     <div className="min-h-screen">
@@ -78,12 +71,15 @@ const Home = () => {
             {/* Right Image */}
             <div className="relative animate-scale-in">
               <div className="relative w-full max-w-md mx-auto">
-                <div className="absolute inset-0 bg-gradient-primary rounded-3xl transform rotate-6 opacity-20"></div>
-                <div className="relative bg-transparent rounded-3xl p-8">
+                <div className="absolute inset-0 bg-gradient-primary rounded-full transform rotate-6 opacity-10 scale-110"></div>
+                <div className="relative">
                   <img 
                     src={heroImage}
                     alt="Jonathan da Cruz - Desenvolvedor e Instrutor"
-                    className="w-full h-auto rounded-2xl drop-shadow-2xl"
+                    className="w-full h-auto rounded-2xl filter drop-shadow-2xl"
+                    style={{
+                      filter: 'drop-shadow(0 25px 50px rgba(59, 130, 246, 0.3))'
+                    }}
                   />
                 </div>
               </div>
@@ -92,29 +88,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Background Removal Demo */}
-      <section className="py-20 bg-brand-muted">
-        <div className="container mx-auto px-4 lg:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Teste de Remoção de Fundo com IA
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Vamos testar como ficaria sua foto sem fundo usando inteligência artificial
-            </p>
-          </div>
-          
-          <div className="flex justify-center">
-            <BackgroundRemovalDemo 
-              originalImageUrl={originalHeroImage}
-              onImageProcessed={handleImageProcessed}
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Especialidades */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-brand-muted">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
@@ -181,7 +156,7 @@ const Home = () => {
       </section>
 
       {/* Templates Preview */}
-      <section className="py-20 bg-brand-muted">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
