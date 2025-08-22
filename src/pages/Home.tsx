@@ -1,9 +1,18 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Youtube, BookOpen, ArrowRight, Code, Database, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
-const heroImage = "/lovable-uploads/e020e825-ba4b-4684-b062-79a26a4e1e23.png";
+import BackgroundRemovalDemo from "@/components/BackgroundRemovalDemo";
+
+const originalHeroImage = "/lovable-uploads/e020e825-ba4b-4684-b062-79a26a4e1e23.png";
 
 const Home = () => {
+  const [heroImage, setHeroImage] = useState(originalHeroImage);
+
+  const handleImageProcessed = (processedImageUrl: string) => {
+    setHeroImage(processedImageUrl);
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -83,8 +92,29 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Especialidades */}
+      {/* Background Removal Demo */}
       <section className="py-20 bg-brand-muted">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+              Teste de Remoção de Fundo com IA
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Vamos testar como ficaria sua foto sem fundo usando inteligência artificial
+            </p>
+          </div>
+          
+          <div className="flex justify-center">
+            <BackgroundRemovalDemo 
+              originalImageUrl={originalHeroImage}
+              onImageProcessed={handleImageProcessed}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Especialidades */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
