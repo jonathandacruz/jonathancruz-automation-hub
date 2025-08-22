@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Youtube, BookOpen, ArrowRight, Code, Database, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
-const heroImage = "/lovable-uploads/ce80acb0-814b-4698-82bb-a4850f3d7bcc.png";
+const heroImage = "/lovable-uploads/e020e825-ba4b-4684-b062-79a26a4e1e23.png";
 
 const Home = () => {
   return (
@@ -146,6 +146,67 @@ const Home = () => {
                 Ver tutoriais <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Templates Preview */}
+      <section className="py-20 bg-brand-muted">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+              Templates Prontos para Usar
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Acelere seus projetos com templates testados e prontos para implementar
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {/* Template 1 */}
+            <div className="bg-white rounded-2xl p-6 shadow-brand hover:shadow-elegant transition-all duration-300 hover:transform hover:scale-105">
+              <div className="w-full h-48 bg-gradient-primary rounded-xl mb-6 flex items-center justify-center">
+                <Code className="h-16 w-16 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Template de Automação de E-mails</h3>
+              <p className="text-muted-foreground mb-4">
+                Automatize o envio de e-mails personalizados com n8n de forma simples e eficiente.
+              </p>
+              <div className="text-brand-primary font-medium">Gratuito</div>
+            </div>
+
+            {/* Template 2 */}
+            <div className="bg-white rounded-2xl p-6 shadow-brand hover:shadow-elegant transition-all duration-300 hover:transform hover:scale-105">
+              <div className="w-full h-48 bg-gradient-primary rounded-xl mb-6 flex items-center justify-center">
+                <Database className="h-16 w-16 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Integração com Banco de Dados</h3>
+              <p className="text-muted-foreground mb-4">
+                Template completo para conectar e sincronizar dados entre sistemas automaticamente.
+              </p>
+              <div className="text-brand-primary font-medium">Premium</div>
+            </div>
+
+            {/* Template 3 */}
+            <div className="bg-white rounded-2xl p-6 shadow-brand hover:shadow-elegant transition-all duration-300 hover:transform hover:scale-105">
+              <div className="w-full h-48 bg-gradient-primary rounded-xl mb-6 flex items-center justify-center">
+                <Zap className="h-16 w-16 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Automação de Relatórios</h3>
+              <p className="text-muted-foreground mb-4">
+                Gere e envie relatórios automaticamente com dados atualizados em tempo real.
+              </p>
+              <div className="text-brand-primary font-medium">Premium</div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <Button variant="brand" size="lg" asChild>
+              <Link to="/templates">
+                Ver Todos os Templates
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

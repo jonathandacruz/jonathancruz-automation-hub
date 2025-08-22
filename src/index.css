@@ -11,23 +11,23 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 262 10% 4%;
     
-    /* Brand Colors - Purple/Blue Theme */
-    --brand-primary: 252 84% 68%;        /* Purple #8B5CF6 */
-    --brand-secondary: 217 91% 60%;      /* Blue #3B82F6 */
-    --brand-accent: 266 100% 71%;        /* Bright Purple #A855F7 */
-    --brand-muted: 252 30% 95%;          /* Light Purple background */
+    /* Brand Colors - Modern Purple/Blue Theme with Better Contrast */
+    --brand-primary: 262 90% 55%;        /* Rich Purple #7C3AED */
+    --brand-secondary: 220 100% 60%;     /* Blue #0099FF */
+    --brand-accent: 280 70% 65%;         /* Light Purple #A855F7 */
+    --brand-muted: 262 40% 97%;          /* Very light purple background */
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--brand-primary)), hsl(var(--brand-secondary)));
-    --gradient-hero: linear-gradient(135deg, hsl(252 84% 68%) 0%, hsl(217 91% 60%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(var(--background)) 0%, hsl(var(--brand-muted)) 100%);
+    /* Gradients with more vibrant colors */
+    --gradient-primary: linear-gradient(135deg, hsl(262 90% 55%), hsl(220 100% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(262 90% 55%) 0%, hsl(220 100% 60%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(262 40% 97%) 100%);
     
-    /* Shadows with brand colors */
-    --shadow-brand: 0 10px 40px -10px hsl(var(--brand-primary) / 0.3);
-    --shadow-elegant: 0 25px 50px -12px hsl(var(--brand-primary) / 0.25);
-    --shadow-glow: 0 0 50px hsl(var(--brand-primary) / 0.3);
+    /* Enhanced shadows with better contrast */
+    --shadow-brand: 0 4px 20px -2px hsl(262 90% 55% / 0.15);
+    --shadow-elegant: 0 20px 40px -5px hsl(262 90% 55% / 0.25);
+    --shadow-glow: 0 0 60px hsl(262 90% 55% / 0.4);
     
     /* Animation tokens */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -39,24 +39,24 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 262 90% 55%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 262 40% 96%;
+    --secondary-foreground: 262 10% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 262 40% 97%;
+    --muted-foreground: 262 20% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 262 40% 96%;
+    --accent-foreground: 262 10% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 262 30% 88%;
+    --input: 262 30% 88%;
+    --ring: 262 90% 55%;
 
     --radius: 0.5rem;
 
@@ -78,33 +78,39 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 262 30% 4%;
+    --foreground: 0 0% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    /* Dark mode brand colors with better visibility */
+    --brand-primary: 262 90% 70%;
+    --brand-secondary: 220 100% 70%;
+    --brand-accent: 280 70% 75%;
+    --brand-muted: 262 30% 8%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --card: 262 30% 4%;
+    --card-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --popover: 262 30% 4%;
+    --popover-foreground: 0 0% 98%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --primary: 262 90% 70%;
+    --primary-foreground: 262 30% 4%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --secondary: 262 20% 12%;
+    --secondary-foreground: 0 0% 98%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --muted: 262 20% 12%;
+    --muted-foreground: 262 10% 65%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --accent: 262 20% 12%;
+    --accent-foreground: 0 0% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 262 20% 15%;
+    --input: 262 20% 15%;
+    --ring: 262 90% 70%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
