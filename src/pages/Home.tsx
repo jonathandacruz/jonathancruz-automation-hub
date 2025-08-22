@@ -69,12 +69,12 @@ const Home = () => {
             {/* Right Image */}
             <div className="relative animate-scale-in">
               <div className="relative w-full max-w-md mx-auto">
-                <div className="absolute inset-0 bg-gradient-primary rounded-3xl transform rotate-6"></div>
-                <div className="relative bg-white rounded-3xl p-8 shadow-elegant">
+                <div className="absolute inset-0 bg-gradient-primary rounded-3xl transform rotate-6 opacity-20"></div>
+                <div className="relative bg-transparent rounded-3xl p-8">
                   <img 
                     src={heroImage}
                     alt="Jonathan da Cruz - Desenvolvedor e Instrutor"
-                    className="w-full h-auto rounded-2xl"
+                    className="w-full h-auto rounded-2xl drop-shadow-2xl"
                   />
                 </div>
               </div>

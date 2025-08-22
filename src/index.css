@@ -13,21 +13,21 @@ All colors MUST be HSL.
     --background: 0 0% 100%;
     --foreground: 262 10% 4%;
     
-    /* Brand Colors - Modern Purple/Blue Theme with Better Contrast */
-    --brand-primary: 262 90% 55%;        /* Rich Purple #7C3AED */
-    --brand-secondary: 220 100% 60%;     /* Blue #0099FF */
-    --brand-accent: 280 70% 65%;         /* Light Purple #A855F7 */
-    --brand-muted: 262 40% 97%;          /* Very light purple background */
+    /* Brand Colors - Tech-focused Dark Theme */
+    --brand-primary: 220 100% 50%;      /* Tech Blue #0080FF */
+    --brand-secondary: 240 60% 25%;     /* Dark Navy #1E293B */
+    --brand-accent: 200 100% 40%;       /* Cyan accent #0099CC */
+    --brand-muted: 220 15% 96%;         /* Light gray background */
     
-    /* Gradients with more vibrant colors */
-    --gradient-primary: linear-gradient(135deg, hsl(262 90% 55%), hsl(220 100% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(262 90% 55%) 0%, hsl(220 100% 60%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(262 40% 97%) 100%);
+    /* Gradients with tech colors */
+    --gradient-primary: linear-gradient(135deg, hsl(220 100% 50%), hsl(240 60% 25%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 100% 50%) 0%, hsl(200 100% 40%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 15% 96%) 100%);
     
-    /* Enhanced shadows with better contrast */
-    --shadow-brand: 0 4px 20px -2px hsl(262 90% 55% / 0.15);
-    --shadow-elegant: 0 20px 40px -5px hsl(262 90% 55% / 0.25);
-    --shadow-glow: 0 0 60px hsl(262 90% 55% / 0.4);
+    /* Enhanced shadows with tech blue */
+    --shadow-brand: 0 4px 20px -2px hsl(220 100% 50% / 0.15);
+    --shadow-elegant: 0 20px 40px -5px hsl(220 100% 50% / 0.25);
+    --shadow-glow: 0 0 60px hsl(220 100% 50% / 0.4);
     
     /* Animation tokens */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -39,24 +39,24 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 262 90% 55%;
+    --primary: 220 100% 50%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 262 40% 96%;
-    --secondary-foreground: 262 10% 15%;
+    --secondary: 220 15% 95%;
+    --secondary-foreground: 240 60% 25%;
 
-    --muted: 262 40% 97%;
-    --muted-foreground: 262 20% 45%;
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 20% 40%;
 
-    --accent: 262 40% 96%;
-    --accent-foreground: 262 10% 15%;
+    --accent: 220 15% 95%;
+    --accent-foreground: 240 60% 25%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 262 30% 88%;
-    --input: 262 30% 88%;
-    --ring: 262 90% 55%;
+    --border: 220 20% 85%;
+    --input: 220 20% 85%;
+    --ring: 220 100% 50%;
 
     --radius: 0.5rem;
 
@@ -78,14 +78,14 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 262 30% 4%;
+    --background: 240 60% 5%;
     --foreground: 0 0% 98%;
 
-    /* Dark mode brand colors with better visibility */
-    --brand-primary: 262 90% 70%;
-    --brand-secondary: 220 100% 70%;
-    --brand-accent: 280 70% 75%;
-    --brand-muted: 262 30% 8%;
+    /* Dark mode tech colors */
+    --brand-primary: 220 100% 60%;
+    --brand-secondary: 200 100% 50%;
+    --brand-accent: 180 100% 50%;
+    --brand-muted: 240 60% 8%;
 
     --card: 262 30% 4%;
     --card-foreground: 0 0% 98%;
