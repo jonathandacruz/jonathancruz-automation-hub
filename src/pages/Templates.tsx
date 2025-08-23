@@ -71,7 +71,8 @@ const Templates = () => {
       featured: true,
       price: 37,
       estimatedTime: "2-3 horas",
-      complexity: "medium"
+      complexity: "medium",
+      buyLink: "https://pay.hotmart.com/J101368751T"
     },
     {
       id: 2,
@@ -86,7 +87,8 @@ const Templates = () => {
       featured: true,
       price: 9.99,
       estimatedTime: "4-5 horas",
-      complexity: "high"
+      complexity: "high",
+      buyLink: "https://pay.hotmart.com/K102456789R"
     },
     {
       id: 3,
@@ -101,7 +103,8 @@ const Templates = () => {
       featured: true,
       price: 37,
       estimatedTime: "1-2 horas",
-      complexity: "low"
+      complexity: "low",
+      buyLink: "https://pay.hotmart.com/S103789456T"
     },
     {
       id: 4,
@@ -116,7 +119,8 @@ const Templates = () => {
       featured: true,
       price: 37,
       estimatedTime: "3-4 horas",
-      complexity: "high"
+      complexity: "high",
+      buyLink: "https://pay.hotmart.com/I104567890A"
     }
   ];
 
@@ -290,9 +294,11 @@ const Templates = () => {
                         Ver Mais
                       </Button>
                       
-                      <Button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-800 hover:to-purple-800 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 button-gradient-shift">
-                        <ShoppingCart className="h-4 w-4 mr-2" />
-                        Comprar
+                      <Button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-800 hover:to-purple-800 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 button-gradient-shift" asChild>
+                        <a href={template.buyLink} target="_blank" rel="noopener noreferrer">
+                          <ShoppingCart className="h-4 w-4 mr-2" />
+                          Comprar
+                        </a>
                       </Button>
                     </div>
                   </div>
