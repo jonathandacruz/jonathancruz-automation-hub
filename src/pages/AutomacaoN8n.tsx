@@ -124,7 +124,7 @@ const AutomacaoN8n = () => {
             
             <h1 className="text-5xl lg:text-7xl font-bold mb-8 leading-tight">
               <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">n8n Fundamentos</span> 
-              <br />n8n Automação Profissional
+              <br />seja um profissional de Automação
             </h1>
             
             <p className="text-xl lg:text-2xl text-slate-300 max-w-4xl mx-auto mb-12 leading-relaxed">
