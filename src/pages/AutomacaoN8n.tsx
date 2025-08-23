@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, Zap, Clock, TrendingUp, ArrowRight, Play, BookOpen, Users, Award } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { CheckCircle, Zap, Clock, TrendingUp, ArrowRight, Play, BookOpen, Users, Award, Star, Workflow, Code, Database, ChevronRight, Target, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const AutomacaoN8n = () => {
@@ -8,190 +9,267 @@ const AutomacaoN8n = () => {
     {
       icon: Clock,
       title: "Economia de Tempo",
-      description: "Automatize tarefas repetitivas e ganhe horas do seu dia"
+      description: "Automatize tarefas repetitivas e ganhe até 10 horas por semana",
+      stat: "80%",
+      statLabel: "menos tempo gasto"
     },
     {
       icon: TrendingUp,
       title: "Aumento de Produtividade",
-      description: "Foque no que realmente importa enquanto as automações trabalham"
+      description: "Foque no que realmente importa enquanto as automações trabalham",
+      stat: "3x",
+      statLabel: "mais produtivo"
     },
     {
-      icon: Zap,
+      icon: Target,
       title: "Redução de Erros",
-      description: "Elimine erros humanos com processos automatizados"
+      description: "Elimine erros humanos com processos automatizados e precisos",
+      stat: "95%",
+      statLabel: "menos erros"
     }
   ];
 
   const examples = [
     {
-      title: "Automação de E-mails",
-      description: "Envio automático de e-mails personalizados baseado em triggers específicos",
-      tools: ["Gmail", "Outlook", "Webhooks"]
+      title: "Automação de E-mails Marketing",
+      description: "Sistema completo de e-mail marketing com segmentação automática e follow-up personalizado",
+      tools: ["Gmail", "Mailchimp", "Google Sheets"],
+      complexity: "Intermediário",
+      timeToImplement: "2-4 horas",
+      benefits: ["Segmentação automática", "Follow-up personalizado", "Relatórios automáticos"]
     },
     {
-      title: "Integração CRM",
-      description: "Sincronização automática de leads entre diferentes plataformas",
-      tools: ["HubSpot", "Pipedrive", "Google Sheets"]
+      title: "Sincronização CRM Multi-Plataforma",
+      description: "Integração bidirecional entre diferentes CRMs e planilhas com validação de dados",
+      tools: ["HubSpot", "Pipedrive", "Airtable"],
+      complexity: "Avançado",
+      timeToImplement: "4-6 horas",
+      benefits: ["Dados sempre atualizados", "Validação automática", "Backup redundante"]
     },
     {
-      title: "Backup Automático",
-      description: "Backup automático de dados e arquivos em múltiplas plataformas",
-      tools: ["Google Drive", "Dropbox", "AWS S3"]
+      title: "Dashboard de Métricas em Tempo Real",
+      description: "Coleta automática de dados e geração de relatórios visuais atualizados",
+      tools: ["Google Analytics", "Slack", "Discord"],
+      complexity: "Avançado",
+      timeToImplement: "6-8 horas",
+      benefits: ["Métricas em tempo real", "Alertas inteligentes", "Visualização automática"]
     },
     {
-      title: "Notificações Inteligentes",
-      description: "Sistema de alertas baseado em métricas e eventos importantes",
-      tools: ["Slack", "Discord", "Telegram"]
+      title: "Backup Inteligente Multi-Cloud",
+      description: "Sistema de backup automático com redundância e verificação de integridade",
+      tools: ["Google Drive", "Dropbox", "AWS S3"],
+      complexity: "Intermediário",
+      timeToImplement: "3-5 horas",
+      benefits: ["Backup redundante", "Verificação automática", "Restauração rápida"]
     }
   ];
 
   const courseModules = [
     {
       number: "01",
-      title: "Introdução ao n8n",
-      description: "Fundamentos da automação e primeiros passos com n8n",
+      title: "Fundamentos do n8n",
+      description: "Aprenda os conceitos básicos e configure seu primeiro workflow",
       duration: "45 min",
-      topics: ["O que é automação", "Instalação do n8n", "Interface básica", "Primeiro workflow"]
+      topics: ["Conceitos de automação", "Instalação e configuração", "Interface visual", "Primeiro workflow"],
+      difficulty: "Iniciante"
     },
     {
       number: "02", 
-      title: "Workflows Básicos",
-      description: "Criação de automações simples e conceitos fundamentais",
+      title: "Workflows Essenciais",
+      description: "Domine triggers, ações e conexões entre diferentes serviços",
       duration: "60 min",
-      topics: ["Triggers e ações", "Nós básicos", "Conexões", "Teste de workflows"]
+      topics: ["Triggers avançados", "Nós essenciais", "Conectores", "Debugging"],
+      difficulty: "Iniciante"
     },
     {
       number: "03",
-      title: "Manipulação de Dados",
-      description: "Transformação e tratamento de dados entre aplicações",
+      title: "Manipulação Avançada de Dados",
+      description: "Transforme e processe dados complexos entre aplicações",
       duration: "90 min", 
-      topics: ["Expressões JavaScript", "Transformação de dados", "Filtros", "Formatação"]
+      topics: ["JavaScript expressions", "Data transformation", "Filtros complexos", "Validação de dados"],
+      difficulty: "Intermediário"
     },
     {
       number: "04",
-      title: "Integrações Populares",
-      description: "Conectando n8n com Gmail, Google Sheets, Slack e mais",
+      title: "Integrações Empresariais",
+      description: "Conecte sistemas corporativos e APIs populares",
       duration: "120 min",
-      topics: ["Gmail API", "Google Sheets", "Slack", "Webhooks", "APIs REST"]
+      topics: ["APIs REST/GraphQL", "Autenticação OAuth", "Webhooks", "Rate limiting"],
+      difficulty: "Intermediário"
     },
     {
       number: "05",
-      title: "Automações Avançadas",
-      description: "Workflows complexos e boas práticas de automação",
+      title: "Automações Profissionais",
+      description: "Crie workflows complexos para cenários empresariais",
       duration: "75 min",
-      topics: ["Loops e condições", "Error handling", "Scheduling", "Monitoramento"]
+      topics: ["Loops e condições", "Error handling", "Scheduling avançado", "Monitoramento"],
+      difficulty: "Avançado"
     },
     {
       number: "06",
-      title: "Deploy e Produção",
-      description: "Como colocar suas automações em produção de forma segura",
+      title: "Deploy e Escalabilidade",
+      description: "Coloque suas automações em produção de forma segura",
       duration: "45 min", 
-      topics: ["Self-hosting", "Docker", "Variáveis de ambiente", "Backup", "Segurança"]
+      topics: ["Docker deployment", "Environment variables", "Load balancing", "Security best practices"],
+      difficulty: "Avançado"
     }
   ];
 
+  const getComplexityColor = (complexity: string) => {
+    switch (complexity) {
+      case "Iniciante": return "bg-green-100 text-green-800 border-green-200";
+      case "Intermediário": return "bg-yellow-100 text-yellow-800 border-yellow-200";
+      case "Avançado": return "bg-red-100 text-red-800 border-red-200";
+      default: return "bg-gray-100 text-gray-800 border-gray-200";
+    }
+  };
+
   return (
-    <div className="pt-16">
-      {/* Hero Section - SEO Optimized */}
-      <section className="py-20 px-4 lg:px-6 bg-gradient-primary text-white">
-        <div className="container mx-auto text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-            n8n Tutorial Completo em Português
-          </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8">
-            Aprenda n8n do zero ao avançado. Tutorial completo de automação de workflows, 
-            integração de APIs e criação de fluxos automatizados. Curso n8n em português 
-            com exemplos práticos e projetos reais.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-white text-slate-900 hover:bg-slate-100 font-semibold px-8 py-3 h-auto rounded-xl button-hover" asChild>
-              <a 
-                href="https://www.youtube.com/channel/UC3M_z-XMGTFMBbCjVLPKkUA"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Play className="mr-2 h-5 w-5" />
-                Ver Tutoriais
-              </a>
-            </Button>
-            <Button variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20" asChild>
-              <Link to="/templates">
-                Templates Prontos
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
+    <div className="pt-16 bg-white overflow-hidden">
+      {/* Hero Section Modernizado */}
+      <section className="py-24 px-4 lg:px-6 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white relative">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]"></div>
+        <div className="absolute top-20 right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
+        
+        <div className="container mx-auto text-center relative z-10">
+          <div className="animate-fade-in">
+            <Badge className="mb-6 px-4 py-2 bg-white/10 text-white border-white/20 text-sm font-semibold">
+              <Sparkles className="w-4 h-4 mr-2" />
+              Curso Completo de n8n em Português
+            </Badge>
+            
+            <h1 className="text-5xl lg:text-7xl font-bold mb-8 leading-tight">
+              Domine <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Automação n8n</span> 
+              <br />do Zero ao Profissional
+            </h1>
+            
+            <p className="text-xl lg:text-2xl text-slate-300 max-w-4xl mx-auto mb-12 leading-relaxed">
+              O tutorial mais completo de n8n em português. Aprenda a criar automações profissionais, 
+              integrar sistemas e <span className="text-white font-semibold">economizar até 80% do seu tempo</span> 
+              com workflows inteligentes.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold text-lg px-10 py-4 h-auto rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300">
+                <Play className="mr-3 h-6 w-6" />
+                Começar Agora Grátis
+              </Button>
+              
+              <Button className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20 font-semibold text-lg px-10 py-4 h-auto rounded-2xl hover:scale-105 transition-all duration-300">
+                <Workflow className="mr-3 h-6 w-6" />
+                Ver Templates Prontos
+              </Button>
+            </div>
+            
+            {/* Social Proof */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
+              <div className="text-center">
+                <div className="text-3xl lg:text-4xl font-bold text-blue-400 mb-2">6K+</div>
+                <div className="text-sm text-slate-400">Alunos Capacitados</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl lg:text-4xl font-bold text-purple-400 mb-2">100+</div>
+                <div className="text-sm text-slate-400">Automações Criadas</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl lg:text-4xl font-bold text-green-400 mb-2">4.9★</div>
+                <div className="text-sm text-slate-400">Avaliação Média</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl lg:text-4xl font-bold text-yellow-400 mb-2">10+</div>
+                <div className="text-sm text-slate-400">Anos de Experiência</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* O que é n8n */}
-      <section className="py-20 px-4 lg:px-6">
+      {/* O que é n8n - Modernizado */}
+      <section className="py-24 px-4 lg:px-6 bg-white">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">
-                O que é o n8n? Ferramenta de Automação Open Source
-              </h2>
-              <div className="space-y-4 text-slate-700">
-                <p className="text-lg">
-                  O n8n é uma ferramenta de automação de workflow open source que permite conectar 
-                  diferentes aplicações e serviços sem programação. É uma alternativa gratuita ao Zapier 
-                  que você pode hospedar em seus próprios servidores.
-                </p>
-                <p>
-                  Com interface visual drag-and-drop, o n8n permite criar automações complexas, 
-                  integrar APIs, automatizar tarefas repetitivas e criar fluxos de trabalho 
-                  personalizados para sua empresa ou projetos pessoais.
-                </p>
-                <p>
-                  Ideal para desenvolvedores, empresas e freelancers que querem automatizar processos, 
-                  integrar sistemas diferentes e aumentar a produtividade sem depender de plataformas pagas.
+            <div className="space-y-8">
+              <div>
+                <Badge className="mb-4 px-3 py-1 bg-blue-100 text-blue-800 border-blue-200">
+                  <Code className="w-4 h-4 mr-2" />
+                  Open Source & Gratuito
+                </Badge>
+                <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+                  O que é o n8n?
+                </h2>
+                <p className="text-xl text-slate-700 leading-relaxed mb-6">
+                  O n8n é a ferramenta de automação visual mais poderosa do mercado. 
+                  Uma alternativa open source ao Zapier que você pode hospedar gratuitamente 
+                  e customizar completamente.
                 </p>
               </div>
               
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-brand-primary" />
-                  <span>Interface visual para automação sem código</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-brand-primary" />
-                  <span>Mais de 350+ integrações nativas (Gmail, Slack, etc)</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-brand-primary" />
-                  <span>Self-hosted - controle total dos seus dados</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-brand-primary" />
-                  <span>Código aberto e gratuito (alternativa ao Zapier)</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-brand-primary" />
-                  <span>Suporte a JavaScript e expressões customizadas</span>
-                </div>
+              <div className="space-y-4">
+                {[
+                  { icon: CheckCircle, text: "Interface visual drag-and-drop intuitiva" },
+                  { icon: Zap, text: "350+ integrações nativas (Gmail, Slack, etc)" },
+                  { icon: Database, text: "Self-hosted - controle total dos dados" },
+                  { icon: Code, text: "Código aberto e 100% gratuito" },
+                  { icon: Workflow, text: "JavaScript customizado para lógicas complexas" }
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center space-x-4 p-3 rounded-xl hover:bg-slate-50 transition-colors duration-200">
+                    <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+                      <item.icon className="h-5 w-5 text-blue-600" />
+                    </div>
+                    <span className="text-slate-800 font-medium">{item.text}</span>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div className="bg-brand-muted rounded-3xl p-8">
-              <div className="space-y-4">
-                <div className="bg-white rounded-2xl p-6 shadow-brand">
-                  <h3 className="font-semibold mb-2">Trigger</h3>
-                  <p className="text-sm text-muted-foreground">Evento que inicia a automação</p>
+            {/* Workflow Visual */}
+            <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl p-8 border border-slate-200">
+              <h3 className="text-xl font-bold text-slate-900 mb-8 text-center">Como Funciona um Workflow</h3>
+              <div className="space-y-6">
+                <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-100 hover:scale-105 transition-transform duration-300">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                      <Play className="h-6 w-6 text-green-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900">1. Trigger</h4>
+                      <p className="text-sm text-slate-600">Evento que inicia a automação</p>
+                    </div>
+                  </div>
                 </div>
+                
                 <div className="flex justify-center">
-                  <ArrowRight className="h-6 w-6 text-brand-primary" />
+                  <ChevronRight className="h-8 w-8 text-blue-500" />
                 </div>
-                <div className="bg-white rounded-2xl p-6 shadow-brand">
-                  <h3 className="font-semibold mb-2">Processamento</h3>
-                  <p className="text-sm text-muted-foreground">Lógica e transformação dos dados</p>
+                
+                <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-100 hover:scale-105 transition-transform duration-300">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                      <Code className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900">2. Processamento</h4>
+                      <p className="text-sm text-slate-600">Transformação e lógica</p>
+                    </div>
+                  </div>
                 </div>
+                
                 <div className="flex justify-center">
-                  <ArrowRight className="h-6 w-6 text-brand-primary" />
+                  <ChevronRight className="h-8 w-8 text-blue-500" />
                 </div>
-                <div className="bg-white rounded-2xl p-6 shadow-brand">
-                  <h3 className="font-semibold mb-2">Ação</h3>
-                  <p className="text-sm text-muted-foreground">Resultado final da automação</p>
+                
+                <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-100 hover:scale-105 transition-transform duration-300">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                      <Target className="h-6 w-6 text-purple-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-900">3. Ação</h4>
+                      <p className="text-sm text-slate-600">Resultado da automação</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -199,29 +277,35 @@ const AutomacaoN8n = () => {
         </div>
       </section>
 
-      {/* Benefícios */}
-      <section className="py-20 px-4 lg:px-6 bg-brand-muted">
+      {/* Benefícios Modernizados */}
+      <section className="py-24 px-4 lg:px-6 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+          <div className="text-center mb-20">
+            <Badge className="mb-4 px-3 py-1 bg-orange-100 text-orange-800 border-orange-200">
+              <TrendingUp className="w-4 h-4 mr-2" />
+              Resultados Comprovados
+            </Badge>
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
               Por que usar automação n8n?
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Benefícios da automação de processos com n8n para empresas e desenvolvedores
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Transforme sua produtividade com dados reais de impacto
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
-              <Card key={index} className="border-0 shadow-brand hover:shadow-elegant transition-all duration-300">
-                <CardHeader className="text-center">
-                  <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <benefit.icon className="h-8 w-8 text-white" />
+              <Card key={index} className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 bg-white overflow-hidden group">
+                <CardHeader className="text-center pb-4">
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl">
+                    <benefit.icon className="h-10 w-10 text-white" />
                   </div>
-                  <CardTitle>{benefit.title}</CardTitle>
+                  <div className="text-4xl font-bold text-blue-600 mb-2">{benefit.stat}</div>
+                  <div className="text-sm text-slate-500 font-medium mb-4">{benefit.statLabel}</div>
+                  <CardTitle className="text-xl font-bold text-slate-900">{benefit.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-center text-base">
+                <CardContent className="text-center">
+                  <CardDescription className="text-base text-slate-600 leading-relaxed">
                     {benefit.description}
                   </CardDescription>
                 </CardContent>
@@ -231,59 +315,73 @@ const AutomacaoN8n = () => {
         </div>
       </section>
 
-      {/* Curso n8n Fundamentos */}
-      <section className="py-20 px-4 lg:px-6 bg-white">
+      {/* Curso Módulos Modernizado */}
+      <section className="py-24 px-4 lg:px-6 bg-white">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Curso n8n Fundamentos - Módulos Completos
+          <div className="text-center mb-20">
+            <Badge className="mb-4 px-3 py-1 bg-purple-100 text-purple-800 border-purple-200">
+              <BookOpen className="w-4 h-4 mr-2" />
+              Curso Estruturado
+            </Badge>
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+              Curso n8n Fundamentos
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Aprenda n8n do básico ao avançado com meu curso estruturado. 
-              Cada módulo foi criado para levar você do zero à criação de automações profissionais.
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
+              Do básico ao avançado: 6+ horas de conteúdo prático e projetos reais
             </p>
-            <div className="flex justify-center gap-8 text-sm text-muted-foreground mb-8">
-              <div className="flex items-center">
-                <Users className="h-4 w-4 mr-2 text-brand-primary" />
-                6+ horas de conteúdo
+            
+            <div className="flex justify-center gap-12 text-sm text-slate-600 mb-8">
+              <div className="flex items-center space-x-2">
+                <Clock className="h-5 w-5 text-blue-500" />
+                <span className="font-medium">6+ horas de conteúdo</span>
               </div>
-              <div className="flex items-center">
-                <BookOpen className="h-4 w-4 mr-2 text-brand-primary" />
-                6 módulos práticos
+              <div className="flex items-center space-x-2">
+                <Users className="h-5 w-5 text-green-500" />
+                <span className="font-medium">6 módulos práticos</span>
               </div>
-              <div className="flex items-center">
-                <Award className="h-4 w-4 mr-2 text-brand-primary" />
-                Projetos reais
+              <div className="flex items-center space-x-2">
+                <Award className="h-5 w-5 text-purple-500" />
+                <span className="font-medium">Projetos reais</span>
               </div>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {courseModules.map((module, index) => (
-              <Card key={index} className="border-0 shadow-brand hover:shadow-elegant transition-all duration-300 group">
-                <CardHeader>
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center">
-                      <span className="text-white font-bold text-lg">{module.number}</span>
+              <Card key={index} className="border-0 shadow-xl hover:shadow-2xl transition-all duration-500 group bg-white overflow-hidden">
+                <CardHeader className="pb-4">
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <span className="text-white font-bold text-xl">{module.number}</span>
                     </div>
-                    <span className="text-sm text-muted-foreground bg-brand-muted px-3 py-1 rounded-full">
-                      {module.duration}
-                    </span>
+                    <div className="text-right">
+                      <Badge className={`${getComplexityColor(module.difficulty)} text-xs font-semibold mb-2`}>
+                        {module.difficulty}
+                      </Badge>
+                      <div className="text-sm text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
+                        {module.duration}
+                      </div>
+                    </div>
                   </div>
-                  <CardTitle className="group-hover:text-brand-primary transition-colors">
+                  
+                  <CardTitle className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-3">
                     {module.title}
                   </CardTitle>
-                  <CardDescription className="text-base">
+                  <CardDescription className="text-base text-slate-600 leading-relaxed">
                     {module.description}
                   </CardDescription>
                 </CardHeader>
+                
                 <CardContent>
-                  <div className="space-y-2">
-                    <h4 className="font-medium text-sm text-muted-foreground mb-3">O que você vai aprender:</h4>
+                  <h4 className="font-semibold text-sm text-slate-700 mb-4 flex items-center">
+                    <CheckCircle className="h-4 w-4 mr-2 text-green-500" />
+                    O que você vai dominar:
+                  </h4>
+                  <div className="grid grid-cols-1 gap-3">
                     {module.topics.map((topic, topicIndex) => (
-                      <div key={topicIndex} className="flex items-center space-x-2">
-                        <CheckCircle className="h-4 w-4 text-brand-primary flex-shrink-0" />
-                        <span className="text-sm">{topic}</span>
+                      <div key={topicIndex} className="flex items-center space-x-3 p-2 rounded-lg hover:bg-slate-50 transition-colors duration-200">
+                        <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                        <span className="text-sm text-slate-700 font-medium">{topic}</span>
                       </div>
                     ))}
                   </div>
@@ -292,56 +390,93 @@ const AutomacaoN8n = () => {
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <Button variant="brand" size="lg" asChild>
+          <div className="text-center mt-16">
+            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold text-lg px-10 py-4 h-auto rounded-2xl shadow-xl hover:scale-105 transition-all duration-300" asChild>
               <a 
                 href="https://www.youtube.com/channel/UC3M_z-XMGTFMBbCjVLPKkUA"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Play className="mr-2 h-5 w-5" />
-                Assistir Curso Completo
+                <Play className="mr-3 h-6 w-6" />
+                Assistir Curso Completo Grátis
               </a>
             </Button>
-            <p className="text-sm text-muted-foreground mt-4">
-              Curso completo disponível no meu canal do YouTube
+            <p className="text-sm text-slate-500 mt-4 font-medium">
+              ✨ Curso completo disponível gratuitamente no YouTube
             </p>
           </div>
         </div>
       </section>
 
-      {/* Exemplos de Fluxos */}
-      <section className="py-20 px-4 lg:px-6 bg-brand-muted">
+      {/* Exemplos Práticos Modernizados */}
+      <section className="py-24 px-4 lg:px-6 bg-gradient-to-br from-slate-900 to-blue-900 text-white">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Exemplos Práticos de Automação n8n
+          <div className="text-center mb-20">
+            <Badge className="mb-4 px-3 py-1 bg-white/10 text-white border-white/20">
+              <Workflow className="w-4 h-4 mr-2" />
+              Casos Reais de Uso
+            </Badge>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              Automações Que Realmente Funcionam
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Workflows reais que você pode implementar hoje mesmo para automatizar seus processos
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Exemplos práticos que você pode implementar hoje mesmo
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {examples.map((example, index) => (
-              <Card key={index} className="border-0 shadow-brand hover:shadow-elegant transition-all duration-300">
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <Zap className="h-5 w-5 text-brand-primary mr-2" />
+              <Card key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-500 overflow-hidden group">
+                <CardHeader className="pb-4">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <Zap className="h-6 w-6 text-white" />
+                    </div>
+                    <div className="text-right">
+                      <Badge className={`${getComplexityColor(example.complexity)} text-xs mb-2`}>
+                        {example.complexity}
+                      </Badge>
+                      <div className="text-xs text-slate-300 bg-white/10 px-2 py-1 rounded-full">
+                        {example.timeToImplement}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <CardTitle className="text-xl font-bold text-white group-hover:text-blue-300 transition-colors mb-3">
                     {example.title}
                   </CardTitle>
-                  <CardDescription>{example.description}</CardDescription>
+                  <CardDescription className="text-slate-300 leading-relaxed">
+                    {example.description}
+                  </CardDescription>
                 </CardHeader>
+                
                 <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {example.tools.map((tool, toolIndex) => (
-                      <span 
-                        key={toolIndex}
-                        className="px-3 py-1 bg-brand-muted text-brand-primary text-sm rounded-full"
-                      >
-                        {tool}
-                      </span>
-                    ))}
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="text-sm font-semibold text-slate-200 mb-3">🛠️ Ferramentas integradas:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {example.tools.map((tool, toolIndex) => (
+                          <span 
+                            key={toolIndex}
+                            className="px-3 py-1 bg-white/10 text-blue-200 text-sm rounded-full border border-blue-400/30"
+                          >
+                            {tool}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-sm font-semibold text-slate-200 mb-3">✨ Benefícios principais:</h4>
+                      <div className="space-y-2">
+                        {example.benefits.map((benefit, benefitIndex) => (
+                          <div key={benefitIndex} className="flex items-center space-x-2">
+                            <CheckCircle className="h-4 w-4 text-green-400" />
+                            <span className="text-sm text-slate-300">{benefit}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -350,33 +485,60 @@ const AutomacaoN8n = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 px-4 lg:px-6 bg-gradient-primary text-white">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            Domine n8n Automação do Zero ao Avançado
-          </h2>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
-            Curso completo de n8n em português. Aprenda automação de workflows, 
-            integração de APIs e crie seus próprios projetos de automação.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20" asChild>
-              <a 
-                href="https://www.youtube.com/channel/UC3M_z-XMGTFMBbCjVLPKkUA"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Play className="mr-2 h-5 w-5" />
-                Canal do YouTube
-              </a>
-            </Button>
-            <Button variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20" asChild>
-              <Link to="/contato">
-                Fale Comigo
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
+      {/* CTA Final Modernizada */}
+      <section className="py-24 px-4 lg:px-6 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:30px_30px]"></div>
+        <div className="container mx-auto text-center relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <Badge className="mb-6 px-4 py-2 bg-white/10 text-white border-white/20 text-sm font-semibold">
+              <Star className="w-4 h-4 mr-2" />
+              Mais de 6.000 alunos já transformaram suas carreiras
+            </Badge>
+            
+            <h2 className="text-4xl lg:text-6xl font-bold mb-8 leading-tight">
+              Pronto para se tornar um 
+              <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent"> Expert em Automação</span>?
+            </h2>
+            
+            <p className="text-xl lg:text-2xl text-slate-200 mb-12 leading-relaxed">
+              Junte-se ao curso mais completo de n8n em português e comece a automatizar 
+              seus processos hoje mesmo. <span className="text-white font-semibold">100% gratuito!</span>
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+              <Button className="bg-white text-slate-900 hover:bg-slate-100 font-bold text-lg px-10 py-4 h-auto rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300" asChild>
+                <a 
+                  href="https://www.youtube.com/channel/UC3M_z-XMGTFMBbCjVLPKkUA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Play className="mr-3 h-6 w-6" />
+                  Começar Agora Grátis
+                </a>
+              </Button>
+              
+              <Button className="bg-transparent border-2 border-white/30 text-white hover:bg-white/10 font-semibold text-lg px-10 py-4 h-auto rounded-2xl hover:scale-105 transition-all duration-300" asChild>
+                <Link to="/contato">
+                  Consultoria Personalizada
+                  <ArrowRight className="ml-3 h-6 w-6" />
+                </Link>
+              </Button>
+            </div>
+            
+            <div className="flex justify-center items-center space-x-8 text-slate-300 text-sm">
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="w-5 h-5 text-green-400" />
+                <span>100% Gratuito</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="w-5 h-5 text-blue-400" />
+                <span>6+ Horas de Conteúdo</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="w-5 h-5 text-purple-400" />
+                <span>Projetos Práticos</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
