@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Zap, Clock, TrendingUp, ArrowRight, Play, BookOpen, Users, Award, Star, Workflow, Code, Database, ChevronRight, Target, Sparkles } from "lucide-react";
+import { CheckCircle, Zap, Clock, TrendingUp, ArrowRight, Play, BookOpen, Users, Award, Star, Workflow, Code, Database, ChevronRight, Target, Sparkles, CreditCard, Shield, Infinity } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const AutomacaoN8n = () => {
@@ -135,51 +135,84 @@ const AutomacaoN8n = () => {
         
         <div className="container mx-auto text-center relative z-10">
           <div className="animate-fade-in">
-            <Badge className="mb-6 px-4 py-2 bg-white/10 text-white border-white/20 text-sm font-semibold">
+            <Badge className="mb-6 px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 text-sm font-semibold shadow-lg">
               <Sparkles className="w-4 h-4 mr-2" />
-              Curso Completo de n8n em Português
+              Curso Premium • Acesso Vitalício • Certificado
             </Badge>
             
             <h1 className="text-5xl lg:text-7xl font-bold mb-8 leading-tight">
-              Domine <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Automação n8n</span> 
-              <br />do Zero ao Profissional
+              <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">Curso Premium</span> 
+              <br />n8n Automação Profissional
             </h1>
             
-            <p className="text-xl lg:text-2xl text-slate-300 max-w-4xl mx-auto mb-12 leading-relaxed">
-              O tutorial mais completo de n8n em português. Aprenda a criar automações profissionais, 
-              integrar sistemas e <span className="text-white font-semibold">economizar até 80% do seu tempo</span> 
-              com workflows inteligentes.
+            <p className="text-xl lg:text-2xl text-slate-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+              O curso mais completo e avançado de n8n do Brasil. Aprenda com metodologia profissional 
+              e <span className="text-white font-semibold">transforme sua carreira</span> 
+              criando automações que geram resultados reais.
             </p>
             
+            {/* Pricing Hero */}
+            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 max-w-2xl mx-auto mb-12 border border-white/20">
+              <div className="flex items-center justify-center space-x-4 mb-4">
+                <div className="text-4xl lg:text-6xl font-bold text-white">R$ 487</div>
+                <div className="text-left">
+                  <div className="text-green-400 font-semibold text-sm">ou 12x de</div>
+                  <div className="text-2xl font-bold text-green-400">R$ 40,58</div>
+                </div>
+              </div>
+              <div className="flex justify-center space-x-6 text-sm text-slate-300 mb-6">
+                <div className="flex items-center space-x-2">
+                  <Infinity className="w-4 h-4 text-green-400" />
+                  <span>Acesso Vitalício</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <CreditCard className="w-4 h-4 text-blue-400" />
+                  <span>Até 12x sem juros</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Shield className="w-4 h-4 text-purple-400" />
+                  <span>Garantia 30 dias</span>
+                </div>
+              </div>
+            </div>
+            
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold text-lg px-10 py-4 h-auto rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300">
-                <Play className="mr-3 h-6 w-6" />
-                Começar Agora Grátis
+              <Button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold text-lg px-10 py-4 h-auto rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300" asChild>
+                <a 
+                  href="https://pay.hotmart.com/J101368751T"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <CreditCard className="mr-3 h-6 w-6" />
+                  Garantir Minha Vaga Agora
+                </a>
               </Button>
               
-              <Button className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20 font-semibold text-lg px-10 py-4 h-auto rounded-2xl hover:scale-105 transition-all duration-300">
-                <Workflow className="mr-3 h-6 w-6" />
-                Ver Templates Prontos
+              <Button className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20 font-semibold text-lg px-10 py-4 h-auto rounded-2xl hover:scale-105 transition-all duration-300" asChild>
+                <a href="#modulos">
+                  <BookOpen className="mr-3 h-6 w-6" />
+                  Ver Conteúdo Completo
+                </a>
               </Button>
             </div>
             
-            {/* Social Proof */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
+            {/* Social Proof + ROI */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+              <div className="text-center">
+                <div className="text-3xl lg:text-4xl font-bold text-green-400 mb-2">R$ 50K+</div>
+                <div className="text-sm text-slate-400">Economizado pelos alunos</div>
+              </div>
               <div className="text-center">
                 <div className="text-3xl lg:text-4xl font-bold text-blue-400 mb-2">6K+</div>
-                <div className="text-sm text-slate-400">Alunos Capacitados</div>
+                <div className="text-sm text-slate-400">Alunos Satisfeitos</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-purple-400 mb-2">100+</div>
-                <div className="text-sm text-slate-400">Automações Criadas</div>
+                <div className="text-3xl lg:text-4xl font-bold text-purple-400 mb-2">4.9★</div>
+                <div className="text-sm text-slate-400">Nota Média</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-green-400 mb-2">4.9★</div>
-                <div className="text-sm text-slate-400">Avaliação Média</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-yellow-400 mb-2">10+</div>
-                <div className="text-sm text-slate-400">Anos de Experiência</div>
+                <div className="text-3xl lg:text-4xl font-bold text-yellow-400 mb-2">30 dias</div>
+                <div className="text-sm text-slate-400">Garantia Total</div>
               </div>
             </div>
           </div>
@@ -316,32 +349,36 @@ const AutomacaoN8n = () => {
       </section>
 
       {/* Curso Módulos Modernizado */}
-      <section className="py-24 px-4 lg:px-6 bg-white">
+      <section id="modulos" className="py-24 px-4 lg:px-6 bg-white">
         <div className="container mx-auto">
           <div className="text-center mb-20">
-            <Badge className="mb-4 px-3 py-1 bg-purple-100 text-purple-800 border-purple-200">
+            <Badge className="mb-4 px-3 py-1 bg-green-100 text-green-800 border-green-200">
               <BookOpen className="w-4 h-4 mr-2" />
-              Curso Estruturado
+              Conteúdo Premium Exclusivo
             </Badge>
             <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-              Curso n8n Fundamentos
+              O que está incluído no curso
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
-              Do básico ao avançado: 6+ horas de conteúdo prático e projetos reais
+              6+ horas de conteúdo premium com metodologia profissional e projetos práticos
             </p>
             
-            <div className="flex justify-center gap-12 text-sm text-slate-600 mb-8">
+            <div className="flex justify-center gap-12 text-sm text-slate-600 mb-12">
               <div className="flex items-center space-x-2">
-                <Clock className="h-5 w-5 text-blue-500" />
+                <Clock className="h-5 w-5 text-green-500" />
                 <span className="font-medium">6+ horas de conteúdo</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Users className="h-5 w-5 text-green-500" />
+                <Users className="h-5 w-5 text-blue-500" />
                 <span className="font-medium">6 módulos práticos</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Award className="h-5 w-5 text-purple-500" />
-                <span className="font-medium">Projetos reais</span>
+                <Infinity className="h-5 w-5 text-purple-500" />
+                <span className="font-medium">Acesso vitalício</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Award className="h-5 w-5 text-orange-500" />
+                <span className="font-medium">Certificado de conclusão</span>
               </div>
             </div>
           </div>
@@ -391,18 +428,28 @@ const AutomacaoN8n = () => {
           </div>
 
           <div className="text-center mt-16">
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold text-lg px-10 py-4 h-auto rounded-2xl shadow-xl hover:scale-105 transition-all duration-300" asChild>
+            <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl p-8 max-w-2xl mx-auto mb-8 border border-green-200">
+              <div className="text-4xl font-bold text-green-600 mb-2">R$ 487</div>
+              <div className="text-slate-600 mb-4">ou 12x de R$ 40,58 sem juros</div>
+              <div className="flex justify-center space-x-6 text-sm text-slate-500">
+                <span>✅ Acesso Vitalício</span>
+                <span>✅ Certificado</span>
+                <span>✅ Garantia 30 dias</span>
+              </div>
+            </div>
+            
+            <Button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold text-lg px-10 py-4 h-auto rounded-2xl shadow-xl hover:scale-105 transition-all duration-300" asChild>
               <a 
-                href="https://www.youtube.com/channel/UC3M_z-XMGTFMBbCjVLPKkUA"
+                href="https://pay.hotmart.com/J101368751T"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Play className="mr-3 h-6 w-6" />
-                Assistir Curso Completo Grátis
+                <CreditCard className="mr-3 h-6 w-6" />
+                Inscrever-se Agora
               </a>
             </Button>
             <p className="text-sm text-slate-500 mt-4 font-medium">
-              ✨ Curso completo disponível gratuitamente no YouTube
+              🔒 Pagamento 100% seguro via Hotmart • Garantia de 30 dias
             </p>
           </div>
         </div>
@@ -485,42 +532,53 @@ const AutomacaoN8n = () => {
         </div>
       </section>
 
-      {/* CTA Final Modernizada */}
-      <section className="py-24 px-4 lg:px-6 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white relative overflow-hidden">
+      {/* CTA Final Premium */}
+      <section className="py-24 px-4 lg:px-6 bg-gradient-to-br from-green-600 via-emerald-600 to-teal-700 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:30px_30px]"></div>
         <div className="container mx-auto text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <Badge className="mb-6 px-4 py-2 bg-white/10 text-white border-white/20 text-sm font-semibold">
               <Star className="w-4 h-4 mr-2" />
-              Mais de 6.000 alunos já transformaram suas carreiras
+              Investimento que se paga em 1 mês
             </Badge>
             
             <h2 className="text-4xl lg:text-6xl font-bold mb-8 leading-tight">
-              Pronto para se tornar um 
-              <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent"> Expert em Automação</span>?
+              Transforme sua carreira com 
+              <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent"> Automação Profissional</span>
             </h2>
             
-            <p className="text-xl lg:text-2xl text-slate-200 mb-12 leading-relaxed">
-              Junte-se ao curso mais completo de n8n em português e comece a automatizar 
-              seus processos hoje mesmo. <span className="text-white font-semibold">100% gratuito!</span>
+            <p className="text-xl lg:text-2xl text-slate-200 mb-8 leading-relaxed">
+              Curso premium completo de n8n: da teoria à prática profissional. 
+              <span className="text-white font-semibold">ROI garantido em 30 dias!</span>
             </p>
             
+            {/* Pricing CTA */}
+            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 max-w-xl mx-auto mb-12 border border-white/20">
+              <div className="text-5xl font-bold text-white mb-2">R$ 487</div>
+              <div className="text-green-300 font-semibold mb-4">12x de R$ 40,58 sem juros</div>
+              <div className="flex justify-center space-x-4 text-sm text-slate-300 mb-6">
+                <span>🔥 Acesso Vitalício</span>
+                <span>📜 Certificado</span>
+                <span>🛡️ Garantia 30 dias</span>
+              </div>
+            </div>
+            
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-              <Button className="bg-white text-slate-900 hover:bg-slate-100 font-bold text-lg px-10 py-4 h-auto rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300" asChild>
+              <Button className="bg-white text-slate-900 hover:bg-slate-100 font-bold text-xl px-12 py-5 h-auto rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300" asChild>
                 <a 
-                  href="https://www.youtube.com/channel/UC3M_z-XMGTFMBbCjVLPKkUA"
+                  href="https://pay.hotmart.com/J101368751T"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Play className="mr-3 h-6 w-6" />
-                  Começar Agora Grátis
+                  <CreditCard className="mr-3 h-7 w-7" />
+                  Garantir Minha Vaga
                 </a>
               </Button>
               
-              <Button className="bg-transparent border-2 border-white/30 text-white hover:bg-white/10 font-semibold text-lg px-10 py-4 h-auto rounded-2xl hover:scale-105 transition-all duration-300" asChild>
+              <Button className="bg-transparent border-2 border-white/30 text-white hover:bg-white/10 font-semibold text-xl px-12 py-5 h-auto rounded-2xl hover:scale-105 transition-all duration-300" asChild>
                 <Link to="/contato">
                   Consultoria Personalizada
-                  <ArrowRight className="ml-3 h-6 w-6" />
+                  <ArrowRight className="ml-3 h-7 w-7" />
                 </Link>
               </Button>
             </div>
@@ -528,15 +586,15 @@ const AutomacaoN8n = () => {
             <div className="flex justify-center items-center space-x-8 text-slate-300 text-sm">
               <div className="flex items-center space-x-2">
                 <CheckCircle className="w-5 h-5 text-green-400" />
-                <span>100% Gratuito</span>
+                <span>Pagamento Seguro</span>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle className="w-5 h-5 text-blue-400" />
-                <span>6+ Horas de Conteúdo</span>
+                <span>Acesso Imediato</span>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle className="w-5 h-5 text-purple-400" />
-                <span>Projetos Práticos</span>
+                <span>Suporte Vitalício</span>
               </div>
             </div>
           </div>
