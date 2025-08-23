@@ -48,14 +48,21 @@ const Home = () => {
                   </Button>
                 </Link>
                 
-                <Button variant="outline" size="lg" asChild className="border-2 border-slate-300 hover:border-brand-primary hover:bg-blue-500 font-semibold px-8 py-4 h-auto rounded-xl">
+                <Button 
+                  variant="youtube" 
+                  size="lg" 
+                  asChild 
+                  className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0 px-8 py-4 h-auto rounded-xl relative overflow-hidden group"
+                >
                   <a 
                     href="https://www.youtube.com/channel/UC3M_z-XMGTFMBbCjVLPKkUA"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="flex items-center justify-center relative z-10"
                   >
-                    <Youtube className="mr-2 h-5 w-5 text-red-600" />
-                    Ver Tutoriais
+                    <Youtube className="mr-3 h-6 w-6 animate-pulse" />
+                    <span className="text-lg">Assista no YouTube</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   </a>
                 </Button>
               </div>
