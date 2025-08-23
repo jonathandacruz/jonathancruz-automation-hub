@@ -42,9 +42,7 @@ const Home = () => {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contato">
-                  <Button 
-                    className="bg-gradient-cta hover:shadow-orange transition-all duration-300 font-bold text-lg px-8 py-4 h-auto rounded-xl shadow-lg hover:scale-105"
-                  >
+                  <Button className="bg-orange-600 hover:bg-orange-700 text-white font-bold text-lg px-8 py-4 h-auto rounded-xl shadow-lg hover:scale-105 transition-all duration-300">
                     <Zap className="mr-2 h-5 w-5" />
                     Solicitar Consultoria
                   </Button>
@@ -131,7 +129,7 @@ const Home = () => {
               </p>
               <Link 
                 to="/automacao-n8n" 
-                className="inline-flex items-center text-brand-primary font-semibold hover:text-brand-primary/80 transition-colors duration-200 story-link"
+                className="inline-flex items-center text-brand-primary font-semibold hover:text-blue-700 transition-colors duration-200 story-link"
               >
                 Saiba mais <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
@@ -148,7 +146,7 @@ const Home = () => {
               </p>
               <Link 
                 to="/templates" 
-                className="inline-flex items-center text-brand-primary font-semibold hover:text-brand-primary/80 transition-colors duration-200 story-link"
+                className="inline-flex items-center text-brand-primary font-semibold hover:text-blue-700 transition-colors duration-200 story-link"
               >
                 Ver templates <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
@@ -165,7 +163,7 @@ const Home = () => {
               </p>
               <Link 
                 to="/contato" 
-                className="inline-flex items-center text-brand-primary font-semibold hover:text-brand-primary/80 transition-colors duration-200 story-link"
+                className="inline-flex items-center text-brand-primary font-semibold hover:text-blue-700 transition-colors duration-200 story-link"
               >
                 Solicitar análise <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
@@ -241,7 +239,7 @@ const Home = () => {
           </div>
 
           <div className="text-center">
-            <Button className="bg-gradient-primary hover:shadow-brand transition-all duration-300 font-bold text-lg px-8 py-4 h-auto rounded-xl shadow-lg hover:scale-105" asChild>
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg px-8 py-4 h-auto rounded-xl shadow-lg hover:scale-105 transition-all duration-300" asChild>
               <Link to="/templates">
                 Ver Todos os Templates
                 <ArrowRight className="ml-2 h-6 w-6" />
@@ -267,7 +265,7 @@ const Home = () => {
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
               <Link to="/contato">
-                <Button className="bg-gradient-cta hover:shadow-orange transition-all duration-300 font-bold text-lg px-8 py-4 h-auto rounded-xl shadow-lg hover:scale-105">
+                <Button className="bg-orange-600 hover:bg-orange-700 text-white font-bold text-lg px-8 py-4 h-auto rounded-xl shadow-lg hover:scale-105 transition-all duration-300">
                   <Zap className="mr-3 h-6 w-6" />
                   Solicitar Consultoria Gratuita
                 </Button>
