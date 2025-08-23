@@ -7,15 +7,16 @@ const heroImage = "/lovable-uploads/e020e825-ba4b-4684-b062-79a26a4e1e23.png";
 const Home = () => {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section Modernizado */}
-      <section className="pt-24 pb-20 px-4 lg:px-6 bg-gradient-to-br from-white via-slate-50 to-blue-50/30 relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        <div className="absolute top-20 right-20 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
-        <div className="absolute bottom-20 left-20 w-72 h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
+      {/* Hero Section Ultra Moderno */}
+      <section className="pt-32 pb-24 px-4 lg:px-6 bg-gradient-to-br from-background via-muted/30 to-primary/5 relative overflow-hidden">
+        {/* Background Effects Modernos */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-primary/[0.03] via-transparent to-accent/[0.05]"></div>
+        <div className="absolute top-1/4 right-1/3 w-96 h-96 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-pulse"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-gradient-to-tr from-accent/25 to-primary/15 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-pulse animation-delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-radial from-transparent via-primary/[0.02] to-transparent"></div>
         
         <div className="container mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[700px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center min-h-[750px]">
             
             {/* Left Content */}
             <div className="space-y-10 animate-fade-in">
