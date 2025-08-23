@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Play, BookOpen, ExternalLink, Calendar } from "lucide-react";
@@ -54,7 +55,7 @@ const Conteudo = () => {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="py-20 px-4 lg:px-6 bg-brand-muted">
+      <section className="py-20 px-4 lg:px-6 bg-gradient-to-br from-white via-slate-50 to-blue-50/30">
         <div className="container mx-auto text-center">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">
             Conteúdo <span className="bg-gradient-primary bg-clip-text text-transparent">Educativo</span>
@@ -76,7 +77,7 @@ const Conteudo = () => {
                 Tutoriais práticos de n8n, programação e banco de dados
               </p>
             </div>
-            <Button variant="brand" asChild>
+            <Button variant="outline" asChild>
               <a 
                 href="https://www.youtube.com/channel/UC3M_z-XMGTFMBbCjVLPKkUA"
                 target="_blank"
@@ -90,7 +91,7 @@ const Conteudo = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {videos.map((video, index) => (
-              <Card key={index} className="border-0 shadow-brand hover:shadow-elegant transition-all duration-300 group">
+              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 group">
                 <CardHeader className="p-0">
                   <div className="relative bg-gradient-primary rounded-t-lg h-48 flex items-center justify-center group-hover:opacity-90 transition-opacity">
                     <Play className="h-12 w-12 text-white" />
@@ -114,7 +115,7 @@ const Conteudo = () => {
       </section>
 
       {/* Articles Section */}
-      <section className="py-20 px-4 lg:px-6 bg-brand-muted">
+      <section className="py-20 px-4 lg:px-6 bg-slate-50">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Artigos e Tutoriais</h2>
@@ -125,10 +126,10 @@ const Conteudo = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {articles.map((article, index) => (
-              <Card key={index} className="border-0 shadow-brand hover:shadow-elegant transition-all duration-300 bg-white">
+              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="px-3 py-1 bg-brand-primary/10 text-brand-primary text-xs rounded-full">
+                    <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">
                       {article.category}
                     </span>
                     <div className="flex items-center text-xs text-muted-foreground">
@@ -159,20 +160,20 @@ const Conteudo = () => {
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8">Tópicos Abordados</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="bg-white rounded-xl p-6 shadow-brand">
-              <h3 className="font-semibold text-brand-primary">Tutorial de n8n</h3>
+            <div className="bg-white rounded-xl p-6 shadow-lg">
+              <h3 className="font-semibold text-blue-600">Tutorial de n8n</h3>
               <p className="text-sm text-muted-foreground mt-2">Automação visual</p>
             </div>
-            <div className="bg-white rounded-xl p-6 shadow-brand">
-              <h3 className="font-semibold text-brand-primary">Programação prática</h3>
+            <div className="bg-white rounded-xl p-6 shadow-lg">
+              <h3 className="font-semibold text-blue-600">Programação prática</h3>
               <p className="text-sm text-muted-foreground mt-2">Desenvolvimento</p>
             </div>
-            <div className="bg-white rounded-xl p-6 shadow-brand">
-              <h3 className="font-semibold text-brand-primary">PostgreSQL</h3>
+            <div className="bg-white rounded-xl p-6 shadow-lg">
+              <h3 className="font-semibold text-blue-600">PostgreSQL</h3>
               <p className="text-sm text-muted-foreground mt-2">Banco de dados</p>
             </div>
-            <div className="bg-white rounded-xl p-6 shadow-brand">
-              <h3 className="font-semibold text-brand-primary">Produtividade</h3>
+            <div className="bg-white rounded-xl p-6 shadow-lg">
+              <h3 className="font-semibold text-blue-600">Produtividade</h3>
               <p className="text-sm text-muted-foreground mt-2">Otimização</p>
             </div>
           </div>
@@ -180,7 +181,7 @@ const Conteudo = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 lg:px-6 bg-gradient-primary text-white">
+      <section className="py-20 px-4 lg:px-6 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6">Acompanhe o Conteúdo</h2>
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
