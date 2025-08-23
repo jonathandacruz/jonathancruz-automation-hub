@@ -18,7 +18,7 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-border shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-lg border-b border-border shadow-sm">
       <nav className="container mx-auto px-4 lg:px-6 h-20 flex items-center justify-between">
         {/* Logo Modernizado */}
         <Link to="/" className="flex items-center space-x-3 group">
@@ -73,7 +73,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 shadow-lg animate-fade-in">
+        <div className="lg:hidden bg-background/98 backdrop-blur-lg border-b border-border shadow-lg animate-fade-in">
           <div className="container mx-auto px-4 py-6 space-y-4">
             {navigation.map((item) => (
               <Link
