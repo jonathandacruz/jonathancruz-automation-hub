@@ -13,10 +13,10 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90 button-pulse",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground button-bounce",
+          "border border-input bg-background hover:bg-blue-900 hover:text-white button-bounce",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 button-glow",
-        ghost: "hover:bg-accent hover:text-accent-foreground button-bounce",
+          "bg-secondary text-secondary-foreground hover:bg-blue-800 hover:text-white button-glow",
+        ghost: "hover:bg-blue-900 hover:text-white button-bounce",
         link: "text-primary underline-offset-4 hover:underline button-glow",
         brand: "bg-gradient-primary text-white shadow-brand hover:shadow-elegant button-gradient-shift",
         hero: "bg-gradient-hero text-white text-lg font-semibold px-8 py-4 shadow-glow hover:shadow-elegant button-pulse",
