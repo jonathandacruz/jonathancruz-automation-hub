@@ -139,11 +139,11 @@ const TemplateDetail = () => {
 
     if (foundTemplate) {
       // SEO Meta Tags
-      document.title = `${foundTemplate.title} - Template n8n Premium | R$ ${foundTemplate.price}`;
+      document.title = `Download ${foundTemplate.title} - Template n8n | R$ ${foundTemplate.price}`;
       
       const metaDescription = document.querySelector('meta[name="description"]');
       if (metaDescription) {
-        metaDescription.setAttribute('content', `${foundTemplate.description} Template premium para n8n por apenas R$ ${foundTemplate.price}. Instalação fácil e suporte incluído.`);
+        metaDescription.setAttribute('content', `Download ${foundTemplate.title} - Template n8n pronto para instalação. ${foundTemplate.description} Por apenas R$ ${foundTemplate.price} com suporte e documentação incluídos.`);
       }
 
       // Structured Data for SEO
@@ -174,11 +174,13 @@ const TemplateDetail = () => {
         },
         "video": {
           "@type": "VideoObject",
-          "name": `Demonstração - ${foundTemplate.title}`,
-          "description": `Vídeo demonstrativo do template ${foundTemplate.title}`,
+          "name": `Como instalar ${foundTemplate.title} no n8n`,
+          "description": `Tutorial completo de instalação e configuração do template ${foundTemplate.title} no n8n`,
           "thumbnailUrl": `https://img.youtube.com/vi/${foundTemplate.youtubeId}/maxresdefault.jpg`,
           "embedUrl": `https://www.youtube.com/embed/${foundTemplate.youtubeId}`
-        }
+        },
+        "downloadUrl": "#download",
+        "applicationCategory": "AutomationSoftware"
       };
 
       const script = document.createElement('script');
@@ -221,7 +223,7 @@ const TemplateDetail = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* SEO Hidden H1 */}
-      <h1 className="sr-only">{template.title} - Template n8n Premium para {template.category}</h1>
+      <h1 className="sr-only">Download {template.title} - Template n8n Premium para {template.category} - Arquivo pronto para instalação</h1>
       
       {/* Breadcrumb */}
       <nav className="pt-24 pb-8 px-4 lg:px-6 bg-slate-50">
@@ -270,8 +272,18 @@ const TemplateDetail = () => {
                 </div>
 
                 <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
-                  {template.title}
+                  Download {template.title}
                 </h2>
+                
+                <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded-lg">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Download className="h-5 w-5 text-green-600" />
+                    <h3 className="font-bold text-green-800">Template n8n Pronto para Download</h3>
+                  </div>
+                  <p className="text-green-700">
+                    Arquivo completo do template n8n para instalação imediata. Inclui workflow configurado, documentação e suporte técnico.
+                  </p>
+                </div>
 
                 <p className="text-xl text-slate-600 leading-relaxed">
                   {template.description}
@@ -293,12 +305,15 @@ const TemplateDetail = () => {
               <section className="space-y-4">
                 <h3 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
                   <Play className="h-6 w-6 text-blue-600" />
-                  Demonstração do Template
+                  Como Instalar o Template no n8n
                 </h3>
+                <p className="text-slate-600 mb-4">
+                  Veja como fazer o download e instalar este template no seu n8n em poucos minutos.
+                </p>
                 <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
                   <iframe
                     src={`https://www.youtube.com/embed/${template.youtubeId}?rel=0&modestbranding=1`}
-                    title={`Demonstração - ${template.title}`}
+                    title={`Como instalar ${template.title} no n8n - Tutorial completo`}
                     className="w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -356,7 +371,7 @@ const TemplateDetail = () => {
 
             {/* Right Column - Purchase Card */}
             <div className="lg:col-span-1">
-              <div className="sticky top-8">
+              <div className="sticky top-24 pt-4">
                 <Card className="border-2 border-slate-200 shadow-xl">
                   <CardHeader className="pb-6">
                     <div className="text-center space-y-4">
@@ -371,8 +386,8 @@ const TemplateDetail = () => {
                         size="lg" 
                         className="w-full py-4 text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl button-gradient-shift"
                       >
-                        <ShoppingCart className="h-5 w-5 mr-2" />
-                        Comprar Template
+                        <Download className="h-5 w-5 mr-2" />
+                        Download Template
                       </Button>
                     </div>
                   </CardHeader>
@@ -386,15 +401,15 @@ const TemplateDetail = () => {
                       <ul className="space-y-3">
                         <li className="flex items-center gap-3 text-slate-600">
                           <CheckCircle className="h-4 w-4 text-green-600" />
-                          Template completo para n8n
+                          Arquivo .json do template n8n
                         </li>
                         <li className="flex items-center gap-3 text-slate-600">
                           <CheckCircle className="h-4 w-4 text-green-600" />
-                          Documentação detalhada
+                          Manual de instalação passo a passo
                         </li>
                         <li className="flex items-center gap-3 text-slate-600">
                           <CheckCircle className="h-4 w-4 text-green-600" />
-                          Vídeo de instalação
+                          Tutorial em vídeo de configuração
                         </li>
                         <li className="flex items-center gap-3 text-slate-600">
                           <CheckCircle className="h-4 w-4 text-green-600" />
