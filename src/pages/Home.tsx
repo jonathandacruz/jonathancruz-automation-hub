@@ -49,10 +49,9 @@ const Home = () => {
                 </Link>
                 
                 <Button 
-                  variant="youtube" 
                   size="lg" 
                   asChild 
-                  className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0 px-8 py-4 h-auto rounded-xl relative overflow-hidden group"
+                  className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 px-8 py-4 h-auto rounded-xl relative overflow-hidden group w-full sm:w-auto"
                 >
                   <a 
                     href="https://www.youtube.com/channel/UC3M_z-XMGTFMBbCjVLPKkUA"
@@ -60,9 +59,8 @@ const Home = () => {
                     rel="noopener noreferrer"
                     className="flex items-center justify-center relative z-10"
                   >
-                    <Youtube className="mr-3 h-6 w-6 animate-pulse" />
-                    <span className="text-lg">Assista no YouTube</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                    <Youtube className="mr-3 h-5 w-5" />
+                    <span>Assista no YouTube</span>
                   </a>
                 </Button>
               </div>
