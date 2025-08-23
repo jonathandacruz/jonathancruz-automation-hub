@@ -1,9 +1,7 @@
 import { Mail, Linkedin, Youtube, Instagram, MessageCircle, CheckCircle, Zap, ArrowRight, Clock, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 const Contato = () => {
-  return (
-    <>
+  return <>
       <title>Contato - Jonathan da Cruz | Desenvolvedor e Especialista em Automação n8n</title>
       <meta name="description" content="Entre em contato com Jonathan da Cruz, desenvolvedor especialista em automação n8n. Consultoria profissional, suporte técnico e desenvolvimento de soluções personalizadas." />
       <meta name="keywords" content="contato jonathan da cruz, consultoria n8n, desenvolvedor automação, especialista n8n brasil, consultoria automação empresarial" />
@@ -22,7 +20,7 @@ const Contato = () => {
               </div>
               <h1 className="text-5xl lg:text-7xl font-bold mb-6 text-slate-900 tracking-tight">
                 Vamos criar algo
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent block">
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent block mx-0 my-[10px] py-[10px]">
                   incrível juntos?
                 </span>
               </h1>
@@ -37,12 +35,7 @@ const Contato = () => {
               {/* WhatsApp - Primary CTA */}
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
-                <a 
-                  href="https://wa.me/5511999999999"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative bg-white rounded-2xl p-8 lg:p-10 shadow-xl hover:shadow-2xl transition-all duration-500 border border-slate-100 group-hover:border-green-200 block"
-                >
+                <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" className="relative bg-white rounded-2xl p-8 lg:p-10 shadow-xl hover:shadow-2xl transition-all duration-500 border border-slate-100 group-hover:border-green-200 block">
                   <div className="flex items-start justify-between mb-6">
                     <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center group-hover:bg-green-200 transition-colors duration-300">
                       <MessageCircle className="w-8 h-8 text-green-600" />
@@ -76,10 +69,7 @@ const Contato = () => {
               {/* Email - Secondary CTA */}
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
-                <a 
-                  href="mailto:contato@jonathandacruz.com.br"
-                  className="relative bg-white rounded-2xl p-8 lg:p-10 shadow-xl hover:shadow-2xl transition-all duration-500 border border-slate-100 group-hover:border-blue-200 block"
-                >
+                <a href="mailto:contato@jonathandacruz.com.br" className="relative bg-white rounded-2xl p-8 lg:p-10 shadow-xl hover:shadow-2xl transition-all duration-500 border border-slate-100 group-hover:border-blue-200 block">
                   <div className="flex items-start justify-between mb-6">
                     <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center group-hover:bg-blue-200 transition-colors duration-300">
                       <Mail className="w-8 h-8 text-blue-600" />
@@ -193,12 +183,7 @@ const Contato = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <a 
-                href="https://youtube.com/@jonathancruz" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-100 hover:border-red-200"
-              >
+              <a href="https://youtube.com/@jonathancruz" target="_blank" rel="noopener noreferrer" className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-100 hover:border-red-200">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center group-hover:bg-red-200 transition-colors">
                     <Youtube className="w-6 h-6 text-red-600" />
@@ -210,12 +195,7 @@ const Contato = () => {
                 </div>
               </a>
 
-              <a 
-                href="https://linkedin.com/in/jonathancruz" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-100 hover:border-blue-200"
-              >
+              <a href="https://linkedin.com/in/jonathancruz" target="_blank" rel="noopener noreferrer" className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-100 hover:border-blue-200">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center group-hover:bg-blue-200 transition-colors">
                     <Linkedin className="w-6 h-6 text-blue-600" />
@@ -227,12 +207,7 @@ const Contato = () => {
                 </div>
               </a>
 
-              <a 
-                href="https://instagram.com/jonathancruz.dev" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-100 hover:border-pink-200"
-              >
+              <a href="https://instagram.com/jonathancruz.dev" target="_blank" rel="noopener noreferrer" className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-100 hover:border-pink-200">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center group-hover:bg-pink-200 transition-colors">
                     <Instagram className="w-6 h-6 text-pink-600" />
@@ -256,8 +231,6 @@ const Contato = () => {
           </div>
         </section>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default Contato;
