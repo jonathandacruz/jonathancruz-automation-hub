@@ -123,7 +123,7 @@ const AutomacaoN8n = () => {
             </Badge>
             
             <h1 className="text-5xl lg:text-7xl font-bold mb-8 leading-tight">
-              <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">Curso Premium</span> 
+              <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">n8n Fundamentos</span> 
               <br />n8n Automação Profissional
             </h1>
             
@@ -434,7 +434,7 @@ const AutomacaoN8n = () => {
             {/* Pricing CTA */}
             <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 max-w-xl mx-auto mb-12 border border-white/20">
               <div className="text-5xl font-bold text-white mb-2">R$ 487</div>
-              <div className="text-green-300 font-semibold mb-4">12x de R$ 40,58 sem juros</div>
+              <div className="text-green-300 font-semibold mb-4">12x de R$ 50,37 no cartão</div>
               <div className="flex justify-center space-x-4 text-sm text-slate-300 mb-6">
                 <span>🔥 Acesso Vitalício</span>
                 <span>📜 Certificado</span>
