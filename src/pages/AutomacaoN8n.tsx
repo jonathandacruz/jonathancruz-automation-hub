@@ -104,7 +104,7 @@ const AutomacaoN8n = () => {
             com exemplos práticos e projetos reais.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20" asChild>
+            <Button className="bg-white text-slate-900 hover:bg-slate-100 font-semibold px-8 py-3 h-auto rounded-xl button-hover" asChild>
               <a 
                 href="https://www.youtube.com/channel/UC3M_z-XMGTFMBbCjVLPKkUA"
                 target="_blank"
@@ -129,10 +129,10 @@ const AutomacaoN8n = () => {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl lg:text-4xl font-bold">
+              <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">
                 O que é o n8n? Ferramenta de Automação Open Source
               </h2>
-              <div className="space-y-4 text-muted-foreground">
+              <div className="space-y-4 text-slate-700">
                 <p className="text-lg">
                   O n8n é uma ferramenta de automação de workflow open source que permite conectar 
                   diferentes aplicações e serviços sem programação. É uma alternativa gratuita ao Zapier 

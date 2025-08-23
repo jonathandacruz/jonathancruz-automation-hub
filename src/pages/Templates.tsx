@@ -85,23 +85,23 @@ const Templates = () => {
   };
 
   return (
-    <div className="pt-16">
+    <div className="pt-16 bg-white">
       {/* Hero Section */}
-      <section className="py-20 px-4 lg:px-6 bg-brand-muted">
+      <section className="py-20 px-4 lg:px-6 bg-slate-50">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+          <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-slate-900">
             Templates de <span className="bg-gradient-primary bg-clip-text text-transparent">Automação</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
             Templates prontos para n8n que você pode baixar e usar imediatamente. 
             Economize tempo e acelere sua produtividade com automações testadas.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="brand" size="lg">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 h-auto rounded-xl button-hover">
               <Download className="mr-2 h-5 w-5" />
               Baixar Templates Gratuitos
             </Button>
-            <Button variant="outline" size="lg">
+            <Button className="border-2 border-slate-300 text-slate-700 hover:bg-slate-100 hover:border-slate-400 font-semibold px-8 py-3 h-auto rounded-xl button-hover">
               <Zap className="mr-2 h-5 w-5" />
               Ver Tutoriais
             </Button>
