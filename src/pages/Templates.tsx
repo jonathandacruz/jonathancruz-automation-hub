@@ -2,11 +2,60 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Download, Star, ShoppingCart, Clock, CheckCircle, Eye, X } from "lucide-react";
-import { useState } from "react";
+import { Download, ShoppingCart, Clock, CheckCircle, Eye, Code, Zap, Users } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const Templates = () => {
   const [selectedTemplate, setSelectedTemplate] = useState(null);
+
+  // SEO structured data
+  useEffect(() => {
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Templates de Automação n8n",
+      "description": "Templates profissionais para n8n - Automatize Instagram, Lotofácil, Stories e Restaurantes",
+      "numberOfItems": 4,
+      "itemListElement": templates.map((template, index) => ({
+        "@type": "Product",
+        "position": index + 1,
+        "name": template.title,
+        "description": template.description,
+        "category": template.category,
+        "offers": {
+          "@type": "Offer",
+          "price": template.price,
+          "priceCurrency": "BRL",
+          "availability": "https://schema.org/InStock"
+        }
+      }))
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(structuredData);
+    document.head.appendChild(script);
+
+    // Meta tags for SEO
+    document.title = "Templates n8n Premium - Automação Instagram, Lotofácil, Stories | R$ 37";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Templates profissionais n8n para automação do Instagram, robô da Lotofácil, stories automáticos e agente IA para restaurantes. Preço único R$ 37.');
+    }
+
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      const keywords = document.createElement('meta');
+      keywords.name = 'keywords';
+      keywords.content = 'n8n templates, automação instagram, robot lotofacil, stories automaticos, agente ia restaurante, templates premium';
+      document.head.appendChild(keywords);
+    }
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
   const templates = [
     {
       id: 1,
@@ -70,55 +119,58 @@ const Templates = () => {
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case "Iniciante": return "bg-slate-100 text-slate-700 border-slate-200";
-      case "Intermediário": return "bg-slate-200 text-slate-700 border-slate-300";
-      case "Avançado": return "bg-slate-300 text-slate-800 border-slate-400";
+      case "Iniciante": return "bg-emerald-50 text-emerald-700 border-emerald-200";
+      case "Intermediário": return "bg-blue-50 text-blue-700 border-blue-200";
+      case "Avançado": return "bg-purple-50 text-purple-700 border-purple-200";
       default: return "bg-slate-100 text-slate-600 border-slate-200";
     }
   };
 
   const getComplexityColor = (complexity: string) => {
     switch (complexity) {
-      case "low": return "text-slate-600";
-      case "medium": return "text-slate-700";
-      case "high": return "text-slate-800";
+      case "low": return "text-emerald-600";
+      case "medium": return "text-blue-600";
+      case "high": return "text-purple-600";
       default: return "text-slate-600";
     }
   };
 
   return (
     <div className="min-h-screen bg-white">
+      {/* SEO Hidden H1 */}
+      <h1 className="sr-only">Templates Premium n8n - Automação Instagram, Lotofácil, Stories e IA para Restaurantes</h1>
+      
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 lg:px-6 bg-slate-50 relative">
+      <header className="pt-24 pb-16 px-4 lg:px-6 bg-gradient-to-br from-blue-50 via-white to-purple-50 relative">
         <div className="container mx-auto text-center relative z-10 max-w-5xl">
-          <Badge className="mb-8 px-6 py-2 bg-slate-200 text-slate-700 border-slate-300 text-base font-medium">
+          <Badge className="mb-8 px-6 py-2 bg-blue-100 text-blue-700 border-blue-200 text-base font-medium">
             Templates Premium n8n
           </Badge>
           
-          <h1 className="text-5xl lg:text-7xl font-bold mb-8 text-slate-900 leading-tight tracking-tight">
+          <h2 className="text-5xl lg:text-7xl font-bold mb-8 text-slate-900 leading-tight tracking-tight">
             Templates de{" "}
-            <span className="text-slate-700">
+            <span className="text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text">
               Automação
             </span>
-          </h1>
+          </h2>
           
           <p className="text-xl lg:text-2xl text-slate-600 max-w-4xl mx-auto mb-12 leading-relaxed font-light">
-            Transforme sua produtividade com automações profissionais. 
+            Transforme sua produtividade com automações profissionais para n8n. 
             <br className="hidden md:block" />
-            Templates testados e otimizados para máximo desempenho.
+            Templates testados, documentados e otimizados para máximo desempenho.
           </p>
           
           <div className="flex justify-center">
-            <Button size="lg" className="px-10 py-4 text-lg font-semibold rounded-xl bg-slate-900 hover:bg-slate-800 text-white">
+            <Button size="lg" className="px-10 py-4 text-lg font-semibold rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
               <ShoppingCart className="mr-3 h-5 w-5" />
               Ver Templates
             </Button>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* Templates Grid */}
-      <section className="py-20 px-4 lg:px-6 bg-white">
+      <main className="py-20 px-4 lg:px-6 bg-white">
         <div className="container mx-auto max-w-7xl">
           {/* Section Header */}
           <div className="text-center mb-16">
@@ -126,7 +178,7 @@ const Templates = () => {
               Templates Disponíveis
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Cada template é cuidadosamente desenvolvido para entregar resultados reais
+              Automações profissionais para Instagram, Lotofácil, Stories e IA para restaurantes
             </p>
           </div>
 
@@ -136,7 +188,11 @@ const Templates = () => {
               <Button 
                 key={category}
                 variant={category === "Todos" ? "default" : "outline"}
-                className="rounded-full px-6 py-2 font-medium bg-slate-900 hover:bg-slate-800 text-white border-slate-300 hover:border-slate-400"
+                className={`rounded-full px-6 py-2 font-medium transition-all duration-300 ${
+                  category === "Todos" 
+                    ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white" 
+                    : "border-blue-200 text-blue-700 hover:bg-blue-50 hover:border-blue-300"
+                }`}
                 size="sm"
               >
                 {category}
@@ -146,28 +202,27 @@ const Templates = () => {
 
           {/* Templates Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {templates.map((template) => (
-              <Card key={template.id} className="group border-slate-200 hover:border-slate-300 bg-white hover:shadow-xl transition-all duration-300 transform hover:scale-[1.01] overflow-hidden">
+            {templates.map((template, index) => (
+              <article key={template.id} className="group border-slate-200 hover:border-blue-300 bg-white hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.01] overflow-hidden rounded-xl border-2">
                 {/* Card Header */}
                 <CardHeader className="pb-4 space-y-4">
-                  {/* Top Row - Badges and Rating */}
+                  {/* Top Row - Badges */}
                   <div className="flex justify-between items-start">
                     <div className="flex items-center gap-3">
                       <Badge className={`${getDifficultyColor(template.difficulty)} font-medium px-3 py-1 border`}>
                         {template.difficulty}
                       </Badge>
-                      <Badge className="bg-slate-100 text-slate-700 border-slate-200 font-medium">
+                      <Badge className="bg-blue-50 text-blue-700 border-blue-200 font-medium">
                         {template.category}
                       </Badge>
                     </div>
-                    <div className="flex items-center space-x-1">
-                      <Star className="h-4 w-4 fill-slate-400 text-slate-400" />
-                      <span className="text-sm font-bold text-slate-900">{template.rating}</span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded-full">#{index + 1}</span>
                     </div>
                   </div>
 
                   {/* Title */}
-                  <CardTitle className="text-2xl lg:text-3xl text-slate-900 leading-tight">
+                  <CardTitle className="text-2xl lg:text-3xl text-slate-900 leading-tight group-hover:text-blue-700 transition-colors duration-300">
                     {template.title}
                   </CardTitle>
 
@@ -183,7 +238,7 @@ const Templates = () => {
                     {template.tags.map((tag, index) => (
                       <span 
                         key={index}
-                        className="px-3 py-1.5 bg-slate-100 text-slate-700 text-sm rounded-full font-medium border border-slate-200"
+                        className="px-3 py-1.5 bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 text-sm rounded-full font-medium border border-blue-200 hover:from-blue-100 hover:to-purple-100 transition-colors cursor-default"
                       >
                         {tag}
                       </span>
@@ -193,11 +248,11 @@ const Templates = () => {
                   {/* Stats */}
                   <div className="grid grid-cols-2 gap-4 py-4 border-t border-slate-200">
                     <div className="flex items-center gap-2 text-slate-600">
-                      <Download className="h-4 w-4" />
+                      <Download className="h-4 w-4 text-blue-600" />
                       <span className="text-sm font-medium">{template.downloads.toLocaleString()} downloads</span>
                     </div>
                     <div className="flex items-center gap-2 text-slate-600">
-                      <Clock className="h-4 w-4" />
+                      <Clock className="h-4 w-4 text-purple-600" />
                       <span className={`text-sm font-medium ${getComplexityColor(template.complexity)}`}>
                         {template.estimatedTime}
                       </span>
@@ -207,7 +262,7 @@ const Templates = () => {
                   {/* Price and CTA */}
                   <div className="flex justify-between items-center pt-4 border-t border-slate-200">
                     <div className="space-y-1">
-                      <div className="text-3xl font-bold text-slate-900">
+                      <div className="text-3xl font-bold text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">
                         R$ {template.price}
                       </div>
                       <div className="text-xs text-slate-500 uppercase tracking-wider">
@@ -217,12 +272,12 @@ const Templates = () => {
                     <div className="flex gap-3">
                       <Dialog>
                         <DialogTrigger asChild>
-                          <Button variant="outline" className="px-6 py-2 rounded-xl border-slate-300 text-slate-700 hover:bg-slate-50">
+                          <Button variant="outline" className="px-6 py-2 rounded-xl border-blue-200 text-blue-700 hover:bg-blue-50 hover:border-blue-300 transition-all duration-300">
                             <Eye className="h-4 w-4 mr-2" />
                             Ver Mais
                           </Button>
                         </DialogTrigger>
-                        <DialogContent className="max-w-2xl bg-white border-slate-200">
+                        <DialogContent className="max-w-2xl bg-white border-slate-200 z-50">
                           <DialogHeader>
                             <DialogTitle className="text-2xl font-bold text-slate-900 mb-2">
                               {template.title}
@@ -310,21 +365,21 @@ const Templates = () => {
                         </DialogContent>
                       </Dialog>
                       
-                      <Button className="px-6 py-2 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl">
+                      <Button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
                         <ShoppingCart className="h-4 w-4 mr-2" />
                         Comprar
                       </Button>
                     </div>
                   </div>
                 </CardContent>
-              </Card>
+              </article>
             ))}
           </div>
         </div>
-      </section>
+      </main>
 
       {/* Features Section */}
-      <section className="py-20 px-4 lg:px-6 bg-slate-50">
+      <section className="py-20 px-4 lg:px-6 bg-gradient-to-br from-blue-50 via-purple-50 to-blue-50">
         <div className="container mx-auto max-w-6xl text-center">
           <h3 className="text-3xl lg:text-4xl font-bold mb-12 text-slate-900">
             Por que escolher nossos templates?
@@ -332,8 +387,8 @@ const Templates = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="space-y-4">
-              <div className="w-16 h-16 bg-slate-200 rounded-2xl flex items-center justify-center mx-auto">
-                <CheckCircle className="h-8 w-8 text-slate-700" />
+              <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto">
+                <CheckCircle className="h-8 w-8 text-white" />
               </div>
               <h4 className="text-xl font-semibold text-slate-900">100% Funcionais</h4>
               <p className="text-slate-600 leading-relaxed">
@@ -342,8 +397,8 @@ const Templates = () => {
             </div>
             
             <div className="space-y-4">
-              <div className="w-16 h-16 bg-slate-200 rounded-2xl flex items-center justify-center mx-auto">
-                <Download className="h-8 w-8 text-slate-700" />
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto">
+                <Code className="h-8 w-8 text-white" />
               </div>
               <h4 className="text-xl font-semibold text-slate-900">Fácil Instalação</h4>
               <p className="text-slate-600 leading-relaxed">
@@ -352,8 +407,8 @@ const Templates = () => {
             </div>
             
             <div className="space-y-4">
-              <div className="w-16 h-16 bg-slate-200 rounded-2xl flex items-center justify-center mx-auto">
-                <Star className="h-8 w-8 text-slate-700" />
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto">
+                <Users className="h-8 w-8 text-white" />
               </div>
               <h4 className="text-xl font-semibold text-slate-900">Suporte Premium</h4>
               <p className="text-slate-600 leading-relaxed">
@@ -365,37 +420,41 @@ const Templates = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-4 lg:px-6 bg-slate-900 text-white relative">
+      <section className="py-24 px-4 lg:px-6 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(59,130,246,0.3),transparent_70%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(147,51,234,0.3),transparent_70%)]"></div>
+        
         <div className="container mx-auto text-center relative z-10 max-w-4xl">
           <h2 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight">
-            Pronto para Automatizar?
+            Pronto para Automatizar Hoje?
           </h2>
           
           <p className="text-xl lg:text-2xl text-slate-300 mb-12 leading-relaxed">
-            Transforme sua produtividade hoje mesmo. Cada template inclui documentação completa e suporte personalizado.
+            Transforme sua produtividade com automações profissionais. Cada template inclui documentação completa e suporte personalizado.
           </p>
           
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
-            <div className="text-center p-6 bg-slate-800 rounded-2xl border border-slate-700">
-              <div className="text-3xl lg:text-4xl font-bold mb-2">4+</div>
-              <div className="text-slate-400 font-medium">Templates</div>
+            <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
+              <div className="text-3xl lg:text-4xl font-bold mb-2 text-blue-300">4+</div>
+              <div className="text-slate-300 font-medium">Templates</div>
             </div>
-            <div className="text-center p-6 bg-slate-800 rounded-2xl border border-slate-700">
-              <div className="text-3xl lg:text-4xl font-bold mb-2">24h</div>
-              <div className="text-slate-400 font-medium">Suporte</div>
+            <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
+              <div className="text-3xl lg:text-4xl font-bold mb-2 text-purple-300">24h</div>
+              <div className="text-slate-300 font-medium">Suporte</div>
             </div>
-            <div className="text-center p-6 bg-slate-800 rounded-2xl border border-slate-700">
-              <div className="text-3xl lg:text-4xl font-bold mb-2">100%</div>
-              <div className="text-slate-400 font-medium">Funcionais</div>
+            <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
+              <div className="text-3xl lg:text-4xl font-bold mb-2 text-emerald-300">100%</div>
+              <div className="text-slate-300 font-medium">Funcionais</div>
             </div>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100 font-bold px-10 py-4 rounded-xl">
+            <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold px-10 py-4 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300">
               <ShoppingCart className="mr-3 h-5 w-5" />
               Comprar Templates
             </Button>
-            <Button variant="outline" size="lg" className="bg-transparent border-slate-600 text-white hover:bg-slate-800 font-semibold px-10 py-4 rounded-xl">
+            <Button variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20 font-semibold px-10 py-4 rounded-xl backdrop-blur-sm">
+              <Zap className="mr-3 h-5 w-5" />
               Fale Comigo
             </Button>
           </div>
