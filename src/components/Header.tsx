@@ -37,10 +37,10 @@ const Header = () => {
             <Link
               key={item.name}
               to={item.href}
-              className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 hover:bg-brand-muted ${
+              className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 hover:bg-slate-100 ${
                 isActive(item.href)
-                  ? "text-brand-primary bg-brand-muted"
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "text-brand-primary bg-blue-50"
+                  : "text-slate-700 hover:text-slate-900"
               }`}
             >
               {item.name}
@@ -51,9 +51,7 @@ const Header = () => {
         {/* CTA Button */}
         <div className="hidden lg:block">
           <Link to="/contato">
-            <Button 
-              className="bg-gradient-cta hover:shadow-orange transition-all duration-300 font-semibold px-6 py-3 h-auto rounded-xl"
-            >
+            <Button className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 py-3 h-auto rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
               Fale Comigo
             </Button>
           </Link>
@@ -72,7 +70,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-white/95 backdrop-blur-lg border-b border-border shadow-lg animate-fade-in">
+        <div className="lg:hidden bg-white border-b border-slate-200 shadow-lg animate-fade-in">
           <div className="container mx-auto px-4 py-6 space-y-4">
             {navigation.map((item) => (
               <Link
@@ -80,8 +78,8 @@ const Header = () => {
                 to={item.href}
                 className={`block px-4 py-3 rounded-xl text-base font-semibold transition-all duration-200 ${
                   isActive(item.href)
-                    ? "text-brand-primary bg-brand-muted"
-                    : "text-muted-foreground hover:text-foreground hover:bg-brand-muted"
+                    ? "text-brand-primary bg-blue-50"
+                    : "text-slate-700 hover:text-slate-900 hover:bg-slate-100"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -89,7 +87,7 @@ const Header = () => {
               </Link>
             ))}
             <Link to="/contato" onClick={() => setIsMenuOpen(false)}>
-              <Button className="w-full mt-4 bg-gradient-cta hover:shadow-orange transition-all duration-300 font-semibold py-3 h-auto rounded-xl">
+              <Button className="w-full mt-4 bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 h-auto rounded-xl shadow-lg">
                 Fale Comigo
               </Button>
             </Link>
