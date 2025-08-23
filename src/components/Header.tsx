@@ -10,7 +10,7 @@ const Header = () => {
   const navigation = [
     { name: "Home", href: "/" },
     { name: "Sobre", href: "/sobre" },
-    { name: "Automação n8n", href: "/automacao-n8n" },
+    { name: "Comunidade N8n", href: "/automacao-n8n" },
     { name: "Templates", href: "/templates" },
     { name: "Contato", href: "/contato" },
   ];
@@ -32,18 +32,21 @@ const Header = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center space-x-2">
+        <div className="hidden lg:flex items-center space-x-1">
           {navigation.map((item) => (
             <Link
               key={item.name}
               to={item.href}
-              className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 hover:bg-slate-100 ${
+              className={`px-5 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 relative overflow-hidden group ${
                 isActive(item.href)
-                  ? "text-brand-primary bg-blue-50"
-                  : "text-slate-700 hover:text-slate-900"
+                  ? "text-primary bg-primary/10 shadow-lg"
+                  : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
               }`}
             >
-              {item.name}
+              <span className="relative z-10">{item.name}</span>
+              {!isActive(item.href) && (
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              )}
             </Link>
           ))}
         </div>

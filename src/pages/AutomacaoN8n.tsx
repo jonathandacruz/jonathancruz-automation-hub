@@ -363,6 +363,22 @@ const AutomacaoN8n = () => {
               6+ horas de conteúdo premium com metodologia profissional e projetos práticos
             </p>
             
+            {/* Templates Access Highlight */}
+            <div className="bg-gradient-to-r from-emerald-50 to-blue-50 rounded-2xl p-6 max-w-4xl mx-auto mb-12 border border-emerald-200">
+              <div className="flex items-center justify-center space-x-3 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-blue-600 rounded-full flex items-center justify-center">
+                  <Sparkles className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900">🎁 Bônus Exclusivo</h3>
+                  <p className="text-sm text-slate-600">Incluso no seu acesso vitalício</p>
+                </div>
+              </div>
+              <p className="text-lg text-center text-slate-700 font-semibold">
+                Com o acesso vitalício do curso, você tem <span className="text-emerald-600">acesso gratuito a todos os templates disponíveis</span> na nossa biblioteca exclusiva!
+              </p>
+            </div>
+            
             <div className="flex justify-center gap-12 text-sm text-slate-600 mb-12">
               <div className="flex items-center space-x-2">
                 <Clock className="h-5 w-5 text-green-500" />
