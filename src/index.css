@@ -140,4 +140,86 @@ All colors MUST be HSL.
   .card-hover {
     @apply transition-all duration-500 ease-out hover:shadow-2xl hover:scale-105 hover:-translate-y-2;
   }
+
+  /* Efeitos especiais para botões */
+  .button-glow {
+    @apply relative overflow-hidden transition-all duration-300 ease-out;
+  }
+  
+  .button-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease-out;
+  }
+  
+  .button-glow:hover::before {
+    left: 100%;
+  }
+  
+  .button-glow:hover {
+    @apply scale-105 shadow-2xl;
+  }
+
+  .button-pulse {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .button-pulse:hover {
+    @apply scale-110 shadow-xl;
+    animation: pulse-glow 1.5s infinite;
+  }
+
+  .button-gradient-shift {
+    @apply relative overflow-hidden transition-all duration-500 ease-out;
+    background-size: 200% 200%;
+  }
+  
+  .button-gradient-shift:hover {
+    @apply scale-105 shadow-2xl;
+    background-position: right center;
+  }
+
+  .button-bounce {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .button-bounce:hover {
+    @apply scale-105 shadow-xl;
+    animation: bounce-subtle 0.6s ease-out;
+  }
+
+  .button-magnetic {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .button-magnetic:hover {
+    @apply scale-110 shadow-2xl -translate-y-1;
+    box-shadow: 0 20px 40px -10px rgba(59, 130, 246, 0.4);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
+  }
+}
+
+@keyframes bounce-subtle {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) scale(1.05);
+  }
+  40% {
+    transform: translateY(-10px) scale(1.05);
+  }
+  60% {
+    transform: translateY(-5px) scale(1.05);
+  }
 }

@@ -161,7 +161,7 @@ const Templates = () => {
           </p>
           
           <div className="flex justify-center">
-            <Button size="lg" className="px-10 py-4 text-lg font-semibold rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+            <Button size="lg" className="px-10 py-4 text-lg font-semibold rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl button-glow">
               <ShoppingCart className="mr-3 h-5 w-5" />
               Ver Templates
             </Button>
@@ -188,10 +188,10 @@ const Templates = () => {
               <Button 
                 key={category}
                 variant={category === "Todos" ? "default" : "outline"}
-                className={`rounded-full px-6 py-2 font-medium transition-all duration-300 ${
+                className={`rounded-full px-6 py-2 font-medium ${
                   category === "Todos" 
-                    ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white" 
-                    : "border-blue-200 text-blue-700 hover:bg-blue-50 hover:border-blue-300"
+                    ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white button-pulse" 
+                    : "border-blue-200 text-blue-700 hover:bg-blue-50 hover:border-blue-300 button-bounce"
                 }`}
                 size="sm"
               >
@@ -272,7 +272,7 @@ const Templates = () => {
                     <div className="flex gap-3">
                       <Dialog>
                         <DialogTrigger asChild>
-                          <Button variant="outline" className="px-6 py-2 rounded-xl border-blue-200 text-blue-700 hover:bg-blue-50 hover:border-blue-300 transition-all duration-300">
+                          <Button variant="outline" className="px-6 py-2 rounded-xl border-blue-200 text-blue-700 hover:bg-blue-50 hover:border-blue-300 button-glow">
                             <Eye className="h-4 w-4 mr-2" />
                             Ver Mais
                           </Button>
@@ -356,7 +356,7 @@ const Templates = () => {
                                   Pagamento único
                                 </div>
                               </div>
-                              <Button className="px-8 py-3 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl">
+                              <Button className="px-8 py-3 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl button-magnetic">
                                 <ShoppingCart className="h-4 w-4 mr-2" />
                                 Comprar Agora
                               </Button>
@@ -365,7 +365,7 @@ const Templates = () => {
                         </DialogContent>
                       </Dialog>
                       
-                      <Button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                      <Button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl button-gradient-shift">
                         <ShoppingCart className="h-4 w-4 mr-2" />
                         Comprar
                       </Button>
@@ -449,11 +449,11 @@ const Templates = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold px-10 py-4 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300">
+            <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold px-10 py-4 rounded-xl shadow-2xl button-pulse">
               <ShoppingCart className="mr-3 h-5 w-5" />
               Comprar Templates
             </Button>
-            <Button variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20 font-semibold px-10 py-4 rounded-xl backdrop-blur-sm">
+            <Button variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20 font-semibold px-10 py-4 rounded-xl backdrop-blur-sm button-magnetic">
               <Zap className="mr-3 h-5 w-5" />
               Fale Comigo
             </Button>
