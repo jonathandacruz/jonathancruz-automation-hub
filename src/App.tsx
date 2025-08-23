@@ -10,6 +10,7 @@ import Sobre from "./pages/Sobre";
 import Conteudo from "./pages/Conteudo";
 import AutomacaoN8n from "./pages/AutomacaoN8n";
 import Templates from "./pages/Templates";
+import TemplateDetail from "./pages/TemplateDetail";
 import Contato from "./pages/Contato";
 import NotFound from "./pages/NotFound";
 
@@ -30,6 +31,7 @@ const App = () => (
               <Route path="/conteudo" element={<Conteudo />} />
               <Route path="/automacao-n8n" element={<AutomacaoN8n />} />
               <Route path="/templates" element={<Templates />} />
+              <Route path="/templates/:templateSlug" element={<TemplateDetail />} />
               <Route path="/contato" element={<Contato />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />

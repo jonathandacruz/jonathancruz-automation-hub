@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { useNavigate } from "react-router-dom";
 import { Download, ShoppingCart, Clock, CheckCircle, Eye, Code, Zap, Users } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const Templates = () => {
-  const [selectedTemplate, setSelectedTemplate] = useState(null);
+  const navigate = useNavigate();
 
   // SEO structured data
   useEffect(() => {
@@ -59,6 +59,7 @@ const Templates = () => {
   const templates = [
     {
       id: 1,
+      slug: "n8n-template-instagram",
       title: "n8n - Post Viral no Instagram",
       description: "Automatize a criação e publicação de posts virais no Instagram. Inclui análise de tendências, geração de conteúdo e agendamento automático.",
       category: "Social Media",
@@ -73,6 +74,7 @@ const Templates = () => {
     },
     {
       id: 2,
+      slug: "n8n-robo-lotofacil",
       title: "N8n - Robô da Lotofácil",
       description: "Sistema inteligente que analisa padrões da Lotofácil e sugere números baseado em estatísticas históricas e algoritmos preditivos.",
       category: "Automação",
@@ -87,6 +89,7 @@ const Templates = () => {
     },
     {
       id: 3,
+      slug: "n8n-template-stories",
       title: "n8n - Template para Stories do Instagram",
       description: "Crie e publique stories automáticos no Instagram com templates personalizáveis, músicas e efeitos visuais incríveis.",
       category: "Social Media",
@@ -101,6 +104,7 @@ const Templates = () => {
     },
     {
       id: 4,
+      slug: "n8n-agente-ia-restaurante",
       title: "n8n - Agente de IA para Restaurantes",
       description: "Assistente virtual inteligente para restaurantes que gerencia pedidos, reservas, cardápio e atendimento ao cliente automaticamente.",
       category: "IA",
@@ -270,100 +274,14 @@ const Templates = () => {
                       </div>
                     </div>
                     <div className="flex gap-3">
-                      <Dialog>
-                        <DialogTrigger asChild>
-                          <Button variant="outline" className="px-6 py-2 rounded-xl border-blue-200 text-blue-700 hover:bg-blue-50 hover:border-blue-300 button-glow">
-                            <Eye className="h-4 w-4 mr-2" />
-                            Ver Mais
-                          </Button>
-                        </DialogTrigger>
-                        <DialogContent className="max-w-2xl bg-white border-slate-200 z-50">
-                          <DialogHeader>
-                            <DialogTitle className="text-2xl font-bold text-slate-900 mb-2">
-                              {template.title}
-                            </DialogTitle>
-                            <DialogDescription className="text-slate-600 text-base leading-relaxed">
-                              {template.description}
-                            </DialogDescription>
-                          </DialogHeader>
-                          
-                          <div className="space-y-6 mt-6">
-                            {/* Template Details */}
-                            <div className="grid grid-cols-2 gap-4">
-                              <div className="space-y-2">
-                                <h4 className="font-semibold text-slate-900">Categoria</h4>
-                                <p className="text-slate-600">{template.category}</p>
-                              </div>
-                              <div className="space-y-2">
-                                <h4 className="font-semibold text-slate-900">Dificuldade</h4>
-                                <p className="text-slate-600">{template.difficulty}</p>
-                              </div>
-                              <div className="space-y-2">
-                                <h4 className="font-semibold text-slate-900">Tempo Estimado</h4>
-                                <p className="text-slate-600">{template.estimatedTime}</p>
-                              </div>
-                              <div className="space-y-2">
-                                <h4 className="font-semibold text-slate-900">Downloads</h4>
-                                <p className="text-slate-600">{template.downloads.toLocaleString()}</p>
-                              </div>
-                            </div>
-
-                            {/* Tags */}
-                            <div className="space-y-2">
-                              <h4 className="font-semibold text-slate-900">Tecnologias</h4>
-                              <div className="flex flex-wrap gap-2">
-                                {template.tags.map((tag, index) => (
-                                  <span 
-                                    key={index}
-                                    className="px-3 py-1 bg-slate-100 text-slate-700 text-sm rounded-full font-medium border border-slate-200"
-                                  >
-                                    {tag}
-                                  </span>
-                                ))}
-                              </div>
-                            </div>
-
-                            {/* What's Included */}
-                            <div className="space-y-3">
-                              <h4 className="font-semibold text-slate-900">O que está incluído:</h4>
-                              <ul className="space-y-2">
-                                <li className="flex items-center gap-2 text-slate-600">
-                                  <CheckCircle className="h-4 w-4 text-slate-500" />
-                                  Template completo para n8n
-                                </li>
-                                <li className="flex items-center gap-2 text-slate-600">
-                                  <CheckCircle className="h-4 w-4 text-slate-500" />
-                                  Documentação de instalação
-                                </li>
-                                <li className="flex items-center gap-2 text-slate-600">
-                                  <CheckCircle className="h-4 w-4 text-slate-500" />
-                                  Suporte por WhatsApp
-                                </li>
-                                <li className="flex items-center gap-2 text-slate-600">
-                                  <CheckCircle className="h-4 w-4 text-slate-500" />
-                                  Atualizações gratuitas
-                                </li>
-                              </ul>
-                            </div>
-
-                            {/* Price and Purchase */}
-                            <div className="flex justify-between items-center pt-6 border-t border-slate-200">
-                              <div className="space-y-1">
-                                <div className="text-3xl font-bold text-slate-900">
-                                  R$ {template.price}
-                                </div>
-                                <div className="text-sm text-slate-500">
-                                  Pagamento único
-                                </div>
-                              </div>
-                              <Button className="px-8 py-3 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl button-magnetic">
-                                <ShoppingCart className="h-4 w-4 mr-2" />
-                                Comprar Agora
-                              </Button>
-                            </div>
-                          </div>
-                        </DialogContent>
-                      </Dialog>
+                      <Button 
+                        variant="outline" 
+                        className="px-6 py-2 rounded-xl border-blue-200 text-blue-700 hover:bg-blue-50 hover:border-blue-300 button-glow"
+                        onClick={() => navigate(`/templates/${template.slug}`)}
+                      >
+                        <Eye className="h-4 w-4 mr-2" />
+                        Ver Mais
+                      </Button>
                       
                       <Button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl button-gradient-shift">
                         <ShoppingCart className="h-4 w-4 mr-2" />
