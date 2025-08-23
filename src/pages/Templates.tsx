@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 
 const Templates = () => {
   const navigate = useNavigate();
+  const [selectedCategory, setSelectedCategory] = useState("Todos");
 
   // SEO structured data
   useEffect(() => {
@@ -83,7 +84,7 @@ const Templates = () => {
       rating: 4.8,
       tags: ["Lotofácil", "Análise", "Estatística", "Bot"],
       featured: true,
-      price: 37,
+      price: 9.99,
       estimatedTime: "4-5 horas",
       complexity: "high"
     },
@@ -139,6 +140,11 @@ const Templates = () => {
     }
   };
 
+  // Filter templates based on selected category
+  const filteredTemplates = selectedCategory === "Todos" 
+    ? templates 
+    : templates.filter(template => template.category === selectedCategory);
+
   return (
     <div className="min-h-screen bg-white">
       {/* SEO Hidden H1 */}
@@ -191,13 +197,14 @@ const Templates = () => {
             {categories.map((category) => (
               <Button 
                 key={category}
-                variant={category === "Todos" ? "default" : "outline"}
-                className={`rounded-full px-6 py-2 font-medium ${
-                  category === "Todos" 
-                    ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white button-pulse" 
-                    : "border-blue-200 text-blue-700 hover:bg-blue-50 hover:border-blue-300 button-bounce"
+                variant={category === selectedCategory ? "default" : "outline"}
+                className={`rounded-full px-6 py-2 font-medium transition-all duration-300 ${
+                  category === selectedCategory 
+                    ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-800 hover:to-purple-800 text-white button-pulse" 
+                    : "border-blue-200 text-blue-700 hover:bg-blue-600 hover:text-white hover:border-blue-600 button-bounce"
                 }`}
                 size="sm"
+                onClick={() => setSelectedCategory(category)}
               >
                 {category}
               </Button>
@@ -206,7 +213,7 @@ const Templates = () => {
 
           {/* Templates Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {templates.map((template, index) => (
+            {filteredTemplates.map((template, index) => (
               <article key={template.id} className="group border-slate-200 hover:border-blue-300 bg-white hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.01] overflow-hidden rounded-xl border-2">
                 {/* Card Header */}
                 <CardHeader className="pb-4 space-y-4">
@@ -276,14 +283,14 @@ const Templates = () => {
                     <div className="flex gap-3">
                       <Button 
                         variant="outline" 
-                        className="px-6 py-2 rounded-xl border-blue-200 text-blue-700 hover:bg-blue-50 hover:border-blue-300 button-glow"
+                        className="px-6 py-2 rounded-xl border-blue-200 text-blue-700 hover:bg-blue-700 hover:text-white hover:border-blue-700 transition-all duration-300 button-glow"
                         onClick={() => navigate(`/templates/${template.slug}`)}
                       >
                         <Eye className="h-4 w-4 mr-2" />
                         Ver Mais
                       </Button>
                       
-                      <Button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl button-gradient-shift">
+                      <Button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-800 hover:to-purple-800 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 button-gradient-shift">
                         <ShoppingCart className="h-4 w-4 mr-2" />
                         Comprar
                       </Button>
