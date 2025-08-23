@@ -142,9 +142,9 @@ const AutomacaoN8n = () => {
               </Button>
               
               <Button className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20 font-semibold text-lg px-10 py-4 h-auto rounded-2xl hover:scale-105 transition-all duration-300" asChild>
-                <a href="#beneficios">
+                <a href="https://pay.hotmart.com/J101368751T">
                   <TrendingUp className="mr-3 h-6 w-6" />
-                  Ver Resultados Reais
+                  Garantir minha vaga
                 </a>
               </Button>
             </div>
@@ -152,7 +152,7 @@ const AutomacaoN8n = () => {
             {/* Social Proof + ROI */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-green-400 mb-2">R$ 50K+</div>
+                <div className="text-3xl lg:text-4xl font-bold text-green-400 mb-2">R$ 10K+</div>
                 <div className="text-sm text-slate-400">Economizado pelos alunos</div>
               </div>
               <div className="text-center">
@@ -164,7 +164,7 @@ const AutomacaoN8n = () => {
                 <div className="text-sm text-slate-400">Nota Média</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-yellow-400 mb-2">30 dias</div>
+                <div className="text-3xl lg:text-4xl font-bold text-yellow-400 mb-2">7 dias</div>
                 <div className="text-sm text-slate-400">Garantia Total</div>
               </div>
             </div>
