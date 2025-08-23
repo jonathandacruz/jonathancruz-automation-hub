@@ -48,7 +48,7 @@ const Home = () => {
                   </Button>
                 </Link>
                 
-                <Button variant="outline" size="lg" asChild className="border-2 border-slate-300 hover:border-brand-primary hover:bg-slate-50 font-semibold px-8 py-4 h-auto rounded-xl">
+                <Button variant="outline" size="lg" asChild className="border-2 border-slate-300 hover:border-brand-primary hover:bg-blue-500 font-semibold px-8 py-4 h-auto rounded-xl">
                   <a 
                     href="https://www.youtube.com/channel/UC3M_z-XMGTFMBbCjVLPKkUA"
                     target="_blank"
