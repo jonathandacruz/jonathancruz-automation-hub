@@ -145,53 +145,24 @@ const AutomacaoN8n = () => {
               <br />n8n Automação Profissional
             </h1>
             
-            <p className="text-xl lg:text-2xl text-slate-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+            <p className="text-xl lg:text-2xl text-slate-300 max-w-4xl mx-auto mb-12 leading-relaxed">
               O curso mais completo e avançado de n8n do Brasil. Aprenda com metodologia profissional 
               e <span className="text-white font-semibold">transforme sua carreira</span> 
               criando automações que geram resultados reais.
             </p>
             
-            {/* Pricing Hero */}
-            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 max-w-2xl mx-auto mb-12 border border-white/20">
-              <div className="flex items-center justify-center space-x-4 mb-4">
-                <div className="text-4xl lg:text-6xl font-bold text-white">R$ 487</div>
-                <div className="text-left">
-                  <div className="text-green-400 font-semibold text-sm">ou 12x de</div>
-                  <div className="text-2xl font-bold text-green-400">R$ 40,58</div>
-                </div>
-              </div>
-              <div className="flex justify-center space-x-6 text-sm text-slate-300 mb-6">
-                <div className="flex items-center space-x-2">
-                  <Infinity className="w-4 h-4 text-green-400" />
-                  <span>Acesso Vitalício</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CreditCard className="w-4 h-4 text-blue-400" />
-                  <span>Até 12x sem juros</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Shield className="w-4 h-4 text-purple-400" />
-                  <span>Garantia 30 dias</span>
-                </div>
-              </div>
-            </div>
-            
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
               <Button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold text-lg px-10 py-4 h-auto rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300" asChild>
-                <a 
-                  href="https://pay.hotmart.com/J101368751T"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <CreditCard className="mr-3 h-6 w-6" />
-                  Garantir Minha Vaga Agora
+                <a href="#modulos">
+                  <BookOpen className="mr-3 h-6 w-6" />
+                  Descobrir Todo o Conteúdo
                 </a>
               </Button>
               
               <Button className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20 font-semibold text-lg px-10 py-4 h-auto rounded-2xl hover:scale-105 transition-all duration-300" asChild>
-                <a href="#modulos">
-                  <BookOpen className="mr-3 h-6 w-6" />
-                  Ver Conteúdo Completo
+                <a href="#beneficios">
+                  <TrendingUp className="mr-3 h-6 w-6" />
+                  Ver Resultados Reais
                 </a>
               </Button>
             </div>
@@ -311,7 +282,7 @@ const AutomacaoN8n = () => {
       </section>
 
       {/* Benefícios Modernizados */}
-      <section className="py-24 px-4 lg:px-6 bg-gradient-to-br from-slate-50 to-blue-50">
+      <section id="beneficios" className="py-24 px-4 lg:px-6 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container mx-auto">
           <div className="text-center mb-20">
             <Badge className="mb-4 px-3 py-1 bg-orange-100 text-orange-800 border-orange-200">
