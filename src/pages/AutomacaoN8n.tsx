@@ -3,129 +3,111 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Zap, Clock, TrendingUp, ArrowRight, Play, BookOpen, Users, Award, Star, Workflow, Code, Database, ChevronRight, Target, Sparkles, CreditCard, Shield, Infinity } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const AutomacaoN8n = () => {
-  const benefits = [
-    {
-      icon: Clock,
-      title: "Economia de Tempo",
-      description: "Automatize tarefas repetitivas e ganhe até 10 horas por semana",
-      stat: "80%",
-      statLabel: "menos tempo gasto"
-    },
-    {
-      icon: TrendingUp,
-      title: "Aumento de Produtividade",
-      description: "Foque no que realmente importa enquanto as automações trabalham",
-      stat: "3x",
-      statLabel: "mais produtivo"
-    },
-    {
-      icon: Target,
-      title: "Redução de Erros",
-      description: "Elimine erros humanos com processos automatizados e precisos",
-      stat: "95%",
-      statLabel: "menos erros"
-    }
-  ];
-
-  const examples = [
-    {
-      title: "Automação de E-mails Marketing",
-      description: "Sistema completo de e-mail marketing com segmentação automática e follow-up personalizado",
-      tools: ["Gmail", "Mailchimp", "Google Sheets"],
-      complexity: "Intermediário",
-      timeToImplement: "2-4 horas",
-      benefits: ["Segmentação automática", "Follow-up personalizado", "Relatórios automáticos"]
-    },
-    {
-      title: "Sincronização CRM Multi-Plataforma",
-      description: "Integração bidirecional entre diferentes CRMs e planilhas com validação de dados",
-      tools: ["HubSpot", "Pipedrive", "Airtable"],
-      complexity: "Avançado",
-      timeToImplement: "4-6 horas",
-      benefits: ["Dados sempre atualizados", "Validação automática", "Backup redundante"]
-    },
-    {
-      title: "Dashboard de Métricas em Tempo Real",
-      description: "Coleta automática de dados e geração de relatórios visuais atualizados",
-      tools: ["Google Analytics", "Slack", "Discord"],
-      complexity: "Avançado",
-      timeToImplement: "6-8 horas",
-      benefits: ["Métricas em tempo real", "Alertas inteligentes", "Visualização automática"]
-    },
-    {
-      title: "Backup Inteligente Multi-Cloud",
-      description: "Sistema de backup automático com redundância e verificação de integridade",
-      tools: ["Google Drive", "Dropbox", "AWS S3"],
-      complexity: "Intermediário",
-      timeToImplement: "3-5 horas",
-      benefits: ["Backup redundante", "Verificação automática", "Restauração rápida"]
-    }
-  ];
-
-  const courseModules = [
-    {
-      number: "01",
-      title: "Fundamentos do n8n",
-      description: "Aprenda os conceitos básicos e configure seu primeiro workflow",
-      duration: "45 min",
-      topics: ["Conceitos de automação", "Instalação e configuração", "Interface visual", "Primeiro workflow"],
-      difficulty: "Iniciante"
-    },
-    {
-      number: "02", 
-      title: "Workflows Essenciais",
-      description: "Domine triggers, ações e conexões entre diferentes serviços",
-      duration: "60 min",
-      topics: ["Triggers avançados", "Nós essenciais", "Conectores", "Debugging"],
-      difficulty: "Iniciante"
-    },
-    {
-      number: "03",
-      title: "Manipulação Avançada de Dados",
-      description: "Transforme e processe dados complexos entre aplicações",
-      duration: "90 min", 
-      topics: ["JavaScript expressions", "Data transformation", "Filtros complexos", "Validação de dados"],
-      difficulty: "Intermediário"
-    },
-    {
-      number: "04",
-      title: "Integrações Empresariais",
-      description: "Conecte sistemas corporativos e APIs populares",
-      duration: "120 min",
-      topics: ["APIs REST/GraphQL", "Autenticação OAuth", "Webhooks", "Rate limiting"],
-      difficulty: "Intermediário"
-    },
-    {
-      number: "05",
-      title: "Automações Profissionais",
-      description: "Crie workflows complexos para cenários empresariais",
-      duration: "75 min",
-      topics: ["Loops e condições", "Error handling", "Scheduling avançado", "Monitoramento"],
-      difficulty: "Avançado"
-    },
-    {
-      number: "06",
-      title: "Deploy e Escalabilidade",
-      description: "Coloque suas automações em produção de forma segura",
-      duration: "45 min", 
-      topics: ["Docker deployment", "Environment variables", "Load balancing", "Security best practices"],
-      difficulty: "Avançado"
-    }
-  ];
-
+  const benefits = [{
+    icon: Clock,
+    title: "Economia de Tempo",
+    description: "Automatize tarefas repetitivas e ganhe até 10 horas por semana",
+    stat: "80%",
+    statLabel: "menos tempo gasto"
+  }, {
+    icon: TrendingUp,
+    title: "Aumento de Produtividade",
+    description: "Foque no que realmente importa enquanto as automações trabalham",
+    stat: "3x",
+    statLabel: "mais produtivo"
+  }, {
+    icon: Target,
+    title: "Redução de Erros",
+    description: "Elimine erros humanos com processos automatizados e precisos",
+    stat: "95%",
+    statLabel: "menos erros"
+  }];
+  const examples = [{
+    title: "Automação de E-mails Marketing",
+    description: "Sistema completo de e-mail marketing com segmentação automática e follow-up personalizado",
+    tools: ["Gmail", "Mailchimp", "Google Sheets"],
+    complexity: "Intermediário",
+    timeToImplement: "2-4 horas",
+    benefits: ["Segmentação automática", "Follow-up personalizado", "Relatórios automáticos"]
+  }, {
+    title: "Sincronização CRM Multi-Plataforma",
+    description: "Integração bidirecional entre diferentes CRMs e planilhas com validação de dados",
+    tools: ["HubSpot", "Pipedrive", "Airtable"],
+    complexity: "Avançado",
+    timeToImplement: "4-6 horas",
+    benefits: ["Dados sempre atualizados", "Validação automática", "Backup redundante"]
+  }, {
+    title: "Dashboard de Métricas em Tempo Real",
+    description: "Coleta automática de dados e geração de relatórios visuais atualizados",
+    tools: ["Google Analytics", "Slack", "Discord"],
+    complexity: "Avançado",
+    timeToImplement: "6-8 horas",
+    benefits: ["Métricas em tempo real", "Alertas inteligentes", "Visualização automática"]
+  }, {
+    title: "Backup Inteligente Multi-Cloud",
+    description: "Sistema de backup automático com redundância e verificação de integridade",
+    tools: ["Google Drive", "Dropbox", "AWS S3"],
+    complexity: "Intermediário",
+    timeToImplement: "3-5 horas",
+    benefits: ["Backup redundante", "Verificação automática", "Restauração rápida"]
+  }];
+  const courseModules = [{
+    number: "01",
+    title: "Fundamentos do n8n",
+    description: "Aprenda os conceitos básicos e configure seu primeiro workflow",
+    duration: "45 min",
+    topics: ["Conceitos de automação", "Instalação e configuração", "Interface visual", "Primeiro workflow"],
+    difficulty: "Iniciante"
+  }, {
+    number: "02",
+    title: "Workflows Essenciais",
+    description: "Domine triggers, ações e conexões entre diferentes serviços",
+    duration: "60 min",
+    topics: ["Triggers avançados", "Nós essenciais", "Conectores", "Debugging"],
+    difficulty: "Iniciante"
+  }, {
+    number: "03",
+    title: "Manipulação Avançada de Dados",
+    description: "Transforme e processe dados complexos entre aplicações",
+    duration: "90 min",
+    topics: ["JavaScript expressions", "Data transformation", "Filtros complexos", "Validação de dados"],
+    difficulty: "Intermediário"
+  }, {
+    number: "04",
+    title: "Integrações Empresariais",
+    description: "Conecte sistemas corporativos e APIs populares",
+    duration: "120 min",
+    topics: ["APIs REST/GraphQL", "Autenticação OAuth", "Webhooks", "Rate limiting"],
+    difficulty: "Intermediário"
+  }, {
+    number: "05",
+    title: "Automações Profissionais",
+    description: "Crie workflows complexos para cenários empresariais",
+    duration: "75 min",
+    topics: ["Loops e condições", "Error handling", "Scheduling avançado", "Monitoramento"],
+    difficulty: "Avançado"
+  }, {
+    number: "06",
+    title: "Deploy e Escalabilidade",
+    description: "Coloque suas automações em produção de forma segura",
+    duration: "45 min",
+    topics: ["Docker deployment", "Environment variables", "Load balancing", "Security best practices"],
+    difficulty: "Avançado"
+  }];
   const getComplexityColor = (complexity: string) => {
     switch (complexity) {
-      case "Iniciante": return "bg-green-100 text-green-800 border-green-200";
-      case "Intermediário": return "bg-yellow-100 text-yellow-800 border-yellow-200";
-      case "Avançado": return "bg-red-100 text-red-800 border-red-200";
-      default: return "bg-gray-100 text-gray-800 border-gray-200";
+      case "Iniciante":
+        return "bg-green-100 text-green-800 border-green-200";
+      case "Intermediário":
+        return "bg-yellow-100 text-yellow-800 border-yellow-200";
+      case "Avançado":
+        return "bg-red-100 text-red-800 border-red-200";
+      default:
+        return "bg-gray-100 text-gray-800 border-gray-200";
     }
   };
-
-  return (
-    <div className="pt-16 bg-white overflow-hidden">
+  return <div className="pt-16 bg-white overflow-hidden">
       {/* Hero Section Modernizado */}
       <section className="py-24 px-4 lg:px-6 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white relative">
         {/* Background Elements */}
@@ -211,20 +193,27 @@ const AutomacaoN8n = () => {
               </div>
               
               <div className="space-y-4">
-                {[
-                  { icon: CheckCircle, text: "Interface visual drag-and-drop intuitiva" },
-                  { icon: Zap, text: "350+ integrações nativas (Gmail, Slack, etc)" },
-                  { icon: Database, text: "Self-hosted - controle total dos dados" },
-                  { icon: Code, text: "Código aberto e 100% gratuito" },
-                  { icon: Workflow, text: "JavaScript customizado para lógicas complexas" }
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center space-x-4 p-3 rounded-xl hover:bg-slate-50 transition-colors duration-200">
+                {[{
+                icon: CheckCircle,
+                text: "Interface visual drag-and-drop intuitiva"
+              }, {
+                icon: Zap,
+                text: "350+ integrações nativas (Gmail, Slack, etc)"
+              }, {
+                icon: Database,
+                text: "Self-hosted - controle total dos dados"
+              }, {
+                icon: Code,
+                text: "Código aberto e 100% gratuito"
+              }, {
+                icon: Workflow,
+                text: "JavaScript customizado para lógicas complexas"
+              }].map((item, index) => <div key={index} className="flex items-center space-x-4 p-3 rounded-xl hover:bg-slate-50 transition-colors duration-200">
                     <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
                       <item.icon className="h-5 w-5 text-blue-600" />
                     </div>
                     <span className="text-slate-800 font-medium">{item.text}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
 
@@ -298,8 +287,7 @@ const AutomacaoN8n = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <Card key={index} className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 bg-white overflow-hidden group">
+            {benefits.map((benefit, index) => <Card key={index} className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 bg-white overflow-hidden group">
                 <CardHeader className="text-center pb-4">
                   <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl">
                     <benefit.icon className="h-10 w-10 text-white" />
@@ -313,8 +301,7 @@ const AutomacaoN8n = () => {
                     {benefit.description}
                   </CardDescription>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -371,8 +358,7 @@ const AutomacaoN8n = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {courseModules.map((module, index) => (
-              <Card key={index} className="border-0 shadow-xl hover:shadow-2xl transition-all duration-500 group bg-white overflow-hidden">
+            {courseModules.map((module, index) => <Card key={index} className="border-0 shadow-xl hover:shadow-2xl transition-all duration-500 group bg-white overflow-hidden">
                 <CardHeader className="pb-4">
                   <div className="flex items-start justify-between mb-6">
                     <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
@@ -402,122 +388,28 @@ const AutomacaoN8n = () => {
                     O que você vai dominar:
                   </h4>
                   <div className="grid grid-cols-1 gap-3">
-                    {module.topics.map((topic, topicIndex) => (
-                      <div key={topicIndex} className="flex items-center space-x-3 p-2 rounded-lg hover:bg-slate-50 transition-colors duration-200">
+                    {module.topics.map((topic, topicIndex) => <div key={topicIndex} className="flex items-center space-x-3 p-2 rounded-lg hover:bg-slate-50 transition-colors duration-200">
                         <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
                         <span className="text-sm text-slate-700 font-medium">{topic}</span>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
 
           <div className="text-center mt-16">
-            <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl p-8 max-w-2xl mx-auto mb-8 border border-green-200">
-              <div className="text-4xl font-bold text-green-600 mb-2">R$ 487</div>
-              <div className="text-slate-600 mb-4">ou 12x de R$ 40,58 sem juros</div>
-              <div className="flex justify-center space-x-6 text-sm text-slate-500">
-                <span>✅ Acesso Vitalício</span>
-                <span>✅ Certificado</span>
-                <span>✅ Garantia 30 dias</span>
-              </div>
-            </div>
+            
             
             <Button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold text-lg px-10 py-4 h-auto rounded-2xl shadow-xl hover:scale-105 transition-all duration-300" asChild>
-              <a 
-                href="https://pay.hotmart.com/J101368751T"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <CreditCard className="mr-3 h-6 w-6" />
-                Inscrever-se Agora
-              </a>
+              
             </Button>
-            <p className="text-sm text-slate-500 mt-4 font-medium">
-              🔒 Pagamento 100% seguro via Hotmart • Garantia de 30 dias
-            </p>
+            
           </div>
         </div>
       </section>
 
       {/* Exemplos Práticos Modernizados */}
-      <section className="py-24 px-4 lg:px-6 bg-gradient-to-br from-slate-900 to-blue-900 text-white">
-        <div className="container mx-auto">
-          <div className="text-center mb-20">
-            <Badge className="mb-4 px-3 py-1 bg-white/10 text-white border-white/20">
-              <Workflow className="w-4 h-4 mr-2" />
-              Casos Reais de Uso
-            </Badge>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              Automações Que Realmente Funcionam
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Exemplos práticos que você pode implementar hoje mesmo
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {examples.map((example, index) => (
-              <Card key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-500 overflow-hidden group">
-                <CardHeader className="pb-4">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <Zap className="h-6 w-6 text-white" />
-                    </div>
-                    <div className="text-right">
-                      <Badge className={`${getComplexityColor(example.complexity)} text-xs mb-2`}>
-                        {example.complexity}
-                      </Badge>
-                      <div className="text-xs text-slate-300 bg-white/10 px-2 py-1 rounded-full">
-                        {example.timeToImplement}
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <CardTitle className="text-xl font-bold text-white group-hover:text-blue-300 transition-colors mb-3">
-                    {example.title}
-                  </CardTitle>
-                  <CardDescription className="text-slate-300 leading-relaxed">
-                    {example.description}
-                  </CardDescription>
-                </CardHeader>
-                
-                <CardContent>
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="text-sm font-semibold text-slate-200 mb-3">🛠️ Ferramentas integradas:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {example.tools.map((tool, toolIndex) => (
-                          <span 
-                            key={toolIndex}
-                            className="px-3 py-1 bg-white/10 text-blue-200 text-sm rounded-full border border-blue-400/30"
-                          >
-                            {tool}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <h4 className="text-sm font-semibold text-slate-200 mb-3">✨ Benefícios principais:</h4>
-                      <div className="space-y-2">
-                        {example.benefits.map((benefit, benefitIndex) => (
-                          <div key={benefitIndex} className="flex items-center space-x-2">
-                            <CheckCircle className="h-4 w-4 text-green-400" />
-                            <span className="text-sm text-slate-300">{benefit}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* CTA Final Premium */}
       <section className="py-24 px-4 lg:px-6 bg-gradient-to-br from-green-600 via-emerald-600 to-teal-700 text-white relative overflow-hidden">
@@ -552,11 +444,7 @@ const AutomacaoN8n = () => {
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
               <Button className="bg-white text-slate-900 hover:bg-slate-100 font-bold text-xl px-12 py-5 h-auto rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300" asChild>
-                <a 
-                  href="https://pay.hotmart.com/J101368751T"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://pay.hotmart.com/J101368751T" target="_blank" rel="noopener noreferrer">
                   <CreditCard className="mr-3 h-7 w-7" />
                   Garantir Minha Vaga
                 </a>
@@ -587,8 +475,6 @@ const AutomacaoN8n = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default AutomacaoN8n;
