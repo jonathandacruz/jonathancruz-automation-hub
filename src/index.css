@@ -10,31 +10,26 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 255 255 255;              /* #FFFFFF - Branco puro */
-    --foreground: 15 23 42;                 /* #0F172A - Azul escuro para texto */
+    --background: 255 255 255;              /* Branco puro */
+    --foreground: 15 23 42;                 /* Texto escuro */
     
-    /* Paleta Azul + Laranja com Contraste Aprimorado */
-    --brand-primary: 29 78 216;             /* #1D4ED8 - Blue-700 mais escuro */
-    --brand-secondary: 30 58 138;           /* #1E3A8A - Blue-800 para secundário */
-    --brand-accent: 234 88 12;              /* #EA580C - Orange-600 mais escuro para CTAs */
-    --brand-muted: 248 250 252;             /* #F8FAFC - Fundo muito claro */
+    /* Cores principais em HSL correto */
+    --brand-primary: 214 100% 59%;          /* #2563EB - Blue-600 */
+    --brand-secondary: 220 13% 18%;         /* #334155 - Slate-700 */
+    --brand-accent: 24 95% 53%;             /* #EA580C - Orange-600 */
+    --brand-muted: 248 250 252;             /* #F8FAFC - Slate-50 */
     
-    /* Text colors com alto contraste */
-    --text-primary: 15 23 42;               /* #0F172A - Texto principal */
-    --text-secondary: 71 85 105;            /* #475569 - Texto secundário */
-    --text-muted: 100 116 139;              /* #64748B - Texto desbotado */
+    /* Gradientes corrigidos */
+    --gradient-primary: linear-gradient(135deg, hsl(214, 100%, 59%), hsl(220, 13%, 18%));
+    --gradient-hero: linear-gradient(135deg, hsl(214, 100%, 59%) 0%, hsl(214, 100%, 70%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(248, 250%, 252%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(24, 95%, 53%), hsl(20, 91%, 48%));
     
-    /* Gradientes otimizados */
-    --gradient-primary: linear-gradient(135deg, hsl(29 78% 216%), hsl(59 91% 25%));
-    --gradient-hero: linear-gradient(135deg, hsl(29 78% 70%) 0%, hsl(29 78% 65%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(255 255 255) 0%, hsl(248 250 252) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(234 88% 52%), hsl(194 100% 39%));
-    
-    /* Sombras com melhor definição */
-    --shadow-brand: 0 4px 20px -2px hsl(29 78% 216% / 0.2);
-    --shadow-elegant: 0 20px 40px -5px hsl(29 78% 216% / 0.3);
-    --shadow-glow: 0 0 60px hsl(29 78% 216% / 0.5);
-    --shadow-orange: 0 10px 30px -5px hsl(234 88% 52% / 0.4);
+    /* Sombras */
+    --shadow-brand: 0 4px 20px -2px hsl(214, 100%, 59%, 0.15);
+    --shadow-elegant: 0 20px 40px -5px hsl(214, 100%, 59%, 0.25);
+    --shadow-glow: 0 0 60px hsl(214, 100%, 59%, 0.4);
+    --shadow-orange: 0 10px 30px -5px hsl(24, 95%, 53%, 0.3);
     
     /* Animações */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -46,27 +41,27 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 29 78 216;                   /* Blue-700 para contraste */
-    --primary-foreground: 255 255 255;     /* Branco puro */
+    --primary: 214 100% 59%;                /* Blue-600 */
+    --primary-foreground: 255 255 255;
 
-    --secondary: 248 250 252;               /* Fundo claro */
-    --secondary-foreground: 15 23 42;       /* Texto escuro */
+    --secondary: 248 250 252;               /* Slate-50 */
+    --secondary-foreground: 15 23 42;
 
-    --muted: 248 250 252;                   /* Fundo claro */
-    --muted-foreground: 71 85 105;          /* Texto secundário com bom contraste */
+    --muted: 248 250 252;                   /* Slate-50 */
+    --muted-foreground: 71 85 105;          /* Slate-600 */
 
-    --accent: 234 88 12;                    /* Orange-600 para CTAs */
-    --accent-foreground: 255 255 255;       /* Branco puro */
+    --accent: 24 95% 53%;                   /* Orange-600 */
+    --accent-foreground: 255 255 255;
 
-    --destructive: 220 38 38;               /* Red-600 */
+    --destructive: 0 84% 60%;
     --destructive-foreground: 255 255 255;
 
-    --border: 226 232 240;                  /* Bordas suaves mas visíveis */
+    --border: 226 232 240;                  /* Slate-200 */
     --input: 226 232 240;
-    --ring: 29 78 216;                      /* Blue-700 para foco */
+    --ring: 214 100% 59%;
 
-    --card: 255 255 255;                    /* Cards brancos */
-    --card-foreground: 15 23 42;            /* Texto escuro em cards */
+    --card: 255 255 255;
+    --card-foreground: 15 23 42;
 
     --radius: 0.5rem;
 
