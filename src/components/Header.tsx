@@ -18,7 +18,7 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-lg border-b border-border shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-lg border-b border-slate-700 shadow-sm">
       <nav className="container mx-auto px-4 lg:px-6 h-20 flex items-center justify-between">
         {/* Logo Modernizado */}
         <Link to="/" className="flex items-center space-x-3 group">
@@ -26,8 +26,8 @@ const Header = () => {
             <Zap className="h-6 w-6 text-white" />
           </div>
           <div className="hidden sm:block">
-            <span className="text-2xl font-bold text-foreground">Jonathan</span>
-            <div className="text-sm text-muted-foreground font-medium -mt-1">Automação & Desenvolvimento</div>
+            <span className="text-2xl font-bold text-white">Jonathan</span>
+            <div className="text-sm text-slate-300 font-medium -mt-1">Automação & Desenvolvimento</div>
           </div>
         </Link>
 
@@ -39,13 +39,13 @@ const Header = () => {
               to={item.href}
               className={`px-5 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 relative overflow-hidden group ${
                 isActive(item.href)
-                  ? "text-primary bg-primary/10 shadow-lg"
-                  : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                  ? "text-blue-400 bg-blue-500/20 shadow-lg"
+                  : "text-slate-300 hover:text-white hover:bg-slate-800/50"
               }`}
             >
               <span className="relative z-10">{item.name}</span>
               {!isActive(item.href) && (
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               )}
             </Link>
           ))}
@@ -73,7 +73,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-background/98 backdrop-blur-lg border-b border-border shadow-lg animate-fade-in">
+        <div className="lg:hidden bg-slate-900/98 backdrop-blur-lg border-b border-slate-700 shadow-lg animate-fade-in">
           <div className="container mx-auto px-4 py-6 space-y-4">
             {navigation.map((item) => (
               <Link
@@ -81,8 +81,8 @@ const Header = () => {
                 to={item.href}
                 className={`block px-4 py-3 rounded-xl text-base font-semibold transition-all duration-200 ${
                   isActive(item.href)
-                    ? "text-brand-primary bg-blue-50"
-                    : "text-slate-700 hover:text-slate-900 hover:bg-slate-100"
+                    ? "text-blue-400 bg-blue-500/20"
+                    : "text-slate-300 hover:text-white hover:bg-slate-800/50"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
