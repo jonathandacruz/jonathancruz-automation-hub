@@ -201,9 +201,8 @@ const Home = () => {
               Pronto para <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">automatizar</span> seus processos?
             </h2>
             <p className="text-xl lg:text-2xl text-slate-300 mb-12 leading-relaxed">
-              Transforme sua empresa com automação inteligente.
-              <span className="font-semibold text-white"> Consultoria facilitada</span> de 30 minutos
-              para descobrir seu potencial de automação.
+              Transforme sua empresa com <span className="font-semibold text-white">automação inteligente</span>.
+              Nossa consultoria revela oportunidades para reduzir custos, otimizar processos e aumentar seus resultados.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
