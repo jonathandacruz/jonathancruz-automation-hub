@@ -203,7 +203,7 @@ const Templates = () => {
           </div>
 
           {/* Templates Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
             {filteredTemplates.map((template, index) => (
               <article key={template.id} className="group border-slate-200 hover:border-blue-300 bg-white hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.01] overflow-hidden rounded-xl border-2">
                 {/* Card Header */}
