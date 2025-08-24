@@ -261,30 +261,41 @@ const Templates = () => {
                     </div>
                   </div>
 
-                  {/* Price and CTA */}
-                  <div className="flex justify-between items-center pt-4 border-t border-slate-200">
-                    <div className="space-y-1">
-                      <div className="text-3xl font-bold text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">
-                        R$ {template.price}
-                      </div>
-                      <div className="text-xs text-slate-500 uppercase tracking-wider">
-                        Preço único
+                  {/* Modern Pricing Section */}
+                  <div className="space-y-6 pt-6 border-t border-slate-200/80">
+                    {/* Price Card */}
+                    <div className="bg-gradient-to-br from-slate-50 to-blue-50/50 rounded-2xl p-6 border border-slate-200/60">
+                      <div className="text-center space-y-3">
+                        <div className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text">
+                          R$ {template.price}
+                        </div>
+                        <div className="flex items-center justify-center gap-2">
+                          <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200 font-medium px-3 py-1">
+                            <CheckCircle className="h-3 w-3 mr-1" />
+                            Preço único
+                          </Badge>
+                        </div>
+                        <p className="text-sm text-slate-600 leading-relaxed">
+                          Acesso completo + documentação + suporte
+                        </p>
                       </div>
                     </div>
-                    <div className="flex gap-3">
+
+                    {/* Action Buttons */}
+                    <div className="flex flex-col sm:flex-row gap-3">
                       <Button 
                         variant="outline" 
-                        className="px-6 py-2 rounded-xl border-blue-200 text-blue-700 hover:bg-blue-700 hover:text-white hover:border-blue-700 transition-all duration-300 button-glow"
+                        className="flex-1 sm:flex-none px-6 py-3 rounded-xl border-slate-300 text-slate-700 hover:bg-slate-700 hover:text-white hover:border-slate-700 transition-all duration-300 button-glow"
                         onClick={() => navigate(`/templates/${template.slug}`)}
                       >
                         <Eye className="h-4 w-4 mr-2" />
-                        Ver Mais
+                        Detalhes
                       </Button>
                       
-                      <Button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-800 hover:to-purple-800 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 button-gradient-shift" asChild>
+                      <Button className="flex-1 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 button-gradient-shift" asChild>
                         <a href={template.buyLink} target="_blank" rel="noopener noreferrer">
                           <ShoppingCart className="h-4 w-4 mr-2" />
-                          Comprar
+                          Comprar Agora
                         </a>
                       </Button>
                     </div>
