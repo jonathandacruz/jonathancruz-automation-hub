@@ -199,7 +199,7 @@ const Conteudo = () => {
               </a>
             </Button>
             <Button variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20" asChild>
-              <a href="mailto:contato@jonathancruz.dev">
+              <a href="mailto:contato@jonathandacruz.com.br">
                 Sugerir Tópico
                 <ExternalLink className="ml-2 h-5 w-5" />
               </a>

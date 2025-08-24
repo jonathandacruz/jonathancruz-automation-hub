@@ -14,10 +14,10 @@ const Home = () => {
         <div className="absolute top-1/4 right-1/3 w-96 h-96 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-pulse"></div>
         <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-gradient-to-tr from-accent/25 to-primary/15 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-pulse animation-delay-1000"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-radial from-transparent via-primary/[0.02] to-transparent"></div>
-        
+
         <div className="container mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center min-h-[750px]">
-            
+
             {/* Left Content */}
             <div className="space-y-10 animate-fade-in">
               <div className="space-y-6">
@@ -25,7 +25,7 @@ const Home = () => {
                   <Zap className="w-4 h-4" />
                   <span>Especialista em Automação n8n</span>
                 </div>
-                
+
                 <h1 className="text-5xl lg:text-7xl font-bold leading-tight text-slate-900">
                   Transforme Seus{" "}
                   <span className="bg-gradient-primary bg-clip-text text-transparent">
@@ -33,28 +33,28 @@ const Home = () => {
                   </span>{" "}
                   Com Automação
                 </h1>
-                
+
                 <p className="text-xl lg:text-2xl text-slate-600 max-w-2xl leading-relaxed">
-                  Automatize tarefas repetitivas, conecte sistemas e 
-                  <span className="font-semibold text-slate-800"> economize até 80% do tempo</span> da sua equipe 
+                  Automatize tarefas repetitivas, conecte sistemas e
+                  <span className="font-semibold text-slate-800"> economize até 80% do tempo</span> da sua equipe
                   com soluções n8n personalizadas.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contato">
-                  <Button className="bg-orange-600 hover:bg-orange-700 text-white font-bold text-lg px-8 py-4 h-auto rounded-xl shadow-lg hover:scale-105 transition-all duration-300">
+                  <Button className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg px-8 py-4 h-auto rounded-xl shadow-lg hover:scale-105 transition-all duration-300">
                     <Zap className="mr-2 h-5 w-5" />
                     Solicitar Consultoria
                   </Button>
                 </Link>
-                
-                <Button 
-                  size="lg" 
-                  asChild 
-                  className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 px-8 py-4 h-auto rounded-xl relative overflow-hidden group w-full sm:w-auto"
+
+                <Button
+                  size="lg"
+                  asChild
+                  className="bg-gradient-to-r from-red-500 to-white-600 hover:from-red-600 hover:to-red-700 text-white font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 px-8 py-4 h-auto rounded-xl relative overflow-hidden group w-full sm:w-auto"
                 >
-                  <a 
+                  <a
                     href="https://www.youtube.com/channel/UC3M_z-XMGTFMBbCjVLPKkUA"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -89,7 +89,7 @@ const Home = () => {
                 <div className="absolute inset-0 bg-gradient-primary rounded-3xl transform rotate-3 opacity-10 scale-105"></div>
                 <div className="absolute inset-0 bg-gradient-cta rounded-3xl transform -rotate-2 opacity-5 scale-110"></div>
                 <div className="relative">
-                  <img 
+                  <img
                     src={heroImage}
                     alt="Jonathan da Cruz - Especialista em Automação n8n"
                     className="w-full h-auto rounded-3xl shadow-2xl border-4 border-white"
@@ -123,7 +123,7 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
+
             {/* Automação n8n */}
             <div className="group bg-white rounded-3xl p-8 shadow-brand hover:shadow-elegant transition-all duration-500 hover:transform hover:scale-105 border border-slate-100">
               <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg">
@@ -133,8 +133,8 @@ const Home = () => {
               <p className="text-slate-600 mb-6 text-lg leading-relaxed">
                 Workflows automatizados para eliminar tarefas repetitivas e conectar todos os seus sistemas de forma inteligente.
               </p>
-              <Link 
-                to="/automacao-n8n" 
+              <Link
+                to="/automacao-n8n"
                 className="inline-flex items-center text-brand-primary font-semibold hover:text-blue-700 transition-colors duration-200 story-link"
               >
                 Saiba mais <ArrowRight className="ml-2 h-5 w-5" />
@@ -150,8 +150,8 @@ const Home = () => {
               <p className="text-slate-600 mb-6 text-lg leading-relaxed">
                 Desenvolvimento de conexões únicas entre sistemas, APIs e plataformas para criar soluções sob medida.
               </p>
-              <Link 
-                to="/templates" 
+              <Link
+                to="/templates"
                 className="inline-flex items-center text-brand-primary font-semibold hover:text-blue-700 transition-colors duration-200 story-link"
               >
                 Ver templates <ArrowRight className="ml-2 h-5 w-5" />
@@ -167,93 +167,30 @@ const Home = () => {
               <p className="text-slate-600 mb-6 text-lg leading-relaxed">
                 Análise completa de processos e estratégia de automação personalizada para maximizar seus resultados.
               </p>
-              <Link 
-                to="/contato" 
+              <Link
+                to="/contato"
                 className="inline-flex items-center text-brand-primary font-semibold hover:text-blue-700 transition-colors duration-200 story-link"
               >
                 Solicitar análise <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
+
             </div>
+
           </div>
         </div>
       </section>
+      <div className="text-center mb-20">
+        <Button className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg px-8 py-6 h-auto rounded-xl shadow-lg hover:scale-105 transition-all duration-300" asChild>
+          <Link to="/templates">
+            Ver Todos os Templates
+            <ArrowRight className="ml-2 h-6 w-6" />
+          </Link>
+        </Button>
+      </div>
+
 
       {/* Templates Preview Modernizado */}
-      <section className="py-24 bg-gradient-to-br from-slate-50 to-blue-50/30">
-        <div className="container mx-auto px-4 lg:px-6">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-slate-900">
-              Templates Prontos para Usar
-            </h2>
-            <p className="text-xl lg:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Acelere sua implementação com automações testadas e documentadas
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            
-            {/* Template 1 */}
-            <div className="group bg-white rounded-3xl overflow-hidden shadow-brand hover:shadow-elegant transition-all duration-500 hover:transform hover:scale-105">
-              <div className="w-full h-56 bg-gradient-primary flex items-center justify-center relative overflow-hidden">
-                <Code className="h-20 w-20 text-white group-hover:scale-110 transition-transform duration-300" />
-                <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm font-semibold">
-                  Gratuito
-                </div>
-              </div>
-              <div className="p-8">
-                <h3 className="text-xl font-bold mb-3 text-slate-900">Automação de E-mails</h3>
-                <p className="text-slate-600 mb-4 leading-relaxed">
-                  Sistema completo para envio automatizado de e-mails personalizados com gatilhos inteligentes.
-                </p>
-                <div className="text-brand-primary font-semibold">Download Gratuito</div>
-              </div>
-            </div>
-
-            {/* Template 2 */}
-            <div className="group bg-white rounded-3xl overflow-hidden shadow-brand hover:shadow-elegant transition-all duration-500 hover:transform hover:scale-105">
-              <div className="w-full h-56 bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center relative overflow-hidden">
-                <Database className="h-20 w-20 text-white group-hover:scale-110 transition-transform duration-300" />
-                <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm font-semibold">
-                  Premium
-                </div>
-              </div>
-              <div className="p-8">
-                <h3 className="text-xl font-bold mb-3 text-slate-900">Sincronização de Dados</h3>
-                <p className="text-slate-600 mb-4 leading-relaxed">
-                  Integração bidirecional entre sistemas com sincronização em tempo real e backup automático.
-                </p>
-                <div className="text-brand-primary font-semibold">R$ 97</div>
-              </div>
-            </div>
-
-            {/* Template 3 */}
-            <div className="group bg-white rounded-3xl overflow-hidden shadow-brand hover:shadow-elegant transition-all duration-500 hover:transform hover:scale-105">
-              <div className="w-full h-56 bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center relative overflow-hidden">
-                <Zap className="h-20 w-20 text-white group-hover:scale-110 transition-transform duration-300" />
-                <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm font-semibold">
-                  Premium
-                </div>
-              </div>
-              <div className="p-8">
-                <h3 className="text-xl font-bold mb-3 text-slate-900">Relatórios Automatizados</h3>
-                <p className="text-slate-600 mb-4 leading-relaxed">
-                  Geração e envio automático de relatórios personalizados com dados em tempo real.
-                </p>
-                <div className="text-brand-primary font-semibold">R$ 197</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg px-8 py-4 h-auto rounded-xl shadow-lg hover:scale-105 transition-all duration-300" asChild>
-              <Link to="/templates">
-                Ver Todos os Templates
-                <ArrowRight className="ml-2 h-6 w-6" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Final Modernizada */}
       <section className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
@@ -264,31 +201,36 @@ const Home = () => {
               Pronto para <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">automatizar</span> seus processos?
             </h2>
             <p className="text-xl lg:text-2xl text-slate-300 mb-12 leading-relaxed">
-              Transforme sua empresa com automação inteligente. 
-              <span className="font-semibold text-white"> Consultoria gratuita</span> de 30 minutos 
+              Transforme sua empresa com automação inteligente.
+              <span className="font-semibold text-white"> Consultoria facilitada</span> de 30 minutos
               para descobrir seu potencial de automação.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
               <Link to="/contato">
                 <Button className="bg-orange-600 hover:bg-orange-700 text-white font-bold text-lg px-8 py-4 h-auto rounded-xl shadow-lg hover:scale-105 transition-all duration-300">
                   <Zap className="mr-3 h-6 w-6" />
-                  Solicitar Consultoria Gratuita
+                  Solicitar Consultoria
                 </Button>
               </Link>
-              
-              <Button variant="outline" className="border-2 border-white/30 text-white hover:bg-white/10 font-semibold px-8 py-4 h-auto rounded-xl" asChild>
-                <a 
+
+              <Button
+                size="lg"
+                asChild
+                className="bg-gradient-to-r from-red-500 to-white-600 hover:from-red-600 hover:to-red-700 text-white font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 px-8 py-4 h-auto rounded-xl relative overflow-hidden group w-full sm:w-auto"
+              >
+                <a
                   href="https://www.youtube.com/channel/UC3M_z-XMGTFMBbCjVLPKkUA"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="flex items-center justify-center relative z-10"
                 >
-                  <Youtube className="mr-2 h-5 w-5" />
-                  Ver Tutoriais
+                  <Youtube className="mr-3 h-5 w-5" />
+                  <span>Assista no YouTube</span>
                 </a>
               </Button>
             </div>
-            
+
             <div className="flex justify-center items-center space-x-8 text-slate-400 text-sm">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>

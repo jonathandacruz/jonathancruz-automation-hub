@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Download, ShoppingCart, Clock, CheckCircle, Star, Play, ArrowLeft, Zap, Users, Code } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
+import { link } from "fs";
 
 const TemplateDetail = () => {
   const { templateSlug } = useParams();
@@ -14,83 +15,76 @@ const TemplateDetail = () => {
     {
       id: 1,
       slug: "n8n-template-instagram",
-      title: "n8n - Post Viral no Instagram",
+      title: "Post Viral no Instagram",
       description: "Automatize a criação e publicação de posts virais no Instagram. Inclui análise de tendências, geração de conteúdo e agendamento automático.",
       category: "Social Media",
       difficulty: "Intermediário",
-      downloads: 2150,
+      downloads: 15,
       rating: 4.9,
       tags: ["Instagram", "API", "IA", "Viral"],
       featured: true,
       price: 37,
+      link: "https://pay.hotmart.com/C101345009B",
       estimatedTime: "2-3 horas",
       complexity: "medium",
-      youtubeId: "dQw4w9WgXcQ", // Exemplo - substitua pelo ID real do vídeo
+      youtubeId: "BRSAI3GOhWc", 
       features: [
         "Análise automática de tendências do Instagram",
-        "Geração de conteúdo com IA integrada",
-        "Agendamento inteligente de posts",
-        "Hashtags automáticas otimizadas",
-        "Métricas de engagement em tempo real",
-        "Integração com Stories e Reels"
+        "Geração de conteúdo com IA integrada", 
+        "Hashtags automáticas otimizadas", 
       ],
       requirements: [
         "n8n instalado (versão 1.0+)",
         "Conta Instagram Business",
         "API do Instagram Graph",
-        "Chave API do OpenAI (opcional)"
+        "Chave API do OpenAI"
       ]
     },
     {
       id: 2,
       slug: "n8n-robo-lotofacil",
-      title: "N8n - Robô da Lotofácil",
-      description: "Sistema inteligente que analisa padrões da Lotofácil e sugere números baseado em estatísticas históricas e algoritmos preditivos.",
+      title: "Robô da Lotofácil",
+      description: "Faz a conferência das apostas por jogador e envia notificação via Whatsapp com a quantidade de acertos",
       category: "Automação",
       difficulty: "Avançado",
-      downloads: 1890,
+      downloads: 36,
       rating: 4.8,
-      tags: ["Lotofácil", "Análise", "Estatística", "Bot"],
+      tags: ["Banco de dados", "Whatsapp", "API", "Bot"],
       featured: true,
-      price: 37,
+      price: 9.90,
+      link: "https://pay.hotmart.com/V101159263W",
       estimatedTime: "4-5 horas",
-      complexity: "high",
-      youtubeId: "dQw4w9WgXcQ",
+      complexity: "medium",
+      youtubeId: "ZWhc3MCFoAg",
       features: [
-        "Análise estatística avançada dos resultados",
-        "Algoritmos preditivos baseados em padrões históricos",
-        "Interface intuitiva para configuração",
-        "Relatórios detalhados de probabilidades",
-        "Notificações automáticas de resultados",
-        "Backup automático dos dados"
+        "Análise estatística avançada dos resultados", 
+        "Bot no Whatsapp, intuitiva para configuração",
+        "Notificações automáticas de resultados", 
       ],
       requirements: [
-        "n8n instalado (versão 1.0+)",
-        "Base de dados histórica da Lotofácil",
-        "Python 3.8+ (para análises)",
-        "Servidor web (opcional)"
+        "n8n instalado",
+        "RapidAPI API Key", 
+        "PostgreSQL"
       ]
     },
     {
       id: 3,
       slug: "n8n-template-stories",
-      title: "n8n - Template para Stories do Instagram",
-      description: "Crie e publique stories automáticos no Instagram com templates personalizáveis, músicas e efeitos visuais incríveis.",
+      title: "Template para Stories do Instagram",
+      description: "Crie e publique stories automáticos no Instagram com templates personalizáveis.",
       category: "Social Media",
       difficulty: "Iniciante",
-      downloads: 3250,
+      downloads: 25,
       rating: 4.9,
       tags: ["Stories", "Instagram", "Templates", "Automação"],
       featured: true,
+      link: "https://pay.hotmart.com/H101450514K",
       price: 37,
       estimatedTime: "1-2 horas",
       complexity: "low",
-      youtubeId: "dQw4w9WgXcQ",
+      youtubeId: "gLTWIXa33WE",
       features: [
         "Templates pré-configurados para stories",
-        "Biblioteca de músicas royalty-free",
-        "Efeitos visuais automáticos",
-        "Agendamento de stories",
         "Personalização de cores e fontes",
         "Integração com banco de imagens"
       ],
@@ -98,37 +92,36 @@ const TemplateDetail = () => {
         "n8n instalado (versão 1.0+)",
         "Conta Instagram Business",
         "API do Instagram Graph",
-        "Canva Pro (opcional)"
+        "Chave de API Replicate"
       ]
     },
     {
       id: 4,
       slug: "n8n-agente-ia-restaurante",
-      title: "n8n - Agente de IA para Restaurantes",
+      title: "Agente de IA para Restaurantes",
       description: "Assistente virtual inteligente para restaurantes que gerencia pedidos, reservas, cardápio e atendimento ao cliente automaticamente.",
       category: "IA",
       difficulty: "Avançado",
-      downloads: 1120,
+      downloads: 350,
       rating: 4.7,
       tags: ["IA", "Restaurante", "Atendimento", "Pedidos"],
       featured: true,
+      link: "https://pay.hotmart.com/G100538074I",
       price: 37,
       estimatedTime: "3-4 horas",
       complexity: "high",
-      youtubeId: "dQw4w9WgXcQ",
+      youtubeId: "j-OMUYNyG-I",
       features: [
         "Chatbot inteligente para WhatsApp",
         "Gestão automática de pedidos",
-        "Sistema de reservas integrado",
-        "Cardápio digital interativo",
-        "Processamento de pagamentos",
-        "Relatórios de vendas em tempo real"
+        "Gerador de PIX integrado",
+        "Cardápio digital interativo",  
       ],
       requirements: [
         "n8n instalado (versão 1.0+)",
-        "WhatsApp Business API",
+        "Evolution API",
         "OpenAI API Key",
-        "Sistema de pagamento (Stripe/PagSeguro)"
+        "Sistema de pagamento (Asaas)"
       ]
     }
   ];
@@ -381,14 +374,17 @@ const TemplateDetail = () => {
                       <div className="text-sm text-slate-500 uppercase tracking-wider">
                         Pagamento único
                       </div>
-                      
+                      <a href={template.link} target="_blank">
                       <Button 
                         size="lg" 
                         className="w-full py-4 text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl button-gradient-shift"
                       >
+                        
                         <Download className="h-5 w-5 mr-2" />
                         Download Template
+                       
                       </Button>
+                       </a>
                     </div>
                   </CardHeader>
 

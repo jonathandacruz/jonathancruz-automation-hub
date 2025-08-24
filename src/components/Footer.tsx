@@ -75,7 +75,7 @@ const Footer = () => {
               </a>
               
               <a 
-                href="https://linkedin.com/in/jonathancruz" 
+                href="https://linkedin.com/in/jonathan-dacruz" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center space-x-3 text-slate-300 hover:text-white transition-colors duration-200 group"
@@ -87,7 +87,7 @@ const Footer = () => {
               </a>
               
               <a 
-                href="https://instagram.com/jonathancruz.dev" 
+                href="https://instagram.com/jonathan_dacruz" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center space-x-3 text-slate-300 hover:text-white transition-colors duration-200 group"

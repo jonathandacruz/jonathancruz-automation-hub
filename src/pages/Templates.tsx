@@ -65,30 +65,30 @@ const Templates = () => {
       description: "Automatize a criação e publicação de posts virais no Instagram. Inclui análise de tendências, geração de conteúdo e agendamento automático.",
       category: "Social Media",
       difficulty: "Intermediário",
-      downloads: 2150,
+      downloads: 15,
       rating: 4.9,
       tags: ["Instagram", "API", "IA", "Viral"],
       featured: true,
       price: 37,
       estimatedTime: "2-3 horas",
       complexity: "medium",
-      buyLink: "https://pay.hotmart.com/J101368751T"
+      buyLink: "https://pay.hotmart.com/C101345009B"
     },
     {
       id: 2,
       slug: "n8n-robo-lotofacil",
-      title: "N8n - Robô da Lotofácil",
+      title: "n8n - Robô da Lotofácil",
       description: "Sistema inteligente que analisa padrões da Lotofácil e sugere números baseado em estatísticas históricas e algoritmos preditivos.",
       category: "Automação",
       difficulty: "Avançado",
-      downloads: 1890,
+      downloads: 36,
       rating: 4.8,
       tags: ["Lotofácil", "Análise", "Estatística", "Bot"],
       featured: true,
       price: 9.99,
       estimatedTime: "4-5 horas",
       complexity: "high",
-      buyLink: "https://pay.hotmart.com/K102456789R"
+      buyLink: "https://pay.hotmart.com/V101159263W"
     },
     {
       id: 3,
@@ -97,14 +97,14 @@ const Templates = () => {
       description: "Crie e publique stories automáticos no Instagram com templates personalizáveis, músicas e efeitos visuais incríveis.",
       category: "Social Media",
       difficulty: "Iniciante",
-      downloads: 3250,
+      downloads: 25,
       rating: 4.9,
       tags: ["Stories", "Instagram", "Templates", "Automação"],
       featured: true,
       price: 37,
       estimatedTime: "1-2 horas",
       complexity: "low",
-      buyLink: "https://pay.hotmart.com/S103789456T"
+      buyLink: "https://pay.hotmart.com/H101450514K"
     },
     {
       id: 4,
@@ -113,14 +113,14 @@ const Templates = () => {
       description: "Assistente virtual inteligente para restaurantes que gerencia pedidos, reservas, cardápio e atendimento ao cliente automaticamente.",
       category: "IA",
       difficulty: "Avançado",
-      downloads: 1120,
+      downloads: 350,
       rating: 4.7,
       tags: ["IA", "Restaurante", "Atendimento", "Pedidos"],
       featured: true,
       price: 37,
       estimatedTime: "3-4 horas",
       complexity: "high",
-      buyLink: "https://pay.hotmart.com/I104567890A"
+      buyLink: "https://pay.hotmart.com/G100538074I"
     }
   ];
 
@@ -174,12 +174,7 @@ const Templates = () => {
             Templates testados, documentados e otimizados para máximo desempenho.
           </p>
           
-          <div className="flex justify-center">
-            <Button size="lg" className="px-10 py-4 text-lg font-semibold rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl button-glow">
-              <ShoppingCart className="mr-3 h-5 w-5" />
-              Ver Templates
-            </Button>
-          </div>
+          
         </div>
       </header>
 
@@ -187,14 +182,6 @@ const Templates = () => {
       <main className="py-20 px-4 lg:px-6 bg-white">
         <div className="container mx-auto max-w-7xl">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-slate-900">
-              Templates Disponíveis
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Automações profissionais para Instagram, Lotofácil, Stories e IA para restaurantes
-            </p>
-          </div>
 
           {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-3 mb-16">
@@ -361,7 +348,7 @@ const Templates = () => {
           </h2>
           
           <p className="text-xl lg:text-2xl text-slate-300 mb-12 leading-relaxed">
-            Transforme sua produtividade com automações profissionais. Cada template inclui documentação completa e suporte personalizado.
+            Transforme sua produtividade com automações profissionais. Todos os templates são disponibilizados de forma gratuita na comunidade n8n.
           </p>
           
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
@@ -382,11 +369,17 @@ const Templates = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold px-10 py-4 rounded-xl shadow-2xl button-pulse">
               <ShoppingCart className="mr-3 h-5 w-5" />
-              Comprar Templates
+              <a href="/automacao-n8n" target="_blank" rel="noopener noreferrer">
+                         
+                          Comunidade n8n
+                        </a>
             </Button>
-            <Button variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20 font-semibold px-10 py-4 rounded-xl backdrop-blur-sm button-magnetic">
+            <Button  variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20 font-semibold px-10 py-4 rounded-xl backdrop-blur-sm button-magnetic">
               <Zap className="mr-3 h-5 w-5" />
-              Fale Comigo
+              <a href="/contato" target="_blank" rel="noopener noreferrer">
+                         
+                          Fale Comigo
+                        </a>
             </Button>
           </div>
         </div>
