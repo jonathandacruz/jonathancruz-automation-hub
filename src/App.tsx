@@ -26,13 +26,13 @@ const App = () => (
           <Header />
           <main className="flex-1">
             <Routes>
-              <Route path="/jonathancruz-automation-hub/" element={<Home />} />
-              <Route path="/jonathancruz-automation-hub/sobre" element={<Sobre />} />
-              <Route path="/jonathancruz-automation-hub/conteudo" element={<Conteudo />} />
-              <Route path="/jonathancruz-automation-hub/automacao-n8n" element={<AutomacaoN8n />} />
-              <Route path="/jonathancruz-automation-hub/templates" element={<Templates />} />
-              <Route path="/jonathancruz-automation-hub/templates/:templateSlug" element={<TemplateDetail />} />
-              <Route path="/jonathancruz-automation-hub/contato" element={<Contato />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/sobre" element={<Sobre />} />
+              <Route path="/conteudo" element={<Conteudo />} />
+              <Route path="/automacao-n8n" element={<AutomacaoN8n />} />
+              <Route path="/templates" element={<Templates />} />
+              <Route path="/templates/:templateSlug" element={<TemplateDetail />} />
+              <Route path="/contato" element={<Contato />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
