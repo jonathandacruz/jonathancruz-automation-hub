@@ -121,6 +121,22 @@ const Templates = () => {
       estimatedTime: "3-4 horas",
       complexity: "high",
       buyLink: "https://pay.hotmart.com/G100538074I"
+    },
+    {
+      id: 5,
+      slug: "n8n-gestao-cobrancas",
+      title: "Implatação do módulo de gestão de cobranças",
+      description: "Irei te auxiliar com a instalação do servidor e customização do espoCRM",
+      category: "IA",
+      difficulty: "Avançado",
+      downloads: 10,
+      rating: 4.9,
+      tags: ["IA", "CRM", "n8n", "espoCRM"],
+      featured: true,
+      price: 149,
+      estimatedTime: "1 hora",
+      complexity: "high",
+      buyLink: "https://pay.hotmart.com/C101862756X"
     }
   ];
 

@@ -123,7 +123,34 @@ const TemplateDetail = () => {
         "OpenAI API Key",
         "Sistema de pagamento (Asaas)"
       ]
-    }
+    },
+    {
+      id: 5,
+      slug: "n8n-gestao-cobrancas",
+      title: "Implatação do módulo de gestão de cobranças",
+      description: "Irei te auxiliar com a instalação do servidor e customização do espoCRM",
+      category: "Automação",
+      difficulty: "Avançado",
+      downloads: 10,
+      rating: 4.8,
+      tags: ["Banco de dados", "Whatsapp", "API", "Bot"],
+      featured: true,
+      price: 149,
+      link: "https://pay.hotmart.com/C101862756X",
+      estimatedTime: "1 hora",
+      complexity: "medium",
+      youtubeId: "aKYfK7QHzQk",
+      features: [
+        "Cadastro de fornecedores e faturas", 
+        "Implantação do espoCRM",
+        "Consultoria exclusiva comigo para instalação", 
+      ],
+      requirements: [
+        "n8n instalado",
+        "espoCRM API Key", 
+        "Evolution API"
+      ]
+    },
   ];
 
   useEffect(() => {
