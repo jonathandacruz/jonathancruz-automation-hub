@@ -1,12 +1,82 @@
 import { Button } from "@/components/ui/button";
-import { Youtube, BookOpen, ArrowRight, Code, Database, Zap } from "lucide-react";
+import Seo from "@/components/Seo";
+import { Youtube, BookOpen, ArrowRight, Code, Database, Zap, CheckCircle, Star, Shield, Users, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const heroImage = "/lovable-uploads/e020e825-ba4b-4684-b062-79a26a4e1e23.png";
+const heroImage = "/lovable-uploads/logo-compiled.png";
 
 const Home = () => {
   return (
     <div className="min-h-screen bg-white">
+      <Seo
+        title="Automação n8n e Consultoria | Jonathan da Cruz"
+        description="Especialista em automação com n8n. Conecte sistemas, elimine tarefas repetitivas e aumente produtividade com consultoria e templates prontos."
+        keywords={[
+          "n8n",
+          "automação",
+          "automação de processos",
+          "automação n8n",
+          "integração de sistemas",
+          "workflows automatizados",
+          "automação empresarial",
+          "consultoria n8n",
+          "templates n8n",
+          "templates n8n gratuitos",
+          "integração APIs",
+          "integração com CRM",
+          "webhooks",
+          "api rest",
+          "automação no-code",
+          "open source automação",
+          "self-hosted automação",
+          "zapier alternativo",
+          "fluxos de trabalho",
+          "automação de marketing",
+          "automação de dados",
+          "comunidade n8n",
+          "suporte n8n",
+          "curso n8n",
+          "estudos n8n",
+          "canal n8n no youtube"
+        ]}
+        og={{
+          title: "Automação n8n e Consultoria | Jonathan da Cruz",
+          description: "Conecte sistemas e automatize processos com n8n. Consultoria e templates para acelerar resultados.",
+          image: "/lovable-uploads/logo-site.png",
+          type: "website",
+          siteName: "Jonathan da Cruz",
+          locale: "pt_BR",
+        }}
+        twitter={{
+          card: "summary_large_image",
+          title: "Automação n8n e Consultoria | Jonathan da Cruz",
+          description: "Automatize tarefas e aumente produtividade com n8n.",
+          image: "/lovable-uploads/logo-site.png",
+        }}
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "Jonathan da Cruz",
+            url: typeof window !== 'undefined' ? window.location.origin : undefined,
+            potentialAction: {
+              "@type": "SearchAction",
+              target: typeof window !== 'undefined' ? `${window.location.origin}/templates?q={search_term_string}` : undefined,
+              "query-input": "required name=search_term_string",
+            },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Jonathan da Cruz Automation Hub",
+            url: typeof window !== 'undefined' ? window.location.origin : undefined,
+            logo: typeof window !== 'undefined' ? `${window.location.origin}/lovable-uploads/logo-site.png` : undefined,
+            sameAs: [
+              "https://www.youtube.com/channel/UC3M_z-XMGTFMBbCjVLPKkUA"
+            ]
+          }
+        ]}
+      />
       {/* Hero Section Ultra Moderno */}
       <section className="pt-32 pb-24 px-4 lg:px-6 bg-gradient-to-br from-background via-muted/30 to-primary/5 relative overflow-hidden">
         {/* Background Effects Modernos */}
@@ -27,33 +97,35 @@ const Home = () => {
                 </div>
 
                 <h1 className="text-5xl lg:text-7xl font-bold leading-tight text-slate-900">
-                  Transforme Seus{" "}
+                  Automação com n8n: {" "}
                   <span className="bg-gradient-primary bg-clip-text text-transparent">
-                    Processos
-                  </span>{" "}
-                  Com Automação
+                    Comunidade, Templates e YouTube
+                  </span>
                 </h1>
 
                 <p className="text-xl lg:text-2xl text-slate-600 max-w-2xl leading-relaxed">
-                  Automatize tarefas repetitivas, conecte sistemas e
-                  <span className="font-semibold text-slate-800"> economize até 80% do tempo</span> da sua equipe
-                  com soluções n8n personalizadas.
+                  Conheça a <span className="font-semibold text-slate-800">comunidade de estudos n8n</span>,
+                  explore <span className="font-semibold text-slate-800">templates prontos</span> e aprenda com
+                  meu <span className="font-semibold text-slate-800">canal no YouTube</span>.
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/contato">
-                  <Button className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg px-8 py-4 h-auto rounded-xl shadow-lg hover:scale-105 transition-all duration-300">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4">
+                <Link to="/automacao-n8n">
+                  <Button variant="brand" size="lg" className="w-full sm:w-auto">
                     <Zap className="mr-2 h-5 w-5" />
-                    Solicitar Consultoria
+                    Assinar Comunidade
                   </Button>
                 </Link>
 
-                <Button
-                  size="lg"
-                  asChild
-                  className="bg-gradient-to-r from-red-500 to-white-600 hover:from-red-600 hover:to-red-700 text-white font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 px-8 py-4 h-auto rounded-xl relative overflow-hidden group w-full sm:w-auto"
-                >
+                <Link to="/templates">
+                  <Button variant="premium" size="lg" className="w-full sm:w-auto">
+                    <BookOpen className="mr-2 h-5 w-5" />
+                    Ver Templates n8n
+                  </Button>
+                </Link>
+
+                <Button variant="youtube" size="lg" asChild className="w-full sm:w-auto">
                   <a
                     href="https://www.youtube.com/channel/UC3M_z-XMGTFMBbCjVLPKkUA"
                     target="_blank"
@@ -67,7 +139,7 @@ const Home = () => {
               </div>
 
               {/* Stats Aprimorados */}
-              <div className="grid grid-cols-3 gap-8 pt-8">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-8">
                 <div className="text-center">
                   <div className="text-4xl lg:text-5xl font-bold text-brand-primary mb-2">6K+</div>
                   <div className="text-sm lg:text-base text-slate-600 font-medium">Alunos Capacitados</div>
@@ -106,6 +178,123 @@ const Home = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Prova Social */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">Resultados dos Alunos</h2>
+            <p className="text-lg text-slate-600">Histórias reais de quem evoluiu com a comunidade n8n</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-2xl p-6 shadow-brand border border-slate-100">
+              <div className="flex items-center mb-4">
+                <Star className="h-5 w-5 text-yellow-500 mr-2" />
+                <span className="text-sm font-semibold text-slate-700">5/5 avaliação</span>
+              </div>
+              <p className="text-slate-700 leading-relaxed">“Em duas semanas publiquei 4 automações no trabalho e reduzi tarefas repetitivas em 60%.”</p>
+              <div className="mt-4 flex items-center text-slate-500 text-sm">
+                <Users className="h-4 w-4 mr-2" />
+                <span>Aluno de produto digital</span>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-brand border border-slate-100">
+              <div className="flex items-center mb-4">
+                <Star className="h-5 w-5 text-yellow-500 mr-2" />
+                <span className="text-sm font-semibold text-slate-700">5/5 avaliação</span>
+              </div>
+              <p className="text-slate-700 leading-relaxed">“Com os templates prontos consegui integrar CRM + WhatsApp e acelerar minhas vendas.”</p>
+              <div className="mt-4 flex items-center text-slate-500 text-sm">
+                <Users className="h-4 w-4 mr-2" />
+                <span>Aluno de marketing</span>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-brand border border-slate-100">
+              <div className="flex items-center mb-4">
+                <Star className="h-5 w-5 text-yellow-500 mr-2" />
+                <span className="text-sm font-semibold text-slate-700">5/5 avaliação</span>
+              </div>
+              <p className="text-slate-700 leading-relaxed">“A trilha guiada me tirou da estaca zero e hoje construo fluxos complexos no n8n.”</p>
+              <div className="mt-4 flex items-center text-slate-500 text-sm">
+                <Users className="h-4 w-4 mr-2" />
+                <span>Aluno iniciante</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefícios */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-blue-50">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">Benefícios da Comunidade</h2>
+            <p className="text-lg text-slate-600">Aprenda, pratique e avance com suporte contínuo</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white rounded-2xl p-6 shadow-brand border border-slate-100">
+              <CheckCircle className="h-6 w-6 text-emerald-600 mb-3" />
+              <h3 className="text-xl font-semibold text-slate-900 mb-2">Trilhas Guiadas</h3>
+              <p className="text-slate-600">Do básico ao avançado com passos claros e projetos práticos.</p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 shadow-brand border border-slate-100">
+              <CheckCircle className="h-6 w-6 text-emerald-600 mb-3" />
+              <h3 className="text-xl font-semibold text-slate-900 mb-2">Templates Premium</h3>
+              <p className="text-slate-600">Modelos prontos para integrar CRMs, APIs e canais de comunicação.</p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 shadow-brand border border-slate-100">
+              <CheckCircle className="h-6 w-6 text-emerald-600 mb-3" />
+              <h3 className="text-xl font-semibold text-slate-900 mb-2">Suporte Semanal</h3>
+              <p className="text-slate-600">Ajuda direta para desbloquear desafios e evoluir mais rápido.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* O que você recebe */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">O que você recebe</h2>
+            <p className="text-lg text-slate-600">Tudo que precisa para dominar automação com n8n</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white rounded-2xl p-6 shadow-brand border border-slate-100">
+              <BookOpen className="h-6 w-6 text-blue-600 mb-3" />
+              <h3 className="text-lg font-semibold text-slate-900 mb-2">Trilhas e guias</h3>
+              <p className="text-slate-600">Conteúdos organizados para acelerar sua curva de aprendizado.</p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 shadow-brand border border-slate-100">
+              <Database className="h-6 w-6 text-purple-600 mb-3" />
+              <h3 className="text-lg font-semibold text-slate-900 mb-2">Templates Premium</h3>
+              <p className="text-slate-600">Biblioteca de modelos prontos e atualizados.</p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 shadow-brand border border-slate-100">
+              <MessageCircle className="h-6 w-6 text-emerald-600 mb-3" />
+              <h3 className="text-lg font-semibold text-slate-900 mb-2">Suporte e comunidade</h3>
+              <p className="text-slate-600">Canal ativo para dúvidas, feedbacks e networking.</p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 shadow-brand border border-slate-100">
+              <Shield className="h-6 w-6 text-slate-700 mb-3" />
+              <h3 className="text-lg font-semibold text-slate-900 mb-2">Garantia e confiança</h3>
+              <p className="text-slate-600">Acesso estável, atualizações e segurança de conteúdo.</p>
+            </div>
+          </div>
+          <div className="text-center mt-12">
+            <Link to="/automacao-n8n">
+              <Button variant="brand" size="lg" className="w-full sm:w-auto">
+                <Zap className="mr-2 h-5 w-5" />
+                Assinar Comunidade
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -179,8 +368,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+      
       <div className="text-center mb-20">
-        <Button className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg px-8 py-6 h-auto rounded-xl shadow-lg hover:scale-105 transition-all duration-300" asChild>
+        <Button variant="premium" size="lg" className="w-full sm:w-auto" asChild>
           <Link to="/templates">
             Ver Todos os Templates
             <ArrowRight className="ml-2 h-6 w-6" />
@@ -207,17 +397,13 @@ const Home = () => {
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
               <Link to="/contato">
-                <Button className="bg-orange-600 hover:bg-orange-700 text-white font-bold text-lg px-8 py-4 h-auto rounded-xl shadow-lg hover:scale-105 transition-all duration-300">
+                <Button variant="brand" size="lg" className="w-full sm:w-auto">
                   <Zap className="mr-3 h-6 w-6" />
                   Solicitar Consultoria
                 </Button>
               </Link>
 
-              <Button
-                size="lg"
-                asChild
-                className="bg-gradient-to-r from-red-500 to-white-600 hover:from-red-600 hover:to-red-700 text-white font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 px-8 py-4 h-auto rounded-xl relative overflow-hidden group w-full sm:w-auto"
-              >
+              <Button variant="youtube" size="lg" asChild className="w-full sm:w-auto">
                 <a
                   href="https://www.youtube.com/channel/UC3M_z-XMGTFMBbCjVLPKkUA"
                   target="_blank"

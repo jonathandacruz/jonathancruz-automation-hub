@@ -137,6 +137,22 @@ const Templates = () => {
       estimatedTime: "1 hora",
       complexity: "high",
       buyLink: "https://pay.hotmart.com/C101862756X"
+    },
+    {
+      id: 6,
+      slug: "n8n-automacao-shopee",
+      title: "n8n-Implatação de automação da Shopee",
+      description: "Como automatizar o envio de ofertas de afiliados da shopee para seu telegram",
+      category: "IA",
+      difficulty: "Avançado",
+      downloads: 10,
+      rating: 4.9,
+      tags: ["IA", "Shopee", "n8n", "Afiliados"],
+      featured: true,
+      price: 37,
+      estimatedTime: "1 hora",
+      complexity: "high",
+      buyLink: "https://pay.hotmart.com/S102253215G"
     }
   ];
 

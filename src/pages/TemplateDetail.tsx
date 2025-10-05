@@ -151,6 +151,33 @@ const TemplateDetail = () => {
         "Evolution API"
       ]
     },
+    {
+      id: 6,
+      slug: "n8n-automacao-shopee",
+      title: "n8n-Implatação de automação da Shopee",
+      description: "Como automatizar o envio de ofertas de afiliados da shopee para seu telegram",
+      category: "Automação",
+      difficulty: "Avançado",
+      downloads: 10,
+      rating: 4.8,
+      tags: ["Afiliados", "Renda Extra", "Telegram", "Bot"],
+      featured: true,
+      price: 37,
+      link: "https://pay.hotmart.com/S102253215G",
+      estimatedTime: "1 hora",
+      complexity: "medium",
+      youtubeId: "aKYfK7QHzQk",
+      features: [
+        "Autenticação segura com Shopee", 
+        "Busca de ofertas de afiliados",
+        "Envio automático para Telegram", 
+      ],
+      requirements: [
+        "n8n instalado",
+        "Shopee API Key", 
+        "Conta do Telegram"
+      ]
+    },
   ];
 
   useEffect(() => {

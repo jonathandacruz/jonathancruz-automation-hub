@@ -109,7 +109,7 @@ const AutomacaoN8n = () => {
   };
   return <div className="pt-16 bg-white overflow-hidden">
       {/* Hero Section Modernizado */}
-      <section className="py-24 px-4 lg:px-6 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white relative">
+      <section className="py-16 sm:py-20 lg:py-24 px-4 lg:px-6 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white relative">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]"></div>
         <div className="absolute top-20 right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
@@ -122,26 +122,26 @@ const AutomacaoN8n = () => {
               Curso Premium • Acesso Vitalício • Certificado
             </Badge>
             
-            <h1 className="text-5xl lg:text-7xl font-bold mb-8 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-8 leading-tight">
               <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">n8n Fundamentos</span> 
               <br />Do Zero ao Profissional
             </h1>
             
-            <p className="text-xl lg:text-2xl text-slate-300 max-w-4xl mx-auto mb-12 leading-relaxed">
+            <p className="text-lg sm:text-xl lg:text-2xl text-slate-300 max-w-4xl mx-auto mb-12 leading-relaxed">
               O curso mais completo e avançado de n8n do Brasil. Aprenda com metodologia profissional 
               e <span className="text-white font-semibold">transforme sua carreira</span> 
               criando automações que geram resultados reais.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-              <Button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold text-lg px-10 py-4 h-auto rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300" asChild>
+              <Button className="w-full sm:w-auto bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold text-lg px-10 py-4 h-auto rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300" asChild>
                 <a href="#modulos">
                   <BookOpen className="mr-3 h-6 w-6" />
                   Descobrir Todo o Conteúdo
                 </a>
               </Button>
               
-              <Button className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20 font-semibold text-lg px-10 py-4 h-auto rounded-2xl hover:scale-105 transition-all duration-300" asChild>
+              <Button className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20 font-semibold text-lg px-10 py-4 h-auto rounded-2xl hover:scale-105 transition-all duration-300" asChild>
                 <a href="https://pay.hotmart.com/J101368751T">
                   <TrendingUp className="mr-3 h-6 w-6" />
                   Garantir minha vaga
@@ -150,13 +150,13 @@ const AutomacaoN8n = () => {
             </div>
             
             {/* Social Proof + ROI */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 max-w-4xl mx-auto">
               <div className="text-center">
                 <div className="text-3xl lg:text-4xl font-bold text-green-400 mb-2">R$ 10K+</div>
                 <div className="text-sm text-slate-400">Economizado pelos alunos</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-blue-400 mb-2">6K+</div>
+                <div className="text-3xl lg:text-4xl font-bold text-blue-400 mb-2">120+</div>
                 <div className="text-sm text-slate-400">Alunos Satisfeitos</div>
               </div>
               <div className="text-center">
@@ -173,7 +173,7 @@ const AutomacaoN8n = () => {
       </section>
 
       {/* O que é n8n - Modernizado */}
-      <section className="py-24 px-4 lg:px-6 bg-white">
+      <section className="py-16 sm:py-20 lg:py-24 px-4 lg:px-6 bg-white">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
@@ -182,10 +182,10 @@ const AutomacaoN8n = () => {
                   <Code className="w-4 h-4 mr-2" />
                   Open Source & Gratuito
                 </Badge>
-                <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
                   O que é o n8n?
                 </h2>
-                <p className="text-xl text-slate-700 leading-relaxed mb-6">
+                <p className="text-base sm:text-lg text-slate-700 leading-relaxed mb-6">
                   O n8n é a ferramenta de automação visual mais poderosa do mercado. 
                   Uma alternativa open source ao Zapier que você pode hospedar gratuitamente 
                   e customizar completamente.
@@ -271,7 +271,7 @@ const AutomacaoN8n = () => {
       </section>
 
       {/* Benefícios Modernizados */}
-      <section id="beneficios" className="py-24 px-4 lg:px-6 bg-gradient-to-br from-slate-50 to-blue-50">
+      <section id="beneficios" className="py-16 sm:py-20 lg:py-24 px-4 lg:px-6 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container mx-auto">
           <div className="text-center mb-20">
             <Badge className="mb-4 px-3 py-1 bg-orange-100 text-orange-800 border-orange-200">
@@ -286,7 +286,7 @@ const AutomacaoN8n = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {benefits.map((benefit, index) => <Card key={index} className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 bg-white overflow-hidden group">
                 <CardHeader className="text-center pb-4">
                   <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl">
@@ -307,7 +307,7 @@ const AutomacaoN8n = () => {
       </section>
 
       {/* Curso Módulos Modernizado */}
-      <section id="modulos" className="py-24 px-4 lg:px-6 bg-white">
+      <section id="modulos" className="py-16 sm:py-20 lg:py-24 px-4 lg:px-6 bg-white">
         <div className="container mx-auto">
           <div className="text-center mb-20">
             <Badge className="mb-4 px-3 py-1 bg-green-100 text-green-800 border-green-200">
@@ -337,7 +337,7 @@ const AutomacaoN8n = () => {
               </p>
             </div>
             
-            <div className="flex justify-center gap-12 text-sm text-slate-600 mb-12">
+            <div className="flex flex-wrap justify-center gap-6 sm:gap-12 text-sm text-slate-600 mb-12">
               <div className="flex items-center space-x-2">
                 <Clock className="h-5 w-5 text-green-500" />
                 <span className="font-medium">6+ horas de conteúdo</span>
@@ -398,12 +398,12 @@ const AutomacaoN8n = () => {
           </div>
 
           <div className="text-center mt-16">
-            
-            
-            <Button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold text-lg px-10 py-4 h-auto rounded-2xl shadow-xl hover:scale-105 transition-all duration-300" asChild>
-              
+            <Button className="w-full sm:w-auto bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold text-lg px-10 py-4 h-auto rounded-2xl shadow-xl hover:scale-105 transition-all duration-300" asChild>
+              <a href="https://pay.hotmart.com/J101368751T" target="_blank" rel="noopener noreferrer">
+                <CreditCard className="mr-3 h-6 w-6" />
+                Garantir minha vaga
+              </a>
             </Button>
-            
           </div>
         </div>
       </section>
@@ -412,7 +412,7 @@ const AutomacaoN8n = () => {
       
 
       {/* CTA Final Premium */}
-      <section className="py-24 px-4 lg:px-6 bg-gradient-to-br from-green-600 via-emerald-600 to-teal-700 text-white relative overflow-hidden">
+      <section className="py-16 sm:py-20 lg:py-24 px-4 lg:px-6 bg-gradient-to-br from-green-600 via-emerald-600 to-teal-700 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:30px_30px]"></div>
         <div className="container mx-auto text-center relative z-10">
           <div className="max-w-4xl mx-auto">
@@ -443,14 +443,14 @@ const AutomacaoN8n = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-              <Button className="bg-white text-slate-900 hover:bg-slate-100 font-bold text-xl px-12 py-5 h-auto rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300" asChild>
+              <Button className="w-full sm:w-auto bg-white text-slate-900 hover:bg-slate-100 font-bold text-xl px-12 py-5 h-auto rounded-2xl shadow-2xl hover:scale-105 transition-all duration-300" asChild>
                 <a href="https://pay.hotmart.com/J101368751T" target="_blank" rel="noopener noreferrer">
                   <CreditCard className="mr-3 h-7 w-7" />
                   Garantir Minha Vaga
                 </a>
               </Button>
               
-              <Button className="bg-transparent border-2 border-white/30 text-white hover:bg-white/10 font-semibold text-xl px-12 py-5 h-auto rounded-2xl hover:scale-105 transition-all duration-300" asChild>
+              <Button className="w-full sm:w-auto bg-transparent border-2 border-white/30 text-white hover:bg-white/10 font-semibold text-xl px-12 py-5 h-auto rounded-2xl hover:scale-105 transition-all duration-300" asChild>
                 <Link to="/contato">
                   Consultoria Personalizada
                   <ArrowRight className="ml-3 h-7 w-7" />
@@ -458,7 +458,7 @@ const AutomacaoN8n = () => {
               </Button>
             </div>
             
-            <div className="flex justify-center items-center space-x-8 text-slate-300 text-sm">
+            <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 text-slate-300 text-sm">
               <div className="flex items-center space-x-2">
                 <CheckCircle className="w-5 h-5 text-green-400" />
                 <span>Pagamento Seguro</span>

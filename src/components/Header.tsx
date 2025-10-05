@@ -64,10 +64,10 @@ const Header = () => {
         <Button
           variant="ghost"
           size="sm"
-          className="lg:hidden p-2"
+          className="lg:hidden p-2 text-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMenuOpen ? <X size={24} className="text-white" /> : <Menu size={24} className="text-white" />}
         </Button>
       </nav>
 
@@ -81,8 +81,8 @@ const Header = () => {
                 to={item.href}
                 className={`block px-4 py-3 rounded-xl text-base font-semibold transition-all duration-200 ${
                   isActive(item.href)
-                    ? "text-blue-400 bg-blue-500/20"
-                    : "text-slate-300 hover:text-white hover:bg-slate-800/50"
+                    ? "text-white bg-white/10"
+                    : "text-white hover:bg-slate-800/50"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
