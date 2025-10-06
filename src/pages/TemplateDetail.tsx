@@ -166,7 +166,7 @@ const TemplateDetail = () => {
       link: "https://pay.hotmart.com/S102253215G",
       estimatedTime: "1 hora",
       complexity: "medium",
-      youtubeId: "aKYfK7QHzQk",
+      youtubeId: "noIvjB5n--c",
       features: [
         "Autenticação segura com Shopee", 
         "Busca de ofertas de afiliados",
