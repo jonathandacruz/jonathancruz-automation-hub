@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useNavigate } from "react-router-dom";
-import { Download, ShoppingCart, Clock, CheckCircle, Eye, Code, Zap, Users } from "lucide-react";
+import { Download, ShoppingCart, Clock, CheckCircle, Eye, Code, Zap, Users, Star, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
+import Seo from "@/components/Seo";
 
 const Templates = () => {
   const navigate = useNavigate();
@@ -37,32 +37,17 @@ const Templates = () => {
     script.textContent = JSON.stringify(structuredData);
     document.head.appendChild(script);
 
-    // Meta tags for SEO
-    document.title = "Templates n8n Premium - Automação Instagram, Lotofácil, Stories | R$ 37";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Templates profissionais n8n para automação do Instagram, robô da Lotofácil, stories automáticos e agente IA para restaurantes. Preço único R$ 37.');
-    }
-
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (!metaKeywords) {
-      const keywords = document.createElement('meta');
-      keywords.name = 'keywords';
-      keywords.content = 'n8n templates, automação instagram, robot lotofacil, stories automaticos, agente ia restaurante, templates premium';
-      document.head.appendChild(keywords);
-    }
-
     return () => {
       document.head.removeChild(script);
     };
   }, []);
+
   const templates = [
     {
       id: 1,
       slug: "n8n-template-instagram",
-      title: "n8n - Post Viral no Instagram",
-      description: "Automatize a criação e publicação de posts virais no Instagram. Inclui análise de tendências, geração de conteúdo e agendamento automático.",
+      title: "Post Viral no Instagram",
+      description: "Automatize a criação e publicação de posts virais. Inclui análise de tendências, geração de conteúdo e agendamento.",
       category: "Social Media",
       difficulty: "Intermediário",
       downloads: 15,
@@ -77,8 +62,8 @@ const Templates = () => {
     {
       id: 2,
       slug: "n8n-robo-lotofacil",
-      title: "n8n - Robô da Lotofácil",
-      description: "Sistema inteligente que analisa padrões da Lotofácil e sugere números baseado em estatísticas históricas e algoritmos preditivos.",
+      title: "Robô da Lotofácil",
+      description: "Sistema inteligente que analisa padrões e sugere números baseado em estatísticas históricas e algoritmos preditivos.",
       category: "Automação",
       difficulty: "Avançado",
       downloads: 36,
@@ -93,8 +78,8 @@ const Templates = () => {
     {
       id: 3,
       slug: "n8n-template-stories",
-      title: "n8n - Template para Stories do Instagram",
-      description: "Crie e publique stories automáticos no Instagram com templates personalizáveis, músicas e efeitos visuais incríveis.",
+      title: "Stories Automáticos",
+      description: "Crie e publique stories no Instagram com templates personalizáveis, músicas e efeitos visuais incríveis.",
       category: "Social Media",
       difficulty: "Iniciante",
       downloads: 25,
@@ -109,8 +94,8 @@ const Templates = () => {
     {
       id: 4,
       slug: "n8n-agente-ia-restaurante",
-      title: "n8n - Agente de IA para Restaurantes",
-      description: "Assistente virtual inteligente para restaurantes que gerencia pedidos, reservas, cardápio e atendimento ao cliente automaticamente.",
+      title: "Agente IA para Restaurantes",
+      description: "Assistente virtual que gerencia pedidos, reservas, cardápio e atendimento ao cliente automaticamente.",
       category: "IA",
       difficulty: "Avançado",
       downloads: 350,
@@ -125,13 +110,13 @@ const Templates = () => {
     {
       id: 5,
       slug: "n8n-gestao-cobrancas",
-      title: "Implatação do módulo de gestão de cobranças",
-      description: "Irei te auxiliar com a instalação do servidor e customização do espoCRM",
+      title: "Gestão de Cobranças",
+      description: "Implantação completa do módulo de gestão de cobranças com instalação do servidor e customização do EspoCRM.",
       category: "IA",
       difficulty: "Avançado",
       downloads: 10,
       rating: 4.9,
-      tags: ["IA", "CRM", "n8n", "espoCRM"],
+      tags: ["IA", "CRM", "n8n", "EspoCRM"],
       featured: true,
       price: 149,
       estimatedTime: "1 hora",
@@ -141,8 +126,8 @@ const Templates = () => {
     {
       id: 6,
       slug: "n8n-automacao-shopee",
-      title: "n8n-Implatação de automação da Shopee",
-      description: "Como automatizar o envio de ofertas de afiliados da shopee para seu telegram",
+      title: "Automação Shopee",
+      description: "Automatize o envio de ofertas de afiliados da Shopee diretamente para seu canal ou grupo do Telegram.",
       category: "IA",
       difficulty: "Avançado",
       downloads: 10,
@@ -160,275 +145,223 @@ const Templates = () => {
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case "Iniciante": return "bg-emerald-50 text-emerald-700 border-emerald-200";
-      case "Intermediário": return "bg-blue-50 text-blue-700 border-blue-200";
-      case "Avançado": return "bg-purple-50 text-purple-700 border-purple-200";
-      default: return "bg-slate-100 text-slate-600 border-slate-200";
+      case "Iniciante": return "bg-emerald-500/10 text-emerald-400 border-emerald-500/20";
+      case "Intermediário": return "bg-blue-500/10 text-blue-400 border-blue-500/20";
+      case "Avançado": return "bg-purple-500/10 text-purple-400 border-purple-500/20";
+      default: return "bg-slate-500/10 text-slate-400 border-slate-500/20";
     }
   };
 
-  const getComplexityColor = (complexity: string) => {
-    switch (complexity) {
-      case "low": return "text-emerald-600";
-      case "medium": return "text-blue-600";
-      case "high": return "text-purple-600";
-      default: return "text-slate-600";
-    }
-  };
-
-  // Filter templates based on selected category
-  const filteredTemplates = selectedCategory === "Todos" 
-    ? templates 
+  const filteredTemplates = selectedCategory === "Todos"
+    ? templates
     : templates.filter(template => template.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* SEO Hidden H1 */}
-      <h1 className="sr-only">Templates Premium n8n - Automação Instagram, Lotofácil, Stories e IA para Restaurantes</h1>
-      
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <Seo
+        title="Templates n8n Premium | Jonathan da Cruz"
+        description="Templates profissionais para n8n. Automatize Instagram, CRM, Vendas e muito mais com fluxos prontos e testados."
+        keywords={["n8n templates", "automação n8n", "workflows n8n", "bot instagram", "automação whatsapp"]}
+      />
+
       {/* Hero Section */}
-      <header className="pt-24 pb-16 px-4 lg:px-6 bg-gradient-to-br from-blue-50 via-white to-purple-50 relative">
-        <div className="container mx-auto text-center relative z-10 max-w-5xl">
-          <Badge className="mb-8 px-6 py-2 bg-blue-100 text-blue-700 border-blue-200 text-base font-medium">
-            Templates Premium n8n
-          </Badge>
-          
-          <h2 className="text-5xl lg:text-7xl font-bold mb-8 text-slate-900 leading-tight tracking-tight">
-            Templates de{" "}
-            <span className="text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text">
-              Automação
-            </span>
-          </h2>
-          
-          <p className="text-xl lg:text-2xl text-slate-600 max-w-4xl mx-auto mb-12 leading-relaxed font-light">
-            Transforme sua produtividade com automações profissionais para n8n. 
-            <br className="hidden md:block" />
-            Templates testados, documentados e otimizados para máximo desempenho.
-          </p>
-          
-          
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
+          <div className="absolute top-20 right-10 w-72 h-72 bg-brand-primary/20 rounded-full blur-[100px] animate-pulse-soft" />
+          <div className="absolute bottom-20 left-10 w-96 h-96 bg-brand-secondary/20 rounded-full blur-[120px] animate-pulse-soft" style={{ animationDelay: "1s" }} />
         </div>
-      </header>
 
-      {/* Templates Grid */}
-      <main className="py-20 px-4 lg:px-6 bg-white">
-        <div className="container mx-auto max-w-7xl">
-          {/* Section Header */}
-
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-3 mb-16">
-            {categories.map((category) => (
-              <Button 
-                key={category}
-                variant={category === selectedCategory ? "default" : "outline"}
-                className={`rounded-full px-6 py-2 font-medium transition-all duration-300 ${
-                  category === selectedCategory 
-                    ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-800 hover:to-purple-800 text-white button-pulse" 
-                    : "border-blue-200 text-blue-700 hover:bg-blue-600 hover:text-white hover:border-blue-600 button-bounce"
-                }`}
-                size="sm"
-                onClick={() => setSelectedCategory(category)}
-              >
-                {category}
-              </Button>
-            ))}
+        <div className="container mx-auto px-4 lg:px-6 relative z-10 text-center">
+          <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-full text-sm font-medium text-brand-primary shadow-glow mb-8 animate-fade-up">
+            <Code className="w-4 h-4 fill-brand-primary" />
+            <span>Biblioteca Premium</span>
           </div>
 
-          {/* Templates Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+          <h1 className="text-5xl lg:text-7xl font-display font-bold mb-8 leading-tight tracking-tight animate-fade-up" style={{ animationDelay: "0.1s" }}>
+            Templates de <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-accent to-brand-secondary">
+              Alta Performance
+            </span>
+          </h1>
+
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            Economize horas de desenvolvimento com fluxos prontos, testados e documentados.
+            Acelere seus resultados com a qualidade que você precisa.
+          </p>
+
+          {/* Category Filter */}
+          <div className="flex flex-wrap justify-center gap-3 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 border ${category === selectedCategory
+                    ? "bg-brand-primary text-white border-brand-primary shadow-glow"
+                    : "bg-white/5 text-slate-400 border-white/10 hover:bg-white/10 hover:text-white hover:border-white/20"
+                  }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Templates Grid */}
+      <section className="pb-32 px-4 lg:px-6">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredTemplates.map((template, index) => (
-              <article key={template.id} className="group border-slate-200 hover:border-blue-300 bg-white hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.01] overflow-hidden rounded-xl border-2">
-                {/* Card Header */}
-                <CardHeader className="pb-4 space-y-4">
-                  {/* Top Row - Badges */}
-                  <div className="flex justify-between items-start">
-                    <div className="flex items-center gap-3">
-                      <Badge className={`${getDifficultyColor(template.difficulty)} font-medium px-3 py-1 border`}>
+              <div
+                key={template.id}
+                className="group relative bg-card/50 backdrop-blur-sm border border-white/5 rounded-3xl p-1 hover:bg-card/80 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-brand-primary/10 animate-fade-up"
+                style={{ animationDelay: `${0.1 * (index + 1)}s` }}
+              >
+                {/* Glow Effect on Hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/20 via-transparent to-brand-secondary/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10" />
+
+                <div className="bg-card/90 rounded-[22px] p-6 h-full flex flex-col relative overflow-hidden">
+                  {/* Top Badges */}
+                  <div className="flex justify-between items-start mb-6">
+                    <div className="flex gap-2">
+                      <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getDifficultyColor(template.difficulty)}`}>
                         {template.difficulty}
-                      </Badge>
-                      <Badge className="bg-blue-50 text-blue-700 border-blue-200 font-medium">
-                        {template.category}
-                      </Badge>
+                      </span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded-full">#{index + 1}</span>
-                    </div>
+                    {template.featured && (
+                      <div className="flex items-center gap-1 text-yellow-500 bg-yellow-500/10 px-2 py-1 rounded-full text-xs font-medium border border-yellow-500/20">
+                        <Star className="w-3 h-3 fill-current" />
+                        <span>Destaque</span>
+                      </div>
+                    )}
                   </div>
 
-                  {/* Title */}
-                  <CardTitle className="text-2xl lg:text-3xl text-slate-900 leading-tight group-hover:text-blue-700 transition-colors duration-300">
-                    {template.title}
-                  </CardTitle>
-
-                  {/* Description */}
-                  <CardDescription className="text-base leading-relaxed text-slate-600">
-                    {template.description}
-                  </CardDescription>
-                </CardHeader>
-
-                <CardContent className="space-y-6">
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
-                    {template.tags.map((tag, index) => (
-                      <span 
-                        key={index}
-                        className="px-3 py-1.5 bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 text-sm rounded-full font-medium border border-blue-200 hover:from-blue-100 hover:to-purple-100 transition-colors cursor-default"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                  {/* Content */}
+                  <div className="mb-6 flex-grow">
+                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-brand-primary transition-colors">
+                      {template.title}
+                    </h3>
+                    <p className="text-slate-400 text-sm leading-relaxed line-clamp-3">
+                      {template.description}
+                    </p>
                   </div>
 
                   {/* Stats */}
-                  <div className="grid grid-cols-2 gap-4 py-4 border-t border-slate-200">
-                    <div className="flex items-center gap-2 text-slate-600">
-                      <Download className="h-4 w-4 text-blue-600" />
-                      <span className="text-sm font-medium">{template.downloads.toLocaleString()} downloads</span>
+                  <div className="grid grid-cols-2 gap-4 mb-6 py-4 border-y border-white/5">
+                    <div className="flex items-center gap-2 text-slate-400 text-sm">
+                      <Download className="w-4 h-4 text-brand-primary" />
+                      <span>{template.downloads} vendas</span>
                     </div>
-                    <div className="flex items-center gap-2 text-slate-600">
-                      <Clock className="h-4 w-4 text-purple-600" />
-                      <span className={`text-sm font-medium ${getComplexityColor(template.complexity)}`}>
-                        {template.estimatedTime}
-                      </span>
+                    <div className="flex items-center gap-2 text-slate-400 text-sm">
+                      <Clock className="w-4 h-4 text-brand-secondary" />
+                      <span>{template.estimatedTime}</span>
                     </div>
                   </div>
 
-                  {/* Modern Pricing Section */}
-                  <div className="space-y-6 pt-6 border-t border-slate-200/80">
-                    {/* Price Card */}
-                    <div className="bg-gradient-to-br from-slate-50 to-blue-50/50 rounded-2xl p-6 border border-slate-200/60">
-                      <div className="text-center space-y-3">
-                        <div className="text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text">
-                          R$ {template.price}
-                        </div>
-                        <div className="flex items-center justify-center gap-2">
-                          <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200 font-medium px-3 py-1">
-                            <CheckCircle className="h-3 w-3 mr-1" />
-                            Preço único
-                          </Badge>
-                        </div>
-                        <p className="text-sm text-slate-600 leading-relaxed">
-                          Acesso completo + documentação + suporte
-                        </p>
+                  {/* Footer & Price */}
+                  <div className="flex items-end justify-between gap-4 mt-auto">
+                    <div>
+                      <p className="text-xs text-slate-500 mb-1">Investimento único</p>
+                      <div className="text-2xl font-bold text-white">
+                        R$ {template.price}
                       </div>
                     </div>
 
-                    {/* Action Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-3">
-                      <Button 
-                        variant="outline" 
-                        className="flex-1 sm:flex-none px-6 py-3 rounded-xl border-slate-300 text-slate-700 hover:bg-slate-700 hover:text-white hover:border-slate-700 transition-all duration-300 button-glow"
+                    <div className="flex gap-2">
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="rounded-xl hover:bg-white/10 hover:text-white text-slate-400"
                         onClick={() => navigate(`/templates/${template.slug}`)}
                       >
-                        <Eye className="h-4 w-4 mr-2" />
-                        Detalhes
+                        <Eye className="w-5 h-5" />
                       </Button>
-                      
-                      <Button className="flex-1 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 button-gradient-shift" asChild>
-                        <a href={template.buyLink} target="_blank" rel="noopener noreferrer">
-                          <ShoppingCart className="h-4 w-4 mr-2" />
-                          Comprar Agora
-                        </a>
-                      </Button>
+                      <a href={template.buyLink} target="_blank" rel="noopener noreferrer">
+                        <Button className="bg-brand-primary hover:bg-brand-secondary text-white rounded-xl shadow-glow hover:shadow-brand transition-all">
+                          <ShoppingCart className="w-4 h-4 mr-2" />
+                          Comprar
+                        </Button>
+                      </a>
                     </div>
                   </div>
-                </CardContent>
-              </article>
+                </div>
+              </div>
             ))}
           </div>
         </div>
-      </main>
+      </section>
 
-      {/* Features Section */}
-      <section className="py-20 px-4 lg:px-6 bg-gradient-to-br from-blue-50 via-purple-50 to-blue-50">
-        <div className="container mx-auto max-w-6xl text-center">
-          <h3 className="text-3xl lg:text-4xl font-bold mb-12 text-slate-900">
-            Por que escolher nossos templates?
-          </h3>
-          
+      {/* Benefits Section */}
+      <section className="py-24 bg-card/30 border-t border-white/5">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl lg:text-4xl font-display font-bold text-white mb-6">
+              Por que escolher nossos templates?
+            </h2>
+            <p className="text-slate-400 text-lg">
+              Qualidade garantida para você escalar suas automações com segurança.
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="space-y-4">
-              <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto">
-                <CheckCircle className="h-8 w-8 text-white" />
-              </div>
-              <h4 className="text-xl font-semibold text-slate-900">100% Funcionais</h4>
-              <p className="text-slate-600 leading-relaxed">
-                Todos os templates são testados e validados antes da publicação
-              </p>
-            </div>
-            
-            <div className="space-y-4">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto">
-                <Code className="h-8 w-8 text-white" />
-              </div>
-              <h4 className="text-xl font-semibold text-slate-900">Fácil Instalação</h4>
-              <p className="text-slate-600 leading-relaxed">
-                Importe diretamente no n8n e comece a usar em minutos
-              </p>
-            </div>
-            
-            <div className="space-y-4">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto">
-                <Users className="h-8 w-8 text-white" />
-              </div>
-              <h4 className="text-xl font-semibold text-slate-900">Suporte Premium</h4>
-              <p className="text-slate-600 leading-relaxed">
-                Documentação completa e suporte direto via WhatsApp
-              </p>
-            </div>
+            <BenefitCard
+              icon={<CheckCircle className="w-8 h-8 text-emerald-500" />}
+              title="100% Funcionais"
+              description="Todos os templates são testados exaustivamente e validados em produção antes da publicação."
+            />
+            <BenefitCard
+              icon={<Zap className="w-8 h-8 text-brand-primary" />}
+              title="Instalação Rápida"
+              description="Copie e cole o JSON diretamente no seu n8n. Configuração simples e documentada."
+            />
+            <BenefitCard
+              icon={<Users className="w-8 h-8 text-brand-secondary" />}
+              title="Suporte Dedicado"
+              description="Dúvidas na implementação? Nosso suporte técnico está pronto para te ajudar."
+            />
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-4 lg:px-6 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(59,130,246,0.3),transparent_70%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(147,51,234,0.3),transparent_70%)]"></div>
-        
-        <div className="container mx-auto text-center relative z-10 max-w-4xl">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight">
-            Pronto para Automatizar Hoje?
+      <section className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-primary/5 to-transparent" />
+
+        <div className="container mx-auto px-4 lg:px-6 relative z-10 text-center">
+          <h2 className="text-4xl lg:text-6xl font-display font-bold text-white mb-8 tracking-tight">
+            Precisa de algo <span className="text-brand-primary">personalizado</span>?
           </h2>
-          
-          <p className="text-xl lg:text-2xl text-slate-300 mb-12 leading-relaxed">
-            Transforme sua produtividade com automações profissionais. Todos os templates são disponibilizados de forma gratuita na comunidade n8n.
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto mb-12">
+            Desenvolvemos soluções sob medida para o seu negócio. Entre em contato para uma consultoria.
           </p>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
-            <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-              <div className="text-3xl lg:text-4xl font-bold mb-2 text-blue-300">4+</div>
-              <div className="text-slate-300 font-medium">Templates</div>
-            </div>
-            <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-              <div className="text-3xl lg:text-4xl font-bold mb-2 text-purple-300">24h</div>
-              <div className="text-slate-300 font-medium">Suporte</div>
-            </div>
-            <div className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-              <div className="text-3xl lg:text-4xl font-bold mb-2 text-emerald-300">100%</div>
-              <div className="text-slate-300 font-medium">Funcionais</div>
-            </div>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold px-10 py-4 rounded-xl shadow-2xl button-pulse">
-              <ShoppingCart className="mr-3 h-5 w-5" />
-              <a href="/automacao-n8n" target="_blank" rel="noopener noreferrer">
-                         
-                          Comunidade n8n
-                        </a>
-            </Button>
-            <Button  variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20 font-semibold px-10 py-4 rounded-xl backdrop-blur-sm button-magnetic">
-              <Zap className="mr-3 h-5 w-5" />
-              <a href="/contato" target="_blank" rel="noopener noreferrer">
-                         
-                          Fale Comigo
-                        </a>
-            </Button>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-6">
+            <a href="/contato">
+              <Button className="w-full sm:w-auto bg-brand-primary hover:bg-brand-secondary text-white px-10 py-6 text-lg rounded-xl shadow-glow hover:shadow-brand transition-all duration-300 hover:-translate-y-1">
+                Fale com Especialista
+              </Button>
+            </a>
+            <a href="https://www.youtube.com/channel/UC3M_z-XMGTFMBbCjVLPKkUA" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" className="w-full sm:w-auto border-white/10 bg-white/5 hover:bg-white/10 text-white px-10 py-6 text-lg rounded-xl backdrop-blur-sm">
+                Ver Tutoriais Grátis
+              </Button>
+            </a>
           </div>
         </div>
       </section>
     </div>
   );
 };
+
+const BenefitCard = ({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) => (
+  <div className="bg-white/5 backdrop-blur-sm border border-white/5 p-8 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 hover:border-white/10 group text-center">
+    <div className="mb-6 p-4 bg-white/5 rounded-xl w-fit mx-auto group-hover:scale-110 transition-transform duration-300">
+      {icon}
+    </div>
+    <h3 className="text-xl font-bold text-white mb-3">{title}</h3>
+    <p className="text-slate-400 leading-relaxed">{description}</p>
+  </div>
+);
 
 export default Templates;

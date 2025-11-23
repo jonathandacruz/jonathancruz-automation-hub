@@ -1,229 +1,118 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    /* Cores principais em HSL correto */
-    --background: 0 0% 100%;                    /* Branco puro */
-    --foreground: 222 84% 4.9%;                 /* Texto escuro */
+    /* Base Colors - Dark Theme Default */
+    --background: 222 47% 11%;     /* #0f172a - Slate-900 (Deep Navy) */
+    --foreground: 210 40% 98%;     /* #f8fafc - Slate-50 */
+
+    /* Brand Colors */
+    --brand-primary: 217 91% 60%;  /* #3b82f6 - Blue-500 (Vibrant Blue) */
+    --brand-secondary: 262 83% 58%; /* #8b5cf6 - Violet-500 (Vibrant Purple) */
+    --brand-accent: 199 89% 48%;   /* #0ea5e9 - Sky-500 (Cyan/Blue) */
+    --brand-dark: 222 47% 8%;      /* #0b1120 - Darker Slate */
     
-    --brand-primary: 214 100% 59%;              /* #2563EB - Blue-600 */
-    --brand-secondary: 220 13% 18%;             /* #334155 - Slate-700 */
-    --brand-accent: 24 95% 53%;                 /* #EA580C - Orange-600 */
-    --brand-muted: 210 40% 98%;                 /* #F8FAFC - Slate-50 */
-    
-    /* Gradientes corrigidos */
-    --gradient-primary: linear-gradient(135deg, hsl(214, 100%, 59%), hsl(220, 13%, 18%));
-    --gradient-hero: linear-gradient(135deg, hsl(214, 100%, 59%) 0%, hsl(214, 100%, 70%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(210, 40%, 98%) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(24, 95%, 53%), hsl(20, 91%, 48%));
-    
-    /* Sombras */
-    --shadow-brand: 0 4px 20px -2px hsl(214, 100%, 59%, 0.15);
-    --shadow-elegant: 0 20px 40px -5px hsl(214, 100%, 59%, 0.25);
-    --shadow-glow: 0 0 60px hsl(214, 100%, 59%, 0.4);
-    --shadow-orange: 0 10px 30px -5px hsl(24, 95%, 53%, 0.3);
-    
-    /* Animações */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-    --card: 0 0% 100%;
-    --card-foreground: 222 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 84% 4.9%;
-
-    --primary: 214 100% 59%;                    /* Blue-600 */
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 210 40% 98%;                   /* Slate-50 */
-    --secondary-foreground: 222 84% 4.9%;
-
-    --muted: 210 40% 98%;                       /* Slate-50 */
-    --muted-foreground: 215 16% 47%;            /* Slate-600 */
-
-    --accent: 214 100% 59%;                     /* Blue-600 para accent */
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 214 32% 91%;                      /* Slate-200 */
-    --input: 214 32% 91%;
-    --ring: 214 100% 59%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217 91% 60%;
-  }
-
-  .dark {
-    --background: 222 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    /* Dark mode colors */
-    --brand-primary: 217 91% 60%;
-    --brand-secondary: 215 28% 17%;
-    --brand-accent: 24 95% 53%;
-    --brand-muted: 222 84% 4.9%;
-
-    --card: 222 84% 4.9%;
+    /* Functional Colors */
+    --card: 217 33% 17%;           /* #1e293b - Slate-800 */
     --card-foreground: 210 40% 98%;
-
-    --popover: 222 84% 4.9%;
+    
+    --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
-
+    
     --primary: 217 91% 60%;
-    --primary-foreground: 222 84% 4.9%;
-
+    --primary-foreground: 210 40% 98%;
+    
     --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
-
+    
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
-
+    
     --accent: 217 33% 17%;
     --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 63% 31%;
+    
+    --destructive: 0 62% 30%;
     --destructive-foreground: 210 40% 98%;
-
+    
     --border: 217 33% 17%;
     --input: 217 33% 17%;
-    --ring: 217 91% 60%;
+    --ring: 224 76% 48%;
     
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224 76% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 4% 16%;
-    --sidebar-accent-foreground: 240 5% 96%;
-    --sidebar-border: 240 4% 16%;
-    --sidebar-ring: 217 91% 60%;
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217, 91%, 60%), hsl(262, 83%, 58%));
+    --gradient-hero: linear-gradient(to right, hsl(222, 47%, 11%), hsl(217, 33%, 17%));
+    --gradient-glow: radial-gradient(circle at center, hsl(217, 91%, 60%, 0.15) 0%, transparent 70%);
+    --gradient-glass: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+
+    /* Shadows */
+    --shadow-glow: 0 0 20px hsl(217, 91%, 60%, 0.3);
+    --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Optional Light Mode Overrides (if needed later, but focusing on dark for premium feel) */
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    /* ... define light mode equivalents if requested ... */
   }
 }
 
-/* Estilos para hover modernos */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased selection:bg-brand-primary selection:text-white;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
 @layer components {
-  .modern-hover {
-    @apply transform transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl;
-  }
-  
-  .button-hover {
-    @apply transition-all duration-300 ease-out hover:shadow-lg hover:scale-105;
-  }
-  
-  .card-hover {
-    @apply transition-all duration-500 ease-out hover:shadow-2xl hover:scale-105 hover:-translate-y-2;
+  .glass-panel {
+    @apply bg-opacity-10 backdrop-blur-lg border border-white/10 shadow-card;
+    background: var(--gradient-glass);
   }
 
-  /* Efeitos especiais para botões */
-  .button-glow {
-    @apply relative overflow-hidden transition-all duration-300 ease-out;
-  }
-  
-  .button-glow::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    transition: left 0.5s ease-out;
-  }
-  
-  .button-glow:hover::before {
-    left: 100%;
-  }
-  
-  .button-glow:hover {
-    @apply scale-105 shadow-2xl;
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-primary to-brand-secondary;
   }
 
-  .button-pulse {
-    @apply transition-all duration-300 ease-out;
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium text-white transition-all duration-300 bg-brand-primary rounded-lg hover:bg-brand-secondary hover:scale-105 hover:shadow-glow group;
   }
   
-  .button-pulse:hover {
-    @apply scale-110 shadow-xl;
-    animation: pulse-glow 1.5s infinite;
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 font-medium text-white transition-all duration-300 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 hover:border-white/20 backdrop-blur-sm;
   }
 
-  .button-gradient-shift {
-    @apply relative overflow-hidden transition-all duration-500 ease-out;
-    background-size: 200% 200%;
-  }
-  
-  .button-gradient-shift:hover {
-    @apply scale-105 shadow-2xl;
-    background-position: right center;
-  }
-
-  .button-bounce {
-    @apply transition-all duration-300 ease-out;
-  }
-  
-  .button-bounce:hover {
-    @apply scale-105 shadow-xl;
-    animation: bounce-subtle 0.6s ease-out;
-  }
-
-  .button-magnetic {
-    @apply transition-all duration-300 ease-out;
-  }
-  
-  .button-magnetic:hover {
-    @apply scale-110 shadow-2xl -translate-y-1;
-    box-shadow: 0 20px 40px -10px rgba(59, 130, 246, 0.4);
+  .card-premium {
+    @apply relative overflow-hidden rounded-xl border border-white/5 bg-card/50 p-6 transition-all duration-300 hover:border-brand-primary/50 hover:shadow-glow hover:-translate-y-1;
   }
 }
 
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
-  }
-}
-
-@keyframes bounce-subtle {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0) scale(1.05);
-  }
-  40% {
-    transform: translateY(-10px) scale(1.05);
-  }
-  60% {
-    transform: translateY(-5px) scale(1.05);
-  }
-}
-
+/* Animations */
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
 }

@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ui/scroll-to-top";
+import WhatsAppButton from "./components/WhatsAppButton";
 import Home from "./pages/Home";
 import Sobre from "./pages/Sobre";
 import Conteudo from "./pages/Conteudo";
@@ -13,6 +14,8 @@ import AutomacaoN8n from "./pages/AutomacaoN8n";
 import Templates from "./pages/Templates";
 import TemplateDetail from "./pages/TemplateDetail";
 import Contato from "./pages/Contato";
+import Termos from "./pages/Termos";
+import Privacidade from "./pages/Privacidade";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,7 +26,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-      <ScrollToTop />
+        <ScrollToTop />
+        <WhatsAppButton />
         <div className="min-h-screen flex flex-col">
           <Header />
           <main className="flex-1">
@@ -35,6 +39,8 @@ const App = () => (
               <Route path="/templates" element={<Templates />} />
               <Route path="/templates/:templateSlug" element={<TemplateDetail />} />
               <Route path="/contato" element={<Contato />} />
+              <Route path="/termos" element={<Termos />} />
+              <Route path="/privacidade" element={<Privacidade />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

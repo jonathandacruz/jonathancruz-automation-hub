@@ -1,15 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Download, ShoppingCart, Clock, CheckCircle, Star, Play, ArrowLeft, Zap, Users, Code } from "lucide-react";
+import { Download, Clock, CheckCircle, Star, Play, ArrowLeft, Zap, Users, Code, Shield, ArrowUpRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import { link } from "fs";
 
 const TemplateDetail = () => {
   const { templateSlug } = useParams();
   const navigate = useNavigate();
-  const [template, setTemplate] = useState(null);
+  const [template, setTemplate] = useState<any>(null);
 
   const templates = [
     {
@@ -27,11 +26,11 @@ const TemplateDetail = () => {
       link: "https://pay.hotmart.com/C101345009B",
       estimatedTime: "2-3 horas",
       complexity: "medium",
-      youtubeId: "BRSAI3GOhWc", 
+      youtubeId: "BRSAI3GOhWc",
       features: [
         "Análise automática de tendências do Instagram",
-        "Geração de conteúdo com IA integrada", 
-        "Hashtags automáticas otimizadas", 
+        "Geração de conteúdo com IA integrada",
+        "Hashtags automáticas otimizadas",
       ],
       requirements: [
         "n8n instalado (versão 1.0+)",
@@ -57,13 +56,13 @@ const TemplateDetail = () => {
       complexity: "medium",
       youtubeId: "ZWhc3MCFoAg",
       features: [
-        "Análise estatística avançada dos resultados", 
+        "Análise estatística avançada dos resultados",
         "Bot no Whatsapp, intuitiva para configuração",
-        "Notificações automáticas de resultados", 
+        "Notificações automáticas de resultados",
       ],
       requirements: [
         "n8n instalado",
-        "RapidAPI API Key", 
+        "RapidAPI API Key",
         "PostgreSQL"
       ]
     },
@@ -115,7 +114,7 @@ const TemplateDetail = () => {
         "Chatbot inteligente para WhatsApp",
         "Gestão automática de pedidos",
         "Gerador de PIX integrado",
-        "Cardápio digital interativo",  
+        "Cardápio digital interativo",
       ],
       requirements: [
         "n8n instalado (versão 1.0+)",
@@ -141,13 +140,13 @@ const TemplateDetail = () => {
       complexity: "medium",
       youtubeId: "aKYfK7QHzQk",
       features: [
-        "Cadastro de fornecedores e faturas", 
+        "Cadastro de fornecedores e faturas",
         "Implantação do espoCRM",
-        "Consultoria exclusiva comigo para instalação", 
+        "Consultoria exclusiva comigo para instalação",
       ],
       requirements: [
         "n8n instalado",
-        "espoCRM API Key", 
+        "espoCRM API Key",
         "Evolution API"
       ]
     },
@@ -168,13 +167,13 @@ const TemplateDetail = () => {
       complexity: "medium",
       youtubeId: "noIvjB5n--c",
       features: [
-        "Autenticação segura com Shopee", 
+        "Autenticação segura com Shopee",
         "Busca de ofertas de afiliados",
-        "Envio automático para Telegram", 
+        "Envio automático para Telegram",
       ],
       requirements: [
         "n8n instalado",
-        "Shopee API Key", 
+        "Shopee API Key",
         "Conta do Telegram"
       ]
     },
@@ -187,7 +186,7 @@ const TemplateDetail = () => {
     if (foundTemplate) {
       // SEO Meta Tags
       document.title = `Download ${foundTemplate.title} - Template n8n | R$ ${foundTemplate.price}`;
-      
+
       const metaDescription = document.querySelector('meta[name="description"]');
       if (metaDescription) {
         metaDescription.setAttribute('content', `Download ${foundTemplate.title} - Template n8n pronto para instalação. ${foundTemplate.description} Por apenas R$ ${foundTemplate.price} com suporte e documentação incluídos.`);
@@ -243,21 +242,21 @@ const TemplateDetail = () => {
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case "Iniciante": return "bg-emerald-50 text-emerald-700 border-emerald-200";
-      case "Intermediário": return "bg-blue-50 text-blue-700 border-blue-200";
-      case "Avançado": return "bg-purple-50 text-purple-700 border-purple-200";
-      default: return "bg-slate-100 text-slate-600 border-slate-200";
+      case "Iniciante": return "bg-emerald-500/10 text-emerald-400 border-emerald-500/20";
+      case "Intermediário": return "bg-blue-500/10 text-blue-400 border-blue-500/20";
+      case "Avançado": return "bg-purple-500/10 text-purple-400 border-purple-500/20";
+      default: return "bg-slate-500/10 text-slate-400 border-slate-500/20";
     }
   };
 
   if (!template) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-white">
+      <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-slate-900 mb-4">Template não encontrado</h1>
-          <p className="text-xl text-slate-600 mb-8">O template que você procura não existe.</p>
+          <h1 className="text-4xl font-bold text-white mb-4">Template não encontrado</h1>
+          <p className="text-xl text-slate-400 mb-8">O template que você procura não existe.</p>
           <Link to="/templates">
-            <Button variant="outline" className="button-bounce">
+            <Button variant="outline" className="border-white/10 text-white hover:bg-white/5">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Voltar aos Templates
             </Button>
@@ -268,32 +267,39 @@ const TemplateDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background text-foreground selection:bg-brand-primary selection:text-white overflow-x-hidden">
+      {/* Background Effects */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-brand-primary/20 rounded-full blur-[100px] animate-pulse-soft" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-brand-secondary/20 rounded-full blur-[120px] animate-pulse-soft" style={{ animationDelay: "1s" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-accent/5 rounded-full blur-[120px]" />
+      </div>
+
       {/* SEO Hidden H1 */}
       <h1 className="sr-only">Download {template.title} - Template n8n Premium para {template.category} - Arquivo pronto para instalação</h1>
-      
+
       {/* Breadcrumb */}
-      <nav className="pt-24 pb-8 px-4 lg:px-6 bg-slate-50">
+      <nav className="pt-24 pb-8 px-4 lg:px-6 relative z-10">
         <div className="container mx-auto max-w-6xl">
-          <div className="flex items-center gap-2 text-sm text-slate-600">
-            <Link to="/" className="hover:text-blue-600 transition-colors">Início</Link>
+          <div className="flex items-center gap-2 text-sm text-slate-400">
+            <Link to="/" className="hover:text-brand-primary transition-colors">Início</Link>
             <span>/</span>
-            <Link to="/templates" className="hover:text-blue-600 transition-colors">Templates</Link>
+            <Link to="/templates" className="hover:text-brand-primary transition-colors">Templates</Link>
             <span>/</span>
-            <span className="text-slate-900 font-medium">{template.title}</span>
+            <span className="text-white font-medium">{template.title}</span>
           </div>
         </div>
       </nav>
 
       {/* Main Content */}
-      <main className="px-4 lg:px-6 pb-20">
+      <main className="px-4 lg:px-6 pb-20 relative z-10">
         <div className="container mx-auto max-w-6xl">
           {/* Back Button */}
           <div className="mb-8">
-            <Button 
-              variant="outline" 
+            <Button
+              variant="ghost"
               onClick={() => navigate('/templates')}
-              className="button-bounce"
+              className="text-slate-400 hover:text-white hover:bg-white/5"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
               Voltar aos Templates
@@ -304,60 +310,61 @@ const TemplateDetail = () => {
             {/* Left Column - Main Content */}
             <div className="lg:col-span-2 space-y-8">
               {/* Header */}
-              <header className="space-y-6">
-                <div className="flex items-center gap-4">
+              <header className="space-y-6 animate-fade-up">
+                <div className="flex items-center gap-4 flex-wrap">
                   <Badge className={`${getDifficultyColor(template.difficulty)} font-medium px-3 py-1 border`}>
                     {template.difficulty}
                   </Badge>
-                  <Badge className="bg-blue-50 text-blue-700 border-blue-200 font-medium">
+                  <Badge className="bg-brand-primary/10 text-brand-primary border-brand-primary/20 font-medium">
                     {template.category}
                   </Badge>
-                  <div className="flex items-center gap-1">
-                    <Star className="h-4 w-4 text-yellow-500 fill-current" />
-                    <span className="text-sm font-medium text-slate-700">{template.rating}</span>
+                  <div className="flex items-center gap-1 bg-yellow-500/10 px-3 py-1 rounded-full border border-yellow-500/20">
+                    <Star className="h-3.5 w-3.5 text-yellow-500 fill-current" />
+                    <span className="text-sm font-medium text-yellow-500">{template.rating}</span>
                   </div>
                 </div>
 
-                <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
-                  Download {template.title}
+                <h2 className="text-4xl lg:text-5xl font-display font-bold text-white leading-tight">
+                  {template.title}
                 </h2>
-                
-                <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded-lg">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Download className="h-5 w-5 text-green-600" />
-                    <h3 className="font-bold text-green-800">Template n8n Pronto para Download</h3>
+
+                <div className="bg-green-500/10 border border-green-500/20 p-6 rounded-2xl backdrop-blur-sm">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 bg-green-500/20 rounded-lg">
+                      <Download className="h-5 w-5 text-green-400" />
+                    </div>
+                    <h3 className="font-bold text-green-400 text-lg">Template n8n Pronto para Uso</h3>
                   </div>
-                  <p className="text-green-700">
+                  <p className="text-slate-300 leading-relaxed">
                     Arquivo completo do template n8n para instalação imediata. Inclui workflow configurado, documentação e suporte técnico.
                   </p>
                 </div>
 
-                <p className="text-xl text-slate-600 leading-relaxed">
+                <p className="text-xl text-slate-400 leading-relaxed">
                   {template.description}
                 </p>
 
-                <div className="flex items-center gap-6 text-slate-600">
+                <div className="flex items-center gap-6 text-slate-400 border-y border-white/5 py-6">
                   <div className="flex items-center gap-2">
-                    <Download className="h-5 w-5 text-blue-600" />
-                    <span className="font-medium">{template.downloads.toLocaleString()} downloads</span>
+                    <Download className="h-5 w-5 text-brand-primary" />
+                    <span className="font-medium text-slate-300">{template.downloads.toLocaleString()} downloads</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Clock className="h-5 w-5 text-purple-600" />
-                    <span className="font-medium">{template.estimatedTime}</span>
+                    <Clock className="h-5 w-5 text-brand-secondary" />
+                    <span className="font-medium text-slate-300">{template.estimatedTime}</span>
                   </div>
                 </div>
               </header>
 
               {/* Video Demo */}
-              <section className="space-y-4">
-                <h3 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
-                  <Play className="h-6 w-6 text-blue-600" />
-                  Como Instalar o Template no n8n
+              <section className="space-y-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+                <h3 className="text-2xl font-bold text-white flex items-center gap-3">
+                  <div className="p-2 bg-brand-primary/20 rounded-lg">
+                    <Play className="h-5 w-5 text-brand-primary" />
+                  </div>
+                  Como Instalar o Template
                 </h3>
-                <p className="text-slate-600 mb-4">
-                  Veja como fazer o download e instalar este template no seu n8n em poucos minutos.
-                </p>
-                <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
+                <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900">
                   <iframe
                     src={`https://www.youtube.com/embed/${template.youtubeId}?rel=0&modestbranding=1`}
                     title={`Como instalar ${template.title} no n8n - Tutorial completo`}
@@ -369,45 +376,49 @@ const TemplateDetail = () => {
               </section>
 
               {/* Features */}
-              <section className="space-y-6">
-                <h3 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
-                  <Zap className="h-6 w-6 text-blue-600" />
-                  Funcionalidades Incluídas
+              <section className="space-y-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+                <h3 className="text-2xl font-bold text-white flex items-center gap-3">
+                  <div className="p-2 bg-brand-secondary/20 rounded-lg">
+                    <Zap className="h-5 w-5 text-brand-secondary" />
+                  </div>
+                  Funcionalidades
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {template.features.map((feature, index) => (
-                    <div key={index} className="flex items-start gap-3 p-4 bg-slate-50 rounded-lg border border-slate-200">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                      <span className="text-slate-700 font-medium">{feature}</span>
+                  {template.features.map((feature: string, index: number) => (
+                    <div key={index} className="flex items-start gap-3 p-4 bg-white/5 rounded-xl border border-white/5 hover:bg-white/10 transition-colors">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-slate-300 font-medium">{feature}</span>
                     </div>
                   ))}
                 </div>
               </section>
 
               {/* Requirements */}
-              <section className="space-y-6">
-                <h3 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
-                  <Code className="h-6 w-6 text-blue-600" />
+              <section className="space-y-6 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+                <h3 className="text-2xl font-bold text-white flex items-center gap-3">
+                  <div className="p-2 bg-brand-accent/20 rounded-lg">
+                    <Code className="h-5 w-5 text-brand-accent" />
+                  </div>
                   Requisitos Técnicos
                 </h3>
                 <div className="space-y-3">
-                  {template.requirements.map((requirement, index) => (
-                    <div key={index} className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <CheckCircle className="h-4 w-4 text-blue-600" />
-                      <span className="text-blue-800 font-medium">{requirement}</span>
+                  {template.requirements.map((requirement: string, index: number) => (
+                    <div key={index} className="flex items-center gap-3 p-3 bg-brand-primary/5 rounded-xl border border-brand-primary/10">
+                      <div className="w-1.5 h-1.5 rounded-full bg-brand-primary"></div>
+                      <span className="text-slate-300 font-medium">{requirement}</span>
                     </div>
                   ))}
                 </div>
               </section>
 
               {/* Tags */}
-              <section className="space-y-4">
-                <h3 className="text-xl font-bold text-slate-900">Tecnologias</h3>
+              <section className="space-y-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
+                <h3 className="text-xl font-bold text-white">Tecnologias</h3>
                 <div className="flex flex-wrap gap-3">
-                  {template.tags.map((tag, index) => (
-                    <span 
+                  {template.tags.map((tag: string, index: number) => (
+                    <span
                       key={index}
-                      className="px-4 py-2 bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 rounded-full font-medium border border-blue-200 hover:from-blue-100 hover:to-purple-100 transition-colors"
+                      className="px-4 py-2 bg-white/5 text-slate-300 rounded-full font-medium border border-white/10 hover:border-brand-primary/50 hover:text-brand-primary transition-colors cursor-default"
                     >
                       {tag}
                     </span>
@@ -418,68 +429,90 @@ const TemplateDetail = () => {
 
             {/* Right Column - Purchase Card */}
             <div className="lg:col-span-1">
-              <div className="sticky top-24 pt-4">
-                <Card className="border-2 border-slate-200 shadow-xl">
-                  <CardHeader className="pb-6">
+              <div className="sticky top-32">
+                <Card className="bg-slate-900/50 backdrop-blur-xl border-white/10 shadow-2xl overflow-hidden group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/10 via-transparent to-brand-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  <CardHeader className="pb-6 relative z-10">
                     <div className="text-center space-y-4">
-                      <div className="text-4xl font-bold text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">
+                      <div className="text-5xl font-display font-bold text-white">
                         R$ {template.price}
                       </div>
-                      <div className="text-sm text-slate-500 uppercase tracking-wider">
-                        Pagamento único
+                      <div className="text-sm text-slate-400 uppercase tracking-wider font-medium">
+                        Pagamento único • Acesso Vitalício
                       </div>
-                      <a href={template.link} target="_blank">
-                      <Button 
-                        size="lg" 
-                        className="w-full py-4 text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl button-gradient-shift"
-                      >
-                        
-                        <Download className="h-5 w-5 mr-2" />
-                        Download Template
-                       
-                      </Button>
-                       </a>
+                      <a href={template.link} target="_blank" rel="noopener noreferrer" className="block">
+                        <Button
+                          size="lg"
+                          className="w-full py-8 text-lg font-bold bg-brand-primary hover:bg-brand-secondary text-white shadow-glow hover:shadow-brand transition-all duration-300 hover:-translate-y-1 rounded-xl"
+                        >
+                          <Download className="h-5 w-5 mr-2" />
+                          Baixar Agora
+                        </Button>
+                      </a>
                     </div>
                   </CardHeader>
 
-                  <CardContent className="space-y-6">
+                  <CardContent className="space-y-6 relative z-10">
                     <div className="space-y-4">
-                      <h4 className="font-bold text-slate-900 flex items-center gap-2">
-                        <Users className="h-5 w-5 text-blue-600" />
+                      <h4 className="font-bold text-white flex items-center gap-2">
+                        <Users className="h-5 w-5 text-brand-primary" />
                         O que você recebe:
                       </h4>
                       <ul className="space-y-3">
-                        <li className="flex items-center gap-3 text-slate-600">
-                          <CheckCircle className="h-4 w-4 text-green-600" />
-                          Arquivo .json do template n8n
+                        <li className="flex items-center gap-3 text-slate-300">
+                          <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                          Arquivo .json do template
                         </li>
-                        <li className="flex items-center gap-3 text-slate-600">
-                          <CheckCircle className="h-4 w-4 text-green-600" />
-                          Manual de instalação passo a passo
+                        <li className="flex items-center gap-3 text-slate-300">
+                          <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                          Manual de instalação PDF
                         </li>
-                        <li className="flex items-center gap-3 text-slate-600">
-                          <CheckCircle className="h-4 w-4 text-green-600" />
-                          Tutorial em vídeo de configuração
+                        <li className="flex items-center gap-3 text-slate-300">
+                          <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                          Vídeo tutorial passo a passo
                         </li>
-                        <li className="flex items-center gap-3 text-slate-600">
-                          <CheckCircle className="h-4 w-4 text-green-600" />
+                        <li className="flex items-center gap-3 text-slate-300">
+                          <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
                           Suporte via WhatsApp
                         </li>
-                        <li className="flex items-center gap-3 text-slate-600">
-                          <CheckCircle className="h-4 w-4 text-green-600" />
+                        <li className="flex items-center gap-3 text-slate-300">
+                          <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
                           Atualizações gratuitas
                         </li>
                       </ul>
                     </div>
 
-                    <div className="pt-6 border-t border-slate-200">
-                      <div className="flex items-center justify-center gap-2 text-sm text-slate-600">
-                        <CheckCircle className="h-4 w-4 text-green-600" />
-                        <span>Garantia de 30 dias</span>
+                    <div className="pt-6 border-t border-white/10">
+                      <div className="flex items-center justify-center gap-2 text-sm text-slate-400">
+                        <Shield className="h-4 w-4 text-green-500" />
+                        <span>Garantia de 30 dias ou seu dinheiro de volta</span>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
+
+                {/* Trust Badges */}
+                <div className="mt-6 grid grid-cols-3 gap-4 text-center">
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
+                      <Shield className="w-5 h-5 text-green-500" />
+                    </div>
+                    <span className="text-xs text-slate-500">Compra Segura</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
+                      <Zap className="w-5 h-5 text-blue-500" />
+                    </div>
+                    <span className="text-xs text-slate-500">Entrega Imediata</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
+                      <Star className="w-5 h-5 text-yellow-500" />
+                    </div>
+                    <span className="text-xs text-slate-500">Suporte VIP</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
