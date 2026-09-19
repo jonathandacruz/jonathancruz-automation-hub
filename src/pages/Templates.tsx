@@ -134,11 +134,12 @@ const Templates = () => {
       rating: 4.9,
       tags: ["IA", "Shopee", "n8n", "Afiliados"],
       featured: true,
-      price: 37,
-      estimatedTime: "1 hora",
+      price: 99,
+      estimatedTime: "2 horas",
       complexity: "high",
-      buyLink: "https://pay.hotmart.com/S102253215G"
-    }
+      buyLink: "https://pay.hotmart.com/N107686573A"
+    },
+    
   ];
 
   const categories = ["Todos", "Social Media", "Automação", "IA"];
