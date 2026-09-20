@@ -1,525 +1,548 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Download, Clock, CheckCircle, Star, Play, ArrowLeft, Zap, Users, Code, Shield, ArrowUpRight } from "lucide-react";
-import { useState, useEffect } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Bot,
+  Boxes,
+  Check,
+  CheckCircle2,
+  Clock3,
+  Code2,
+  Database,
+  Download,
+  ExternalLink,
+  FileJson,
+  Headphones,
+  LockKeyhole,
+  Play,
+  ShieldCheck,
+  ShoppingCart,
+  Star,
+  Server,
+  Workflow,
+  Zap,
+} from "lucide-react";
+import { useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
+import "./TemplateDetail.css";
+
+type ProductTemplate = {
+  id: number;
+  slug: string;
+  title: string;
+  promise: string;
+  description: string;
+  category: string;
+  difficulty: string;
+  downloads: number;
+  rating: number;
+  tags: string[];
+  price: number;
+  link: string;
+  estimatedTime: string;
+  youtubeId: string;
+  features: string[];
+  requirements: string[];
+  currentState?: {
+    label: string;
+    title: string;
+    description: string;
+  };
+  purchaseIncludes?: string[];
+};
+
+const templates: ProductTemplate[] = [
+  {
+    id: 1,
+    slug: "n8n-template-instagram",
+    title: "Post Viral no Instagram",
+    promise: "Transforme tendências em posts publicados sem repetir o processo manual todos os dias.",
+    description: "Automatize a análise de tendências, a geração do conteúdo e o agendamento de posts no Instagram com um fluxo pronto para adaptar.",
+    category: "Social Media",
+    difficulty: "Intermediário",
+    downloads: 15,
+    rating: 4.9,
+    tags: ["Instagram", "API", "IA", "Viral"],
+    price: 37,
+    link: "https://pay.hotmart.com/C101345009B",
+    estimatedTime: "2–3 horas",
+    youtubeId: "BRSAI3GOhWc",
+    features: ["Análise automática de tendências do Instagram", "Geração de conteúdo com IA integrada", "Hashtags automáticas otimizadas"],
+    requirements: ["n8n instalado (versão 1.0+)", "Conta Instagram Business", "API do Instagram Graph", "Chave API da OpenAI"],
+  },
+  {
+    id: 2,
+    slug: "n8n-robo-lotofacil",
+    title: "Robô da Lotofácil",
+    promise: "Confira apostas por jogador e envie o resultado automaticamente pelo WhatsApp.",
+    description: "Um fluxo completo para processar apostas, consultar resultados e avisar cada jogador sobre a quantidade de acertos.",
+    category: "Automação",
+    difficulty: "Avançado",
+    downloads: 36,
+    rating: 4.8,
+    tags: ["Banco de dados", "WhatsApp", "API", "Bot"],
+    price: 9.9,
+    link: "https://pay.hotmart.com/V101159263W",
+    estimatedTime: "4–5 horas",
+    youtubeId: "ZWhc3MCFoAg",
+    features: ["Análise automática dos resultados", "Bot no WhatsApp pronto para configurar", "Notificações automáticas por jogador"],
+    requirements: ["n8n instalado", "RapidAPI API Key", "PostgreSQL"],
+  },
+  {
+    id: 3,
+    slug: "n8n-template-stories",
+    title: "Stories automáticos no Instagram",
+    promise: "Crie e publique stories com consistência sem montar cada conteúdo do zero.",
+    description: "Use um fluxo configurável para gerar stories, personalizar o visual e publicar automaticamente no Instagram.",
+    category: "Social Media",
+    difficulty: "Iniciante",
+    downloads: 25,
+    rating: 4.9,
+    tags: ["Stories", "Instagram", "Templates", "Automação"],
+    price: 37,
+    link: "https://pay.hotmart.com/H101450514K",
+    estimatedTime: "1–2 horas",
+    youtubeId: "gLTWIXa33WE",
+    features: ["Templates pré-configurados para stories", "Personalização de cores e fontes", "Integração com banco de imagens"],
+    requirements: ["n8n instalado (versão 1.0+)", "Conta Instagram Business", "API do Instagram Graph", "Chave de API Replicate"],
+  },
+  {
+    id: 4,
+    slug: "n8n-agente-ia-restaurante",
+    title: "Agente de IA para restaurantes",
+    promise: "Atenda clientes, receba pedidos e organize reservas mesmo quando sua equipe está ocupada.",
+    description: "Um assistente virtual integrado ao WhatsApp para automatizar atendimento, pedidos, cardápio, reservas e pagamentos.",
+    category: "IA",
+    difficulty: "Avançado",
+    downloads: 350,
+    rating: 4.7,
+    tags: ["IA", "Restaurante", "Atendimento", "Pedidos"],
+    price: 37,
+    link: "https://pay.hotmart.com/G100538074I",
+    estimatedTime: "3–4 horas",
+    youtubeId: "j-OMUYNyG-I",
+    features: ["Chatbot inteligente para WhatsApp", "Gestão automática de pedidos", "Gerador de PIX integrado", "Cardápio digital interativo"],
+    requirements: ["n8n instalado (versão 1.0+)", "Evolution API", "OpenAI API Key", "Sistema de pagamento Asaas"],
+  },
+  {
+    id: 5,
+    slug: "n8n-gestao-cobrancas",
+    title: "Gestão de cobranças com EspoCRM",
+    promise: "Centralize fornecedores e faturas em uma operação de cobrança mais organizada.",
+    description: "Implantação do módulo de cobranças com apoio na instalação do servidor, configuração e customização do EspoCRM.",
+    category: "Automação",
+    difficulty: "Avançado",
+    downloads: 10,
+    rating: 4.8,
+    tags: ["Banco de dados", "WhatsApp", "API", "EspoCRM"],
+    price: 149,
+    link: "https://pay.hotmart.com/C101862756X",
+    estimatedTime: "1 hora",
+    youtubeId: "aKYfK7QHzQk",
+    features: ["Cadastro de fornecedores e faturas", "Implantação do EspoCRM", "Consultoria exclusiva para instalação"],
+    requirements: ["n8n instalado", "EspoCRM API Key", "Evolution API"],
+  },
+  {
+    id: 6,
+    slug: "n8n-automacao-shopee",
+    title: "Automação de afiliados Shopee",
+    promise: "Construa uma operação confiável para capturar, organizar e selecionar ofertas da Shopee sem depender de processos manuais frágeis.",
+    description: "Uma stack completa com n8n, API FastAPI, workers, PostgreSQL e Grafana para ingerir feeds da Shopee, aplicar regras comerciais e preparar ofertas para publicação.",
+    category: "Automação",
+    difficulty: "Avançado",
+    downloads: 78,
+    rating: 4.9,
+    tags: ["Afiliados", "Shopee", "Telegram", "Bot"],
+    price: 99,
+    link: "https://pay.hotmart.com/N107686573A",
+    estimatedTime: "2 horas",
+    youtubeId: "2hFpNWJ_N4I",
+    features: [
+      "Ingestão assíncrona de feeds FULL, DELTA e AUTO",
+      "Seleção de ofertas por desconto global ou por categoria",
+      "Histórico, retries, idempotência e acompanhamento operacional",
+      "Reserva segura de ofertas para integração com canais externos",
+    ],
+    requirements: [
+      "Git, Docker e Docker Compose v2",
+      "Conta aprovada no Programa de Afiliados Shopee",
+      "App ID e Secret da Open API Shopee",
+      "EasyPanel e dois domínios DNS para deploy em servidor",
+    ],
+    currentState: {
+      label: "Escopo atual do produto",
+      title: "Ingestão e seleção prontas; publicação exige integração final.",
+      description: "A stack processa feeds, mantém catálogo, histórico e candidatos. O adaptador que envia a mensagem ao Telegram deve ser concluído e validado no workflow B antes de ativar a publicação.",
+    },
+    purchaseIncludes: [
+      "Stack Docker Compose com 9 serviços",
+      "API FastAPI, worker e outbox durável",
+      "13 workflows n8n para operação e testes",
+      "PostgreSQL com migrations e views",
+      "Dashboard operacional no Grafana",
+      "Guia completo para instalação local e EasyPanel",
+    ],
+  },
+];
+
+const includedItems = [
+  { icon: FileJson, text: "Arquivo .json do workflow" },
+  { icon: Play, text: "Vídeo de instalação passo a passo" },
+  { icon: Headphones, text: "Suporte via WhatsApp" },
+  { icon: Zap, text: "Atualizações do template" },
+];
+
+const getPurchaseItems = (template: ProductTemplate) =>
+  template.purchaseIncludes ?? includedItems.map((item) => item.text);
+
+const currency = new Intl.NumberFormat("pt-BR", {
+  style: "currency",
+  currency: "BRL",
+  minimumFractionDigits: 2,
+});
 
 const TemplateDetail = () => {
   const { templateSlug } = useParams();
-  const navigate = useNavigate();
-  const [template, setTemplate] = useState<any>(null);
-
-  const templates = [
-    {
-      id: 1,
-      slug: "n8n-template-instagram",
-      title: "Post Viral no Instagram",
-      description: "Automatize a criação e publicação de posts virais no Instagram. Inclui análise de tendências, geração de conteúdo e agendamento automático.",
-      category: "Social Media",
-      difficulty: "Intermediário",
-      downloads: 15,
-      rating: 4.9,
-      tags: ["Instagram", "API", "IA", "Viral"],
-      featured: true,
-      price: 37,
-      link: "https://pay.hotmart.com/C101345009B",
-      estimatedTime: "2-3 horas",
-      complexity: "medium",
-      youtubeId: "BRSAI3GOhWc",
-      features: [
-        "Análise automática de tendências do Instagram",
-        "Geração de conteúdo com IA integrada",
-        "Hashtags automáticas otimizadas",
-      ],
-      requirements: [
-        "n8n instalado (versão 1.0+)",
-        "Conta Instagram Business",
-        "API do Instagram Graph",
-        "Chave API do OpenAI"
-      ]
-    },
-    {
-      id: 2,
-      slug: "n8n-robo-lotofacil",
-      title: "Robô da Lotofácil",
-      description: "Faz a conferência das apostas por jogador e envia notificação via Whatsapp com a quantidade de acertos",
-      category: "Automação",
-      difficulty: "Avançado",
-      downloads: 36,
-      rating: 4.8,
-      tags: ["Banco de dados", "Whatsapp", "API", "Bot"],
-      featured: true,
-      price: 9.90,
-      link: "https://pay.hotmart.com/V101159263W",
-      estimatedTime: "4-5 horas",
-      complexity: "medium",
-      youtubeId: "ZWhc3MCFoAg",
-      features: [
-        "Análise estatística avançada dos resultados",
-        "Bot no Whatsapp, intuitiva para configuração",
-        "Notificações automáticas de resultados",
-      ],
-      requirements: [
-        "n8n instalado",
-        "RapidAPI API Key",
-        "PostgreSQL"
-      ]
-    },
-    {
-      id: 3,
-      slug: "n8n-template-stories",
-      title: "Template para Stories do Instagram",
-      description: "Crie e publique stories automáticos no Instagram com templates personalizáveis.",
-      category: "Social Media",
-      difficulty: "Iniciante",
-      downloads: 25,
-      rating: 4.9,
-      tags: ["Stories", "Instagram", "Templates", "Automação"],
-      featured: true,
-      link: "https://pay.hotmart.com/H101450514K",
-      price: 37,
-      estimatedTime: "1-2 horas",
-      complexity: "low",
-      youtubeId: "gLTWIXa33WE",
-      features: [
-        "Templates pré-configurados para stories",
-        "Personalização de cores e fontes",
-        "Integração com banco de imagens"
-      ],
-      requirements: [
-        "n8n instalado (versão 1.0+)",
-        "Conta Instagram Business",
-        "API do Instagram Graph",
-        "Chave de API Replicate"
-      ]
-    },
-    {
-      id: 4,
-      slug: "n8n-agente-ia-restaurante",
-      title: "Agente de IA para Restaurantes",
-      description: "Assistente virtual inteligente para restaurantes que gerencia pedidos, reservas, cardápio e atendimento ao cliente automaticamente.",
-      category: "IA",
-      difficulty: "Avançado",
-      downloads: 350,
-      rating: 4.7,
-      tags: ["IA", "Restaurante", "Atendimento", "Pedidos"],
-      featured: true,
-      link: "https://pay.hotmart.com/G100538074I",
-      price: 37,
-      estimatedTime: "3-4 horas",
-      complexity: "high",
-      youtubeId: "j-OMUYNyG-I",
-      features: [
-        "Chatbot inteligente para WhatsApp",
-        "Gestão automática de pedidos",
-        "Gerador de PIX integrado",
-        "Cardápio digital interativo",
-      ],
-      requirements: [
-        "n8n instalado (versão 1.0+)",
-        "Evolution API",
-        "OpenAI API Key",
-        "Sistema de pagamento (Asaas)"
-      ]
-    },
-    {
-      id: 5,
-      slug: "n8n-gestao-cobrancas",
-      title: "Implatação do módulo de gestão de cobranças",
-      description: "Irei te auxiliar com a instalação do servidor e customização do espoCRM",
-      category: "Automação",
-      difficulty: "Avançado",
-      downloads: 10,
-      rating: 4.8,
-      tags: ["Banco de dados", "Whatsapp", "API", "Bot"],
-      featured: true,
-      price: 149,
-      link: "https://pay.hotmart.com/C101862756X",
-      estimatedTime: "1 hora",
-      complexity: "medium",
-      youtubeId: "aKYfK7QHzQk",
-      features: [
-        "Cadastro de fornecedores e faturas",
-        "Implantação do espoCRM",
-        "Consultoria exclusiva comigo para instalação",
-      ],
-      requirements: [
-        "n8n instalado",
-        "espoCRM API Key",
-        "Evolution API"
-      ]
-    },
-    {
-      id: 6,
-      slug: "n8n-automacao-shopee",
-      title: "Automação de afiliados Shopee",
-      description: "Como automatizar o envio de ofertas de afiliados da shopee para seu telegram",
-      category: "Automação",
-      difficulty: "Avançado",
-      downloads: 78,
-      rating: 4.9,
-      tags: ["Afiliados", "Renda Extra", "Telegram", "Bot"],
-      featured: true,
-      price: 99,
-      link: "https://pay.hotmart.com/N107686573A",
-      estimatedTime: "2 horas",
-      complexity: "medium",
-      youtubeId: "2hFpNWJ_N4I",
-      features: [
-        "Autenticação segura com Shopee",
-        "Busca de ofertas de afiliados",
-        "Envio automático para Telegram",
-      ],
-      requirements: [
-        "n8n instalado",
-        "Shopee API Key",
-        "Conta do Telegram"
-      ]
-    },
-  ];
+  const template = templates.find((item) => item.slug === templateSlug);
 
   useEffect(() => {
-    const foundTemplate = templates.find(t => t.slug === templateSlug);
-    setTemplate(foundTemplate);
+    if (!template) return;
 
-    if (foundTemplate) {
-      // SEO Meta Tags
-      document.title = `Download ${foundTemplate.title} - Template n8n | R$ ${foundTemplate.price}`;
+    const previousTitle = document.title;
+    document.title = `${template.title} | Template n8n por ${currency.format(template.price)}`;
 
-      const metaDescription = document.querySelector('meta[name="description"]');
-      if (metaDescription) {
-        metaDescription.setAttribute('content', `Download ${foundTemplate.title} - Template n8n pronto para instalação. ${foundTemplate.description} Por apenas R$ ${foundTemplate.price} com suporte e documentação incluídos.`);
-      }
+    const metaDescription = document.querySelector<HTMLMetaElement>('meta[name="description"]');
+    const previousDescription = metaDescription?.content;
+    metaDescription?.setAttribute("content", `${template.promise} Template n8n com vídeo, suporte e acesso imediato.`);
 
-      // Structured Data for SEO
-      const structuredData = {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": foundTemplate.title,
-        "description": foundTemplate.description,
-        "category": foundTemplate.category,
-        "brand": {
-          "@type": "Brand",
-          "name": "n8n Templates"
-        },
-        "offers": {
-          "@type": "Offer",
-          "price": foundTemplate.price,
-          "priceCurrency": "BRL",
-          "availability": "https://schema.org/InStock",
-          "seller": {
-            "@type": "Organization",
-            "name": "n8n Templates Brasil"
-          }
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": foundTemplate.rating,
-          "reviewCount": foundTemplate.downloads
-        },
-        "video": {
-          "@type": "VideoObject",
-          "name": `Como instalar ${foundTemplate.title} no n8n`,
-          "description": `Tutorial completo de instalação e configuração do template ${foundTemplate.title} no n8n`,
-          "thumbnailUrl": `https://img.youtube.com/vi/${foundTemplate.youtubeId}/maxresdefault.jpg`,
-          "embedUrl": `https://www.youtube.com/embed/${foundTemplate.youtubeId}`
-        },
-        "downloadUrl": "#download",
-        "applicationCategory": "AutomationSoftware"
-      };
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: template.title,
+      description: template.description,
+      category: template.category,
+      brand: { "@type": "Brand", name: "Jonathan da Cruz" },
+      offers: {
+        "@type": "Offer",
+        price: template.price,
+        priceCurrency: "BRL",
+        availability: "https://schema.org/InStock",
+        url: template.link,
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: template.rating,
+        reviewCount: template.downloads,
+      },
+    };
 
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.textContent = JSON.stringify(structuredData);
-      document.head.appendChild(script);
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(structuredData);
+    document.head.appendChild(script);
 
-      return () => {
-        document.head.removeChild(script);
-      };
-    }
-  }, [templateSlug]);
-
-  const getDifficultyColor = (difficulty: string) => {
-    switch (difficulty) {
-      case "Iniciante": return "bg-emerald-500/10 text-emerald-400 border-emerald-500/20";
-      case "Intermediário": return "bg-blue-500/10 text-blue-400 border-blue-500/20";
-      case "Avançado": return "bg-purple-500/10 text-purple-400 border-purple-500/20";
-      default: return "bg-slate-500/10 text-slate-400 border-slate-500/20";
-    }
-  };
+    return () => {
+      document.title = previousTitle;
+      if (metaDescription && previousDescription) metaDescription.content = previousDescription;
+      script.remove();
+    };
+  }, [template]);
 
   if (!template) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">Template não encontrado</h1>
-          <p className="text-xl text-slate-400 mb-8">O template que você procura não existe.</p>
-          <Link to="/templates">
-            <Button variant="outline" className="border-white/10 text-white hover:bg-white/5">
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Voltar aos Templates
-            </Button>
-          </Link>
+      <main className="grid min-h-screen place-items-center bg-[#0b1020] px-4 text-white">
+        <div className="max-w-lg text-center">
+          <h1 className="font-display text-4xl font-semibold">Template não encontrado</h1>
+          <p className="mt-4 text-slate-400">Este produto não está disponível ou o endereço foi alterado.</p>
+          <Link className="product-back-link mx-auto mt-8" to="/templates"><ArrowLeft size={17} /> Ver todos os templates</Link>
         </div>
-      </div>
+      </main>
     );
   }
 
+  const price = currency.format(template.price);
+  const isShopeeTemplate = template.slug === "n8n-automacao-shopee";
+
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-brand-primary selection:text-white overflow-x-hidden">
-      {/* Background Effects */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-brand-primary/20 rounded-full blur-[100px] animate-pulse-soft" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-brand-secondary/20 rounded-full blur-[120px] animate-pulse-soft" style={{ animationDelay: "1s" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-accent/5 rounded-full blur-[120px]" />
-      </div>
+    <div className="product-page">
+      <div className="product-grid-bg" aria-hidden="true" />
 
-      {/* SEO Hidden H1 */}
-      <h1 className="sr-only">Download {template.title} - Template n8n Premium para {template.category} - Arquivo pronto para instalação</h1>
-
-      {/* Breadcrumb */}
-      <nav className="pt-24 pb-8 px-4 lg:px-6 relative z-10">
-        <div className="container mx-auto max-w-6xl">
-          <div className="flex items-center gap-2 text-sm text-slate-400">
-            <Link to="/" className="hover:text-brand-primary transition-colors">Início</Link>
-            <span>/</span>
-            <Link to="/templates" className="hover:text-brand-primary transition-colors">Templates</Link>
-            <span>/</span>
-            <span className="text-white font-medium">{template.title}</span>
-          </div>
+      <main>
+        <div className="product-container product-breadcrumb">
+          <Link to="/templates"><ArrowLeft size={16} /> Templates</Link>
+          <span>/</span>
+          <span>{template.title}</span>
         </div>
-      </nav>
 
-      {/* Main Content */}
-      <main className="px-4 lg:px-6 pb-20 relative z-10">
-        <div className="container mx-auto max-w-6xl">
-          {/* Back Button */}
-          <div className="mb-8">
-            <Button
-              variant="ghost"
-              onClick={() => navigate('/templates')}
-              className="text-slate-400 hover:text-white hover:bg-white/5"
-            >
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Voltar aos Templates
-            </Button>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Left Column - Main Content */}
-            <div className="lg:col-span-2 space-y-8">
-              {/* Header */}
-              <header className="space-y-6 animate-fade-up">
-                <div className="flex items-center gap-4 flex-wrap">
-                  <Badge className={`${getDifficultyColor(template.difficulty)} font-medium px-3 py-1 border`}>
-                    {template.difficulty}
-                  </Badge>
-                  <Badge className="bg-brand-primary/10 text-brand-primary border-brand-primary/20 font-medium">
-                    {template.category}
-                  </Badge>
-                  <div className="flex items-center gap-1 bg-yellow-500/10 px-3 py-1 rounded-full border border-yellow-500/20">
-                    <Star className="h-3.5 w-3.5 text-yellow-500 fill-current" />
-                    <span className="text-sm font-medium text-yellow-500">{template.rating}</span>
-                  </div>
-                </div>
-
-                <h2 className="text-4xl lg:text-5xl font-display font-bold text-white leading-tight">
-                  {template.title}
-                </h2>
-
-                <div className="bg-green-500/10 border border-green-500/20 p-6 rounded-2xl backdrop-blur-sm">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="p-2 bg-green-500/20 rounded-lg">
-                      <Download className="h-5 w-5 text-green-400" />
-                    </div>
-                    <h3 className="font-bold text-green-400 text-lg">Template n8n Pronto para Uso</h3>
-                  </div>
-                  <p className="text-slate-300 leading-relaxed">
-                    Arquivo completo do template n8n para instalação imediata. Inclui workflow configurado, documentação e suporte técnico.
-                  </p>
-                </div>
-
-                <p className="text-xl text-slate-400 leading-relaxed">
-                  {template.description}
-                </p>
-
-                <div className="flex items-center gap-6 text-slate-400 border-y border-white/5 py-6">
-                  <div className="flex items-center gap-2">
-                    <Download className="h-5 w-5 text-brand-primary" />
-                    <span className="font-medium text-slate-300">{template.downloads.toLocaleString()} downloads</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Clock className="h-5 w-5 text-brand-secondary" />
-                    <span className="font-medium text-slate-300">{template.estimatedTime}</span>
-                  </div>
-                </div>
-              </header>
-
-              {/* Video Demo */}
-              <section className="space-y-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-                <h3 className="text-2xl font-bold text-white flex items-center gap-3">
-                  <div className="p-2 bg-brand-primary/20 rounded-lg">
-                    <Play className="h-5 w-5 text-brand-primary" />
-                  </div>
-                  Como Instalar o Template
-                </h3>
-                <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900">
-                  <iframe
-                    src={`https://www.youtube.com/embed/${template.youtubeId}?rel=0&modestbranding=1`}
-                    title={`Como instalar ${template.title} no n8n - Tutorial completo`}
-                    className="w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-              </section>
-
-              {/* Features */}
-              <section className="space-y-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-                <h3 className="text-2xl font-bold text-white flex items-center gap-3">
-                  <div className="p-2 bg-brand-secondary/20 rounded-lg">
-                    <Zap className="h-5 w-5 text-brand-secondary" />
-                  </div>
-                  Funcionalidades
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {template.features.map((feature: string, index: number) => (
-                    <div key={index} className="flex items-start gap-3 p-4 bg-white/5 rounded-xl border border-white/5 hover:bg-white/10 transition-colors">
-                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-slate-300 font-medium">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              {/* Requirements */}
-              <section className="space-y-6 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-                <h3 className="text-2xl font-bold text-white flex items-center gap-3">
-                  <div className="p-2 bg-brand-accent/20 rounded-lg">
-                    <Code className="h-5 w-5 text-brand-accent" />
-                  </div>
-                  Requisitos Técnicos
-                </h3>
-                <div className="space-y-3">
-                  {template.requirements.map((requirement: string, index: number) => (
-                    <div key={index} className="flex items-center gap-3 p-3 bg-brand-primary/5 rounded-xl border border-brand-primary/10">
-                      <div className="w-1.5 h-1.5 rounded-full bg-brand-primary"></div>
-                      <span className="text-slate-300 font-medium">{requirement}</span>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              {/* Tags */}
-              <section className="space-y-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
-                <h3 className="text-xl font-bold text-white">Tecnologias</h3>
-                <div className="flex flex-wrap gap-3">
-                  {template.tags.map((tag: string, index: number) => (
-                    <span
-                      key={index}
-                      className="px-4 py-2 bg-white/5 text-slate-300 rounded-full font-medium border border-white/10 hover:border-brand-primary/50 hover:text-brand-primary transition-colors cursor-default"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </section>
+        <section className="product-container product-hero">
+          <div className="product-intro">
+            <div className="product-meta">
+              <span>{template.category}</span>
+              <span>{template.difficulty}</span>
+              <span><Star size={14} fill="currentColor" /> {template.rating}</span>
             </div>
 
-            {/* Right Column - Purchase Card */}
-            <div className="lg:col-span-1">
-              <div className="sticky top-32">
-                <Card className="bg-slate-900/50 backdrop-blur-xl border-white/10 shadow-2xl overflow-hidden group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/10 via-transparent to-brand-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <h1>{template.title}</h1>
+            <p className="product-promise">{template.promise}</p>
+            <p className="product-description">{template.description}</p>
 
-                  <CardHeader className="pb-6 relative z-10">
-                    <div className="text-center space-y-4">
-                      <div className="text-5xl font-display font-bold text-white">
-                        R$ {template.price}
-                      </div>
-                      <div className="text-sm text-slate-400 uppercase tracking-wider font-medium">
-                        Pagamento único • Acesso Vitalício
-                      </div>
-                      <a href={template.link} target="_blank" rel="noopener noreferrer" className="block">
-                        <Button
-                          size="lg"
-                          className="w-full py-8 text-lg font-bold bg-brand-primary hover:bg-brand-secondary text-white shadow-glow hover:shadow-brand transition-all duration-300 hover:-translate-y-1 rounded-xl"
-                        >
-                          <Download className="h-5 w-5 mr-2" />
-                          Baixar Agora
-                        </Button>
-                      </a>
-                    </div>
-                  </CardHeader>
-
-                  <CardContent className="space-y-6 relative z-10">
-                    <div className="space-y-4">
-                      <h4 className="font-bold text-white flex items-center gap-2">
-                        <Users className="h-5 w-5 text-brand-primary" />
-                        O que você recebe:
-                      </h4>
-                      <ul className="space-y-3">
-                        <li className="flex items-center gap-3 text-slate-300">
-                          <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
-                          Arquivo .json do template
-                        </li>
-                        <li className="flex items-center gap-3 text-slate-300">
-                          <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
-                          Manual de instalação PDF
-                        </li>
-                        <li className="flex items-center gap-3 text-slate-300">
-                          <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
-                          Vídeo tutorial passo a passo
-                        </li>
-                        <li className="flex items-center gap-3 text-slate-300">
-                          <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
-                          Suporte via WhatsApp
-                        </li>
-                        <li className="flex items-center gap-3 text-slate-300">
-                          <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
-                          Atualizações gratuitas
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div className="pt-6 border-t border-white/10">
-                      <div className="flex items-center justify-center gap-2 text-sm text-slate-400">
-                        <Shield className="h-4 w-4 text-green-500" />
-                        <span>Garantia de 30 dias ou seu dinheiro de volta</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Trust Badges */}
-                <div className="mt-6 grid grid-cols-3 gap-4 text-center">
-                  <div className="flex flex-col items-center gap-2">
-                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
-                      <Shield className="w-5 h-5 text-green-500" />
-                    </div>
-                    <span className="text-xs text-slate-500">Compra Segura</span>
-                  </div>
-                  <div className="flex flex-col items-center gap-2">
-                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
-                      <Zap className="w-5 h-5 text-blue-500" />
-                    </div>
-                    <span className="text-xs text-slate-500">Entrega Imediata</span>
-                  </div>
-                  <div className="flex flex-col items-center gap-2">
-                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">
-                      <Star className="w-5 h-5 text-yellow-500" />
-                    </div>
-                    <span className="text-xs text-slate-500">Suporte VIP</span>
-                  </div>
+            {template.currentState && (
+              <div className="product-state-note">
+                <ShieldCheck size={22} />
+                <div>
+                  <span>{template.currentState.label}</span>
+                  <strong>{template.currentState.title}</strong>
+                  <p>{template.currentState.description}</p>
                 </div>
+              </div>
+            )}
+
+            <div className="product-quick-proof">
+              <span><Download size={18} /> {template.downloads} downloads</span>
+              <span><Clock3 size={18} /> Configure em cerca de {template.estimatedTime}</span>
+              <span><CheckCircle2 size={18} /> Acesso imediato</span>
+            </div>
+
+            <div className="workflow-preview" aria-label="Etapas do workflow incluído">
+              <div className="workflow-preview-head">
+                <span><Workflow size={18} /> workflow pronto</span>
+                <i><span /> ativo</i>
+              </div>
+              <div className="workflow-nodes">
+                <div><Download size={17} /><span><small>Entrada</small>{isShopeeTemplate ? "API Shopee" : "Captura dados"}</span></div>
+                <ArrowRight size={18} />
+                <div><Bot size={17} /><span><small>Processa</small>{isShopeeTemplate ? "Worker + regras" : "Aplica regras"}</span></div>
+                <ArrowRight size={18} />
+                <div><Zap size={17} /><span><small>Resultado</small>{isShopeeTemplate ? "Ofertas candidatas" : "Executa ação"}</span></div>
               </div>
             </div>
           </div>
-        </div>
+
+          <PurchasePanel template={template} price={price} />
+        </section>
+
+        <section className="product-container product-demo" aria-labelledby="demo-title">
+          <div className="product-section-heading">
+            <span>Veja antes de comprar</span>
+            <h2 id="demo-title">Entenda o fluxo funcionando na prática.</h2>
+            <p>O vídeo mostra a lógica, a configuração e como adaptar o template ao seu ambiente.</p>
+          </div>
+
+          <div className="demo-layout">
+            <div className="video-frame">
+              <iframe
+                src={`https://www.youtube.com/embed/${template.youtubeId}?rel=0&modestbranding=1`}
+                title={`Demonstração do template ${template.title}`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+
+            <div className="demo-summary">
+              <h3>O que este fluxo automatiza</h3>
+              <ul>
+                {template.features.map((feature) => (
+                  <li key={feature}><Check size={18} /> {feature}</li>
+                ))}
+              </ul>
+              <a className="text-buy-link" href={template.link} target="_blank" rel="noopener noreferrer">
+                Quero este workflow por {price}<ArrowRight size={18} />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {isShopeeTemplate && <ShopeeSystemSection />}
+
+        <section className="product-details-section">
+          <div className="product-container product-details-grid">
+            <div>
+              <div className="product-section-heading compact">
+                <span>Entrega completa</span>
+                <h2>Você recebe o fluxo e o caminho para colocá-lo no ar.</h2>
+              </div>
+              <div className="included-list">
+                {getPurchaseItems(template).map((text, index) => {
+                  const Icon = includedItems[index % includedItems.length].icon;
+                  return <div key={text}><Icon size={21} /><span>{text}</span></div>;
+                })}
+              </div>
+            </div>
+
+            <aside className="requirements-panel">
+              <Code2 size={24} />
+              <h3>O que você precisa</h3>
+              <p>Confira se você já possui estes itens antes de instalar:</p>
+              <ul>
+                {template.requirements.map((requirement) => (
+                  <li key={requirement}><span />{requirement}</li>
+                ))}
+              </ul>
+              <div className="technology-tags">
+                {template.tags.map((tag) => <span key={tag}>{tag}</span>)}
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section className="product-container reassurance-strip" aria-label="Garantias da compra">
+          <div><ShieldCheck size={25} /><span><strong>30 dias de garantia</strong><small>Você pode solicitar o reembolso dentro do prazo.</small></span></div>
+          <div><LockKeyhole size={25} /><span><strong>Pagamento pela Hotmart</strong><small>Checkout protegido em ambiente externo seguro.</small></span></div>
+          <div><Headphones size={25} /><span><strong>Suporte humano</strong><small>Ajuda pelo WhatsApp para colocar o fluxo em funcionamento.</small></span></div>
+        </section>
+
+        <section className="product-container product-faq" aria-labelledby="faq-title">
+          <div className="product-section-heading compact">
+            <span>Antes de decidir</span>
+            <h2 id="faq-title">Dúvidas comuns sobre a compra.</h2>
+          </div>
+          <div className="faq-list">
+            {isShopeeTemplate && (
+              <details open>
+                <summary>O template já publica ofertas automaticamente no Telegram?</summary>
+                <p>A ingestão e a seleção das ofertas estão implementadas. A publicação permanece bloqueada por segurança até você concluir e validar o adaptador externo do workflow B. O guia explica as travas e a sequência correta de ativação.</p>
+              </details>
+            )}
+            <details>
+              <summary>Como recebo o template depois da compra?</summary>
+              <p>O acesso ao material é liberado pela Hotmart após a confirmação do pagamento.</p>
+            </details>
+            <details>
+              <summary>Preciso saber programar?</summary>
+              <p>{isShopeeTemplate ? "O produto é voltado a quem já consegue operar Docker, variáveis de ambiente, APIs e workflows do n8n. O guia é detalhado, mas a implantação exige familiaridade técnica." : "Não é necessário programar, mas você precisa conhecer o básico do n8n e ter acesso às ferramentas listadas nos requisitos."}</p>
+            </details>
+            <details>
+              <summary>O template já vem totalmente configurado?</summary>
+              <p>O workflow e a lógica vêm prontos. Você ainda precisará conectar suas credenciais e ajustar dados específicos da sua operação.</p>
+            </details>
+            <details>
+              <summary>E se eu não conseguir instalar?</summary>
+              <p>Você recebe o vídeo de instalação e pode usar o suporte via WhatsApp para tirar dúvidas sobre a configuração.</p>
+            </details>
+          </div>
+        </section>
+
+        <section className="product-container product-final-cta">
+          <div>
+            <span>Pagamento único · acesso imediato</span>
+            <h2>Comece com o fluxo pronto e adapte ao seu negócio.</h2>
+            <p>Evite reconstruir do zero uma automação que já foi organizada, testada e documentada.</p>
+          </div>
+          <a href={template.link} target="_blank" rel="noopener noreferrer">
+            <ShoppingCart size={20} /> Comprar template por {price}<ExternalLink size={16} />
+          </a>
+        </section>
       </main>
+
+      <div className="mobile-buy-bar">
+        <div><small>Pagamento único</small><strong>{price}</strong></div>
+        <a href={template.link} target="_blank" rel="noopener noreferrer">Comprar agora <ArrowRight size={18} /></a>
+      </div>
     </div>
   );
 };
+
+const PurchasePanel = ({ template, price }: { template: ProductTemplate; price: string }) => (
+  <aside className="purchase-column" aria-label="Opções de compra">
+    <div className="purchase-panel">
+      <p className="purchase-label">Template completo + suporte</p>
+      <div className="purchase-price"><small>por</small><strong>{price}</strong></div>
+      <p className="purchase-payment">Pagamento único. Sem mensalidade.</p>
+
+      <a className="purchase-button" href={template.link} target="_blank" rel="noopener noreferrer">
+        <ShoppingCart size={20} />
+        Comprar template
+        <ExternalLink size={16} />
+      </a>
+      <p className="checkout-note"><LockKeyhole size={14} /> Você será direcionado para o checkout seguro da Hotmart.</p>
+
+      <div className="purchase-divider" />
+      <h2>Incluído na compra</h2>
+      <ul>
+        {getPurchaseItems(template).slice(0, 6).map((text) => <li key={text}><CheckCircle2 size={17} />{text}</li>)}
+      </ul>
+
+      <div className="guarantee-note">
+        <ShieldCheck size={25} />
+        <span><strong>Garantia de 30 dias</strong><small>Compre, avalie e solicite o reembolso dentro do prazo se não fizer sentido para você.</small></span>
+      </div>
+    </div>
+  </aside>
+);
+
+const ShopeeSystemSection = () => (
+  <section className="shopee-system-section" aria-labelledby="shopee-system-title">
+    <div className="product-container">
+      <div className="product-section-heading">
+        <span>Mais do que um workflow</span>
+        <h2 id="shopee-system-title">Uma base operacional para trabalhar com feeds da Shopee.</h2>
+        <p>O produto separa credenciais, processamento, dados e orquestração para que a operação possa crescer sem concentrar tudo dentro do n8n.</p>
+      </div>
+
+      <div className="system-metrics" aria-label="Resumo técnico do produto">
+        <div><strong>9</strong><span>serviços no Docker Compose</span></div>
+        <div><strong>13</strong><span>workflows n8n incluídos</span></div>
+        <div><strong>3</strong><span>modos de carga: AUTO, FULL e DELTA</span></div>
+        <div><strong>2</strong><span>caminhos de deploy documentados</span></div>
+      </div>
+
+      <div className="architecture-panel">
+        <div className="architecture-heading">
+          <Workflow size={23} />
+          <div><span>Arquitetura do fluxo</span><small>Credenciais Shopee permanecem isoladas no worker</small></div>
+        </div>
+        <div className="architecture-flow" aria-label="Fluxo entre os serviços">
+          <div><Workflow size={20} /><span><small>Orquestra</small>n8n</span></div>
+          <ArrowRight size={18} />
+          <div><Code2 size={20} /><span><small>Controla</small>Feed API</span></div>
+          <ArrowRight size={18} />
+          <div><Database size={20} /><span><small>Persiste</small>PostgreSQL</span></div>
+          <ArrowRight size={18} />
+          <div><Server size={20} /><span><small>Processa</small>Worker</span></div>
+          <ArrowRight size={18} />
+          <div><Boxes size={20} /><span><small>Consulta</small>API Shopee</span></div>
+        </div>
+      </div>
+
+      <div className="capability-list">
+        <article>
+          <span>Operação confiável</span>
+          <h3>Jobs assíncronos e recuperação</h3>
+          <p>Fila no PostgreSQL, checkpoints, retries controlados e chaves de idempotência evitam duplicações e tornam falhas rastreáveis.</p>
+        </article>
+        <article>
+          <span>Seleção comercial</span>
+          <h3>Regras de desconto por categoria</h3>
+          <p>Defina um percentual global ou sobrescreva categorias específicas, com política de republicação apenas quando o preço cair novamente.</p>
+        </article>
+        <article>
+          <span>Visibilidade</span>
+          <h3>Grafana pronto para acompanhar</h3>
+          <p>Dashboard provisionado com leitura isolada para conferir jobs, produtos, categorias, candidatos, callbacks e pendências.</p>
+        </article>
+        <article>
+          <span>Deploy documentado</span>
+          <h3>Local ou EasyPanel</h3>
+          <p>Use o Compose local para desenvolver e validar ou publique a mesma stack em servidor com HTTPS e serviços internos protegidos.</p>
+        </article>
+      </div>
+
+      <div className="activation-sequence">
+        <div>
+          <span>Sequência segura de ativação</span>
+          <h3>O sistema começa bloqueado de propósito.</h3>
+          <p>Os flags de contrato e publicação ficam desativados até que o feed real da sua conta seja validado. Isso impede que um mapeamento desconhecido publique preço, comissão ou produto incorreto.</p>
+        </div>
+        <ol>
+          <li><span>1</span>Validar credenciais e contratos FULL/DELTA</li>
+          <li><span>2</span>Executar uma carga FULL controlada</li>
+          <li><span>3</span>Conferir catálogo, histórico e candidatos</li>
+          <li><span>4</span>Concluir e testar o adaptador de publicação</li>
+          <li><span>5</span>Ativar o canal e liberar a publicação por último</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+);
 
 export default TemplateDetail;
